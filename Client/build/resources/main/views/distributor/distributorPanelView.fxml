@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1284.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server.gui.distributor.DistributorController">
+   <children>
+      <Label blendMode="DARKEN" layoutX="125.0" layoutY="19.0" prefHeight="30.0" prefWidth="205.0" text="Distributor Panel">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
+      <Label fx:id="userDataLabel" layoutX="746.0" layoutY="15.0" prefHeight="47.0" prefWidth="205.0" textFill="#4141b2">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font></Label>
+      <ImageView fx:id="userImageView" fitHeight="54.0" fitWidth="91.0" layoutX="636.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+      <Separator layoutX="-14.0" layoutY="61.0" prefHeight="17.0" prefWidth="1297.0" />
+      <Button fx:id="googleButton" layoutX="1094.0" layoutY="24.0" mnemonicParsing="false" onAction="#showGoogleBrowser" prefHeight="30.0" prefWidth="37.0" />
+      <Button fx:id="antiStormButton" layoutX="1141.0" layoutY="24.0" mnemonicParsing="false" onAction="#showAntiStormBrowser" prefHeight="30.0" prefWidth="37.0" />
+      <Button fx:id="phoneButton" layoutX="1187.0" layoutY="24.0" mnemonicParsing="false" onAction="#showPhoneView" prefHeight="30.0" prefWidth="64.0" />
+      <Separator layoutX="958.0" layoutY="1.0" orientation="VERTICAL" prefHeight="66.0" prefWidth="4.0" />
+      <Button layoutX="23.0" layoutY="15.0" mnemonicParsing="false" onAction="#logout" prefHeight="38.0" prefWidth="71.0" text="Log out ">
+         <effect>
+            <DropShadow color="#c60404" />
+         </effect></Button>
+      <Label fx:id="clockLabel" alignment="CENTER" layoutX="969.0" layoutY="24.0" prefHeight="30.0" prefWidth="118.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <DropShadow color="#0856dd" />
+         </effect></Label>
+      <HBox fx:id="googleMapPane" layoutX="746.0" layoutY="74.0" prefHeight="665.0" prefWidth="526.0" />
+      <TableView fx:id="tableWithAllSystemNotifications" layoutX="9.0" layoutY="115.0" prefHeight="260.0" prefWidth="717.0">
+        <columns>
+          <TableColumn prefWidth="95.99998474121094" style="-fx-alignment: CENTER;" text="Accident Type">
+             <cellValueFactory><PropertyValueFactory property="accidentType" />
+             </cellValueFactory>
+          </TableColumn>
+          <TableColumn prefWidth="107.00003051757812" style="-fx-alignment: CENTER;" text="Created Time">
+             <cellValueFactory><PropertyValueFactory property="timeCreated" />
+             </cellValueFactory>
+          </TableColumn>
+          <TableColumn prefWidth="119.0" style="-fx-alignment: CENTER;" text="Institution">
+             <cellValueFactory><PropertyValueFactory property="institutionType" />
+             </cellValueFactory>
+          </TableColumn>
+          <TableColumn prefWidth="130.0" style="-fx-alignment: CENTER;" text="Caller Data">
+             <cellValueFactory><PropertyValueFactory property="callerData" />
+             </cellValueFactory>
+          </TableColumn>
+          <TableColumn prefWidth="86.0" style="-fx-alignment: CENTER;" text="Caller Phone">
+             <cellValueFactory><PropertyValueFactory property="callerPhoneNumber" />
+             </cellValueFactory>
+          </TableColumn>
+          <TableColumn prefWidth="122.0" style="-fx-alignment: CENTER;" text="City">
+             <cellValueFactory><PropertyValueFactory property="city" />
+             </cellValueFactory>
+          </TableColumn>
+          <TableColumn prefWidth="59.0" style="-fx-alignment: CENTER;" text="Status">
+             <cellValueFactory><PropertyValueFactory property="status" />
+             </cellValueFactory>
+          </TableColumn>
+        </columns>
+      </TableView>
+      <TableView fx:id="tableWithUserNotifications" layoutX="159.0" layoutY="440.0" prefHeight="299.0" prefWidth="570.0">
+        <columns>
+          <TableColumn prefWidth="94.99996948242188" style="-fx-alignment: CENTER;" text="Accident Type">
+             <cellValueFactory><PropertyValueFactory property="accidentType" />
+             </cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="127.0" style="-fx-alignment: CENTER;" text="Created Time">
+               <cellValueFactory><PropertyValueFactory property="timeCreated" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="124.0" style="-fx-alignment: CENTER;" text="Institution Type">
+               <cellValueFactory><PropertyValueFactory property="institutionType" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="166.0" style="-fx-alignment: CENTER;" text="Distributor">
+               <cellValueFactory><PropertyValueFactory property="distributorData" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="0.0" prefWidth="57.0" style="-fx-alignment: CENTER;" text="Status">
+               <cellValueFactory><PropertyValueFactory property="status" />
+               </cellValueFactory>
+            </TableColumn>
+        </columns>
+      </TableView>
+      <Separator layoutX="732.0" layoutY="69.0" orientation="VERTICAL" prefHeight="682.0" prefWidth="6.0" />
+      <Label layoutX="304.0" layoutY="84.0" text="Your Notification:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="344.0" layoutY="410.0" text="Notification In System:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="495.0" layoutY="22.0" mnemonicParsing="false" onAction="#showEmployeeEditView" text="Edit employee data">
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" color="#221717" />
+         </effect>
+      </Button>
+      <VBox alignment="BASELINE_CENTER" layoutX="14.0" layoutY="434.0" prefHeight="183.0" prefWidth="118.0" spacing="15">
+         <children>
+            <Label prefHeight="15.0" prefWidth="57.0" text="PANEL" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <effect>
+                  <Shadow color="#d7142b" height="1.0" radius="0.0" width="0.0" />
+               </effect></Label>
+            <ToggleButton fx:id="breakOnButton" mnemonicParsing="false" onAction="#manageDistributorBreak" text="Break ON" />
+            <ToggleButton fx:id="breakOffButton" mnemonicParsing="false" onAction="#manageDistributorBreak" text="Break OFF" />
+            <Button mnemonicParsing="false" text="Work inf." />
+         </children>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+         <effect>
+            <DropShadow color="#3d4be1" />
+         </effect>
+      </VBox>
+      <Separator layoutY="392.0" prefHeight="2.0" prefWidth="734.0" />
+      <Separator layoutX="141.0" layoutY="392.0" orientation="VERTICAL" prefHeight="358.0" prefWidth="6.0" />
+      <Button fx:id="attentionButton" layoutX="28.0" layoutY="633.0" mnemonicParsing="false" onAction="#activeEmergencyAlarm" prefHeight="96.0" prefWidth="91.0">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" color="RED" height="121.81" radius="44.84" spread="0.29" width="59.55" />
+         </effect></Button>
+   </children>
+</AnchorPane>

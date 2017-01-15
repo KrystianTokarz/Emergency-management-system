@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="p" fx:id="p" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="284.0" prefWidth="227.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server.gui.distributor.phone.DistributorPhoneController">
+   <children>
+      <Separator layoutY="69.0" prefHeight="12.0" prefWidth="227.0" />
+      <TextField fx:id="numberPhoneTextField" alignment="CENTER" layoutX="11.0" layoutY="14.0" onAction="#makeCall" prefHeight="50.0" prefWidth="206.0" promptText="PHONE NUMBER ">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
+      <Button fx:id="button1" layoutX="14.0" layoutY="89.0" mnemonicParsing="false" onAction="#clickNumberButton" prefHeight="21.0" prefWidth="58.0" text="1">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="button2" layoutX="88.0" layoutY="89.0" mnemonicParsing="false" onAction="#clickNumberButton" prefHeight="30.0" prefWidth="58.0" text="2">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="button3" layoutX="157.0" layoutY="89.0" mnemonicParsing="false" onAction="#clickNumberButton" prefHeight="30.0" prefWidth="58.0" text="3">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="button4" layoutX="14.0" layoutY="128.0" mnemonicParsing="false" onAction="#clickNumberButton" prefHeight="30.0" prefWidth="58.0" text="4">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="button5" layoutX="87.0" layoutY="127.0" mnemonicParsing="false" onAction="#clickNumberButton" prefHeight="30.0" prefWidth="58.0" text="5">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="button6" layoutX="157.0" layoutY="127.0" mnemonicParsing="false" onAction="#clickNumberButton" prefHeight="30.0" prefWidth="58.0" text="6">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="button7" layoutX="14.0" layoutY="164.0" mnemonicParsing="false" onAction="#clickNumberButton" prefHeight="30.0" prefWidth="58.0" text="7">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="button8" layoutX="87.0" layoutY="164.0" mnemonicParsing="false" onAction="#clickNumberButton" prefHeight="30.0" prefWidth="58.0" text="8">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="button9" layoutX="157.0" layoutY="164.0" mnemonicParsing="false" onAction="#clickNumberButton" prefHeight="21.0" prefWidth="58.0" text="9">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="button0" layoutX="87.0" layoutY="204.0" mnemonicParsing="false" onAction="#clickNumberButton" prefHeight="12.0" prefWidth="58.0" text="0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="backOneStepButton" layoutX="157.0" layoutY="204.0" mnemonicParsing="false" onAction="#backOneStepButton" prefHeight="30.0" prefWidth="58.0"/>
+      <Button fx:id="callButton" layoutX="27.0" layoutY="241.0" mnemonicParsing="false" onAction="#makeCall" prefHeight="37.0" prefWidth="73.0" />
+      <Button fx:id="cancelCallButton" layoutX="129.0" layoutY="241.0" mnemonicParsing="false" onAction="#closePhoneView" prefHeight="37.0" prefWidth="73.0" />
+   </children>
+</AnchorPane>

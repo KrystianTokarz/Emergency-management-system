@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1284.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server.gui.distributor.DistributorController">
+   <children>
+      <Label layoutX="125.0" layoutY="19.0" prefHeight="30.0" prefWidth="205.0" text="Distributor Panel">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
+      <Label fx:id="userDataLabel" layoutX="702.0" layoutY="15.0" prefHeight="47.0" prefWidth="205.0" textFill="#4141b2">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font></Label>
+      <ImageView fx:id="userImageView" fitHeight="54.0" fitWidth="91.0" layoutX="597.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+      <Separator layoutX="-14.0" layoutY="61.0" prefHeight="17.0" prefWidth="1297.0" />
+      <Button fx:id="googleButton" layoutX="1094.0" layoutY="24.0" mnemonicParsing="false" onAction="#showGoogleBrowser" prefHeight="30.0" prefWidth="37.0" />
+      <Button fx:id="antiStormButton" layoutX="1141.0" layoutY="24.0" mnemonicParsing="false" onAction="#showAntiStormBrowser" prefHeight="30.0" prefWidth="37.0" />
+      <Button fx:id="phoneButton" layoutX="1187.0" layoutY="24.0" mnemonicParsing="false" onAction="#showPhoneView" prefHeight="30.0" prefWidth="64.0" />
+      <Separator layoutX="946.0" layoutY="1.0" orientation="VERTICAL" prefHeight="66.0" prefWidth="4.0" />
+      <Button layoutX="23.0" layoutY="15.0" mnemonicParsing="false" onAction="#logout" prefHeight="38.0" prefWidth="71.0" text="Log out " />
+      <Label fx:id="clockLabel" alignment="CENTER" layoutX="981.0" layoutY="24.0" prefHeight="30.0" prefWidth="79.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <HBox fx:id="googleMapPane" layoutX="746.0" layoutY="72.0" prefHeight="677.0" prefWidth="538.0" />
+   </children>
+</AnchorPane>

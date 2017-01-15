@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server.gui.administrator.employeeManagement.employeesEditing.AdministratorEmployeeEditController">
+   <children>
+      <Label layoutX="176.0" layoutY="22.0" text="Edit Employee">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="101.0" text="First Name:" />
+      <Label layoutX="37.0" layoutY="147.0" text="Last Name:" />
+      <Label layoutX="50.0" layoutY="192.0" text="email:" />
+      <Label layoutX="54.0" layoutY="240.0" text="type:" />
+      <TextField fx:id="firstNameTextField" layoutX="121.0" layoutY="97.0" />
+      <TextField fx:id="lastNameTextField" layoutX="121.0" layoutY="143.0" />
+      <TextField fx:id="emailTextField" layoutX="121.0" layoutY="188.0" />
+      <ChoiceBox fx:id="employeeTypeChoiceBox" layoutX="120.0" layoutY="236.0" prefWidth="150.0" value="Distributor">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Administrator" />
+               <String fx:value="Distributor" />
+            </FXCollections>
+         </items>
+      </ChoiceBox>
+      <Separator layoutX="306.0" layoutY="-4.0" orientation="VERTICAL" prefHeight="337.0" prefWidth="17.0" />
+      <Separator layoutX="-4.0" layoutY="329.0" prefHeight="7.0" prefWidth="600.0" />
+      <ImageView fx:id="imageView" fitHeight="103.0" fitWidth="127.0" layoutX="337.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="362.0" layoutY="147.0" text="login:" />
+      <Label layoutX="351.0" layoutY="192.0" text="password:" />
+      <Label layoutX="346.0" layoutY="240.0" text="repeat pass:" />
+      <TextField fx:id="loginTextField" layoutX="426.0" layoutY="143.0" />
+      <PasswordField fx:id="firstPasswordField" layoutX="426.0" layoutY="188.0" />
+      <PasswordField fx:id="secondPasswordField" layoutX="426.0" layoutY="236.0" />
+      <Button fx:id="loadImageButton" layoutX="497.0" layoutY="50.0" mnemonicParsing="false" text="Load image" />
+      <Button fx:id="editButton" layoutX="207.0" layoutY="348.0" mnemonicParsing="false" onAction="#editEmployee" prefHeight="33.0" prefWidth="82.0" text="Edit">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Button fx:id="cancelButton" layoutX="336.0" layoutY="348.0" mnemonicParsing="false" onAction="#closeEditEmployeeWindow" prefHeight="33.0" prefWidth="82.0" text="Cancel">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Label fx:id="emailValidateLabel" layoutX="121.0" layoutY="168.0" text="Bad email address" textFill="#ff0505" visible="false" />
+   </children>
+</AnchorPane>
