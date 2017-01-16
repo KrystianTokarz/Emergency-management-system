@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="p" fx:id="p" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="812.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server.gui.distributor.notificationPanel.DistributorNotificationController">
+<AnchorPane id="p" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="812.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server.gui.distributor.notificationPanel.DistributorNotificationController">
    <children>
       <Label alignment="CENTER" layoutX="356.0" layoutY="12.0" prefHeight="30.0" prefWidth="127.0" text="Notification" textAlignment="CENTER">
          <font>
@@ -23,7 +23,7 @@
          </effect>
       </Label>
       <Separator layoutY="42.0" prefHeight="4.0" prefWidth="812.0" />
-      <Button layoutX="333.0" layoutY="341.0" mnemonicParsing="false" onAction="#sendFirstNotification" prefHeight="30.0" prefWidth="146.0" text="Send Notification">
+      <Button fx:id="firstNotificationButton" layoutX="333.0" layoutY="341.0" mnemonicParsing="false" onAction="#sendFirstNotification" prefHeight="30.0" prefWidth="146.0" text="Send Notification">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -31,7 +31,7 @@
             <DropShadow blurType="ONE_PASS_BOX" color="RED" radius="20.377499999999998" width="62.51" />
          </effect></Button>
       <Separator layoutY="379.0" prefHeight="4.0" prefWidth="812.0" />
-      <Button layoutX="311.0" layoutY="552.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="191.0" text="Send additional informations">
+      <Button layoutX="311.0" layoutY="552.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="191.0" onAction="#sendSecondNotification" text="Send additional information">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -45,9 +45,9 @@
       <Label layoutX="459.0" layoutY="121.0" text="Locality" />
       <Label layoutX="464.0" layoutY="165.0" text="Street" />
       <Label layoutX="14.0" layoutY="262.0" text="Institution:" />
-      <TextArea layoutX="25.0" layoutY="393.0" prefHeight="143.0" prefWidth="481.0" promptText="notations" />
+      <TextArea fx:id="notationTextArea" layoutX="25.0" layoutY="393.0" prefHeight="143.0" prefWidth="481.0" promptText="notations" />
       <Label layoutX="513.0" layoutY="512.0" text="Number of victims:" />
-      <TextField layoutX="615.0" layoutY="508.0" prefHeight="25.0" prefWidth="80.0" />
+      <TextField fx:id="numberOfVictimsTextField" layoutX="615.0" layoutY="508.0" prefHeight="25.0" prefWidth="80.0" />
       <Label layoutX="265.0" layoutY="261.0" text="Institution:" />
       <Label layoutX="546.0" layoutY="261.0" text="Institution:" />
       <ChoiceBox fx:id="policeChoiceBox" layoutX="81.0" layoutY="258.0" prefWidth="150.0" />

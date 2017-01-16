@@ -147,7 +147,7 @@ public class DistributorController implements Initializable {
                                 .status(notification.getStatus())
                                 .callerData(notification.getCallerFirstName(),notification.getCallerLastName())
                                 .callerNumber(notification.getCallerPhoneNumber())
-                                .city(notification.getStreet().getStreet() + " " + notification.getStreet().getSpecialNumber())
+                                .city(notification.getLocality().getLocality())
                                 .build();
                         notificationForAllApplicationTablesList.add(forUser);
                     }

@@ -3,11 +3,8 @@ package server.communication;
 import javafx.application.Platform;
 import server.message.command.*;
 import server.message.Message;
-import server.message.command.distributor.EditEmployeeDataCommand;
-import server.message.command.distributor.NotificationForAllApplicationListCommand;
+import server.message.command.distributor.*;
 //import server.message.command.distributor.NotificationForDistributorListCommand;
-import server.message.command.distributor.OneEmployeeForDistributorCommand;
-import server.message.command.distributor.SaveFirstNotificationCommand;
 import server.message.command.employees.AuthorizationCommand;
 import server.message.command.employees.EmployeeListCommand;
 import server.message.command.employees.OneEmployeeCommand;
@@ -75,6 +72,7 @@ public class ThreadedEchoClient extends Thread {
         Command notificationListForAllApplicationCommand = new NotificationForAllApplicationListCommand(distributorCommandMediator);
         Command institutionForNotificationCommand = new InstitutionsForNotificationCommand(distributorCommandMediator);
         Command saveFirstNotificationCommand = new SaveFirstNotificationCommand(distributorCommandMediator);
+        Command saveSecondNotificationCommand = new SaveSecondNotificationCommand(distributorCommandMediator);
 
 
         commandRegister = new CommandRegister();
@@ -89,6 +87,7 @@ public class ThreadedEchoClient extends Thread {
         commandRegister.addCommand(MessageType.SEND_NOTIFICATION,notificationListForAllApplicationCommand);
         commandRegister.addCommand(MessageType.SEND_FOR_INSTITUTION_FOR_LOCALIZATION,institutionForNotificationCommand);
         commandRegister.addCommand(MessageType.SAVE_NEW_FIRST_NOTIFICATION,saveFirstNotificationCommand);
+        commandRegister.addCommand(MessageType.SAVE_NEW_SECOND_NOTIFICATION,saveSecondNotificationCommand);
     }
 
     @Override

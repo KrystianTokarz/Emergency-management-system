@@ -26,6 +26,7 @@ import server.model.localization.Locality;
 import server.model.localization.Province;
 import server.model.localization.Street;
 import server.model.message.MessageWithNotification;
+import server.model.message.SecondMessageWithNotification;
 import server.model.notification.Notification;
 
 import java.util.List;
@@ -43,6 +44,7 @@ public class DistributorCommandMediator {
     private DistributorNotificationService distributorNotificationService;
 
     private static DistributorCommandMediator instance = null;
+
 
     private DistributorCommandMediator(){
     }
@@ -274,5 +276,17 @@ public class DistributorCommandMediator {
 
     public void setNotificationId(Long notificationId) {
         this.distributorNotificationService.setNotificationId(notificationId);
+    }
+
+    public void setResultNotificationInServer(Boolean resultNotificationInServer) {
+        this.distributorNotificationService.setResultNotificationInServer(resultNotificationInServer);
+    }
+
+    public void saveSecondNotification(SecondMessageWithNotification secondMessageWithNotification) {
+        this.distributorNotificationService.saveSecondNotification(secondMessageWithNotification);
+    }
+
+    public boolean returnResultOfSaveAllNotificationInDatabase(){
+        return distributorNotificationService.returnResultOfSaveAllNotificationInDatabase();
     }
 }

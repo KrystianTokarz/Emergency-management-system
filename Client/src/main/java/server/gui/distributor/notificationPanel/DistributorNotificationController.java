@@ -3,9 +3,20 @@ package server.gui.distributor.notificationPanel;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ListView;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.stage.Stage;
 import server.gui.distributor.notificationPanel.decorator.*;
 import server.gui.distributor.receivingPanel.CallerForTable;
 import server.message.mediator.DistributorCommandMediator;
@@ -15,7 +26,9 @@ import server.model.institution.InstitutionType;
 import server.model.localization.Locality;
 import server.model.localization.Street;
 import server.model.message.MessageWithNotification;
+import server.model.message.SecondMessageWithNotification;
 import server.model.notification.AccidentType;
+
 
 import java.net.URL;
 import java.util.List;
@@ -25,6 +38,9 @@ public class DistributorNotificationController implements Initializable {
 
     private DistributorCommandMediator commandMediator = DistributorCommandMediator.getInstance();
 
+
+    @FXML
+    private AnchorPane anchorPane;
     @FXML
     private TextField callerNumber;
 
@@ -48,6 +64,17 @@ public class DistributorNotificationController implements Initializable {
     private TextField callerFirstNameTextField;
     @FXML
     private TextField callerLastNameTextField;
+
+    @FXML
+    private Button firstNotificationButton;
+
+    @FXML
+    private TextArea notationTextArea;
+    @FXML
+    private TextField numberOfVictimsTextField;
+
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -153,47 +180,103 @@ public class DistributorNotificationController implements Initializable {
 
     }
 
+    public void showEmptyFieldPopup(){
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("ERROR");
+        alert.setContentText("You leave empty field     ");
+        alert.setHeaderText(null);
+        alert.showAndWait();
+    }
+
+    public void showErrorInput(){
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("ERROR");
+        alert.setContentText("You add bad data into number of victims ");
+        alert.setHeaderText(null);
+        alert.showAndWait();
+    }
+
+
+
+    @FXML
+    public void sendSecondNotification(){
+        String pattern = "\\d+";
+        //System.out.println(myString.matches(pattern));
+        if(numberOfVictimsTextField.getText()!="" && accidentListView.getSelectionModel().getSelectedIndex()!=-1) {
+            if(!numberOfVictimsTextField.getText().matches(pattern))
+                showErrorInput();
+            else {
+                SecondMessageWithNotification secondMessageWithNotification = new SecondMessageWithNotification();
+                secondMessageWithNotification.setNumberOfVictims(Integer.parseInt(numberOfVictimsTextField.getText()));
+                secondMessageWithNotification.setAccidentType((AccidentType) accidentListView.getSelectionModel().getSelectedItem());
+                secondMessageWithNotification.setNotations(notationTextArea.getText());
+                commandMediator.saveSecondNotification(secondMessageWithNotification);
+                boolean resultFromServer = false;
+                while(resultFromServer == false){
+                        resultFromServer = commandMediator.returnResultOfSaveAllNotificationInDatabase();
+
+                }
+                Stage stage = (Stage) firstNotificationButton.getScene().getWindow();
+                stage.close();
+
+            }
+        }
+    }
+
     @FXML
     public void sendFirstNotification(){
 
+        if(localityChoiceBox.getSelectionModel().getSelectedIndex()!=-1 && streetChoiceBox.getSelectionModel().getSelectedIndex()!=-1
+                &&(fireBrigadeChoiceBox.getSelectionModel().getSelectedIndex()!=0
+                    || policeChoiceBox.getSelectionModel().getSelectedIndex()!=0 || emergencyChoiceBox.getSelectionModel().getSelectedIndex()!=0 )) {
+            commandMediator.setInstitutionChoiceBoxForService(policeChoiceBox, emergencyChoiceBox, fireBrigadeChoiceBox);
+            InstitutionNotification messageWithInstitution = messageWithInstitution = new PoliceInstitutionDecorator(new FireBrigadeInstitutionDecorator(new EmergencyInstitutionDecorator(new InstitutionNotificationImpl())));
+            MessageWithNotification messageWithNotification = new MessageWithNotification();
+
+            String firstName = callerFirstNameTextField.getText();
+            String lastName = callerLastNameTextField.getText();
+            String number = callerNumber.getText();
 
 
-        commandMediator.setInstitutionChoiceBoxForService(policeChoiceBox,emergencyChoiceBox,fireBrigadeChoiceBox);
-        InstitutionNotification messageWithInstitution =  messageWithInstitution = new PoliceInstitutionDecorator(new FireBrigadeInstitutionDecorator(new EmergencyInstitutionDecorator(new InstitutionNotificationImpl())));
-        MessageWithNotification messageWithNotification = new MessageWithNotification();
+            String province = (String) provinceChoiceBox.getSelectionModel().getSelectedItem();
 
-        String firstName = callerFirstNameTextField.getText();
-        String lastName = callerLastNameTextField.getText();
-        String number = callerNumber.getText();
+            String locality = (String) localityChoiceBox.getSelectionModel().getSelectedItem();
+            String street = null;
+            if (streetChoiceBox.getSelectionModel().getSelectedItem() != null)
+                street = (String) streetChoiceBox.getSelectionModel().getSelectedItem();
 
-
-        String province = (String)provinceChoiceBox.getSelectionModel().getSelectedItem();
-
-        String locality  = (String) localityChoiceBox.getSelectionModel().getSelectedItem();
-        String street = null;
-        if(streetChoiceBox.getSelectionModel().getSelectedItem() != null)
-            street = (String) streetChoiceBox.getSelectionModel().getSelectedItem();
-
-        String[] split = street.split(" ");
-        String streetName = split[0];
-        String streetNumber = split[1];
-        Employee employee = new Employee();
-        employee.setEmail(commandMediator.getUserEmail());
-        employee.setFirstName(commandMediator.getUserFirstName());
-        employee.setLastName(commandMediator.getUserLastName());
+            String[] split = street.split("\\s+");
+            String streetName = split[0];
+            String streetNumber = split[1];
+            Employee employee = new Employee();
+            employee.setEmail(commandMediator.getUserEmail());
+            employee.setFirstName(commandMediator.getUserFirstName());
+            employee.setLastName(commandMediator.getUserLastName());
 
 
-        messageWithNotification.setCallerFirstNameTextField(firstName);
-        messageWithNotification.setCallerLastNameTextField(lastName);
-        messageWithNotification.setEmployee(employee);
-        messageWithNotification.setCallerNumber(number);
-        messageWithNotification.setProvince(province);
-        messageWithNotification.setLocality(locality);
-        messageWithNotification.setStreetName(streetName);
-        messageWithNotification.setStreetNumber(streetNumber);
-        messageWithNotification.setInstitutionNotification(messageWithInstitution.getInstitution());
+            messageWithNotification.setCallerFirstNameTextField(firstName);
+            messageWithNotification.setCallerLastNameTextField(lastName);
+            messageWithNotification.setEmployee(employee);
+            messageWithNotification.setCallerNumber(number);
+            messageWithNotification.setProvince(province);
+            messageWithNotification.setLocality(locality);
+            messageWithNotification.setStreetName(streetName);
+            messageWithNotification.setStreetNumber(streetNumber);
+            messageWithNotification.setInstitutionNotification(messageWithInstitution.getInstitution());
 
-        commandMediator.saveFirstNotification(messageWithNotification);
-        System.out.println("wykonano");
+            commandMediator.saveFirstNotification(messageWithNotification);
+            provinceChoiceBox.setDisable(true);
+            localityChoiceBox.setDisable(true);
+            streetChoiceBox.setDisable(true);
+            callerFirstNameTextField.setDisable(true);
+            callerLastNameTextField.setDisable(true);
+            callerNumber.setDisable(true);
+            emergencyChoiceBox.setDisable(true);
+            policeChoiceBox.setDisable(true);
+            fireBrigadeChoiceBox.setDisable(true);
+            firstNotificationButton.setDisable(true);
+        }else{
+            showEmptyFieldPopup();
+        }
     }
 }

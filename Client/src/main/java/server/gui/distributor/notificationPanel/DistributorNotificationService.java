@@ -12,6 +12,7 @@ import server.model.localization.Province;
 import server.model.localization.Street;
 import server.model.message.MessageType;
 import server.model.message.MessageWithNotification;
+import server.model.message.SecondMessageWithNotification;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,7 @@ public class DistributorNotificationService {
     private String emergencyNameInstitution;
     private String fireBrigadeNameInstitution;
     private Long notificationId;
+    private Boolean resultNotificationInServer = false;
 
     public DistributorNotificationService(DistributorCommandMediator distributorCommandMediator, CallerForTable callerForTable){
         this.commandMediator = distributorCommandMediator;
@@ -172,10 +174,30 @@ public class DistributorNotificationService {
                 .build();
         Thread thread = new EchoThread(message);
         thread.start();
-        System.out.println("poszedł");
+
     }
 
     public void setNotificationId(Long notificationId) {
         this.notificationId = notificationId;
+    }
+
+
+    public void saveSecondNotification(SecondMessageWithNotification messageWithNotification) {
+        messageWithNotification.setIdFirstMessage(notificationId);
+        Message message = new Message.MessageBuilder(MessageType.SAVE_NEW_SECOND_NOTIFICATION)
+                .object(messageWithNotification)
+                .build();
+        Thread thread = new EchoThread(message);
+        thread.start();
+
+    }
+
+    public boolean returnResultOfSaveAllNotificationInDatabase(){
+        return this.resultNotificationInServer;
+    }
+
+    public void setResultNotificationInServer(Boolean resultNotificationInServer) {
+        System.out.println("utytane");
+        this.resultNotificationInServer = resultNotificationInServer;
     }
 }

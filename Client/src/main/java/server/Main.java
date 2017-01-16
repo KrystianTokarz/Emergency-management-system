@@ -23,7 +23,7 @@ public class Main  extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("views/loginPanelView.fxml"));
-        primaryStage.setTitle("Application");
+        primaryStage.setTitle("Application ");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
 
@@ -33,7 +33,7 @@ public class Main  extends Application{
         primaryStage.setOnCloseRequest(e -> {
             e.consume();
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Confirmation Dialog");
+            alert.setTitle("Confirmation Dialog  ");
             alert.setHeaderText(null);
             alert.setContentText("You are sure ?");
 
