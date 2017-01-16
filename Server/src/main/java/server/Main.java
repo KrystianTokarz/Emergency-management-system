@@ -87,7 +87,7 @@ public class Main {
         locality2.add(street2);
         province2.add(locality2);
         Institution institution2 = new Institution();
-        institution2.setName("Ochotnicza Straz Pozarna nr.2");
+        institution2.setName("Ochotnicza Straz Pozarna nr.2 ");
         institution2.setAvailability(true);
         institution2.setInstitutionImage(null);
         institution2.setInstitutionType(InstitutionType.FIRE_BRIGADE);

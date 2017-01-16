@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @Entity
-public class EmployeeAccount extends EmployeeAccountPrototype implements Cloneable {
+public class EmployeeAccount extends EmployeeAccountPrototype implements Serializable {
 
     static final long serialVersionUID = 43L;
     @Id

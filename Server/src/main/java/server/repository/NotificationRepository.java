@@ -6,11 +6,13 @@ import server.model.localization.Locality;
 import server.model.localization.Province;
 import server.model.localization.Street;
 import server.model.message.MessageWithNotification;
+import server.model.message.SecondMessageWithNotification;
 import server.model.notification.Notification;
 
 import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.CriteriaUpdate;
 import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -102,9 +104,7 @@ public class NotificationRepository extends Repository {
 
         }
 
-//        for (Institution institution:institutionsList) {
-//            institution.set
-//        }
+
 
         Notification notification = new Notification();
         notification.setStatus(1);
@@ -125,5 +125,25 @@ public class NotificationRepository extends Repository {
 
 
         return 1L;
+    }
+
+    public Boolean saveSecondNotification(SecondMessageWithNotification secondMessageWithNotification) {
+
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaUpdate<Notification> criteriaNotificationUpdate = criteriaBuilder.createCriteriaUpdate(Notification.class);
+        Root<Notification> notificationRoot = criteriaNotificationUpdate.from(Notification.class);
+        if(secondMessageWithNotification.getNotations()!=null)
+             criteriaNotificationUpdate.set("notation",secondMessageWithNotification.getNotations());
+        criteriaNotificationUpdate.set("numberOfVictims",secondMessageWithNotification.getNumberOfVictims());
+        criteriaNotificationUpdate.set("accidentType",secondMessageWithNotification.getAccidentType());
+        criteriaNotificationUpdate.where(notificationRoot.get("id").in(secondMessageWithNotification.getIdFirstMessage()));
+
+        entityManager.getTransaction().begin();
+        entityManager.createQuery(criteriaNotificationUpdate).executeUpdate();
+        entityManager.getTransaction().commit();
+        entityManager.clear();
+        System.out.println("poszedl zapis");
+        return true;
+
     }
 }

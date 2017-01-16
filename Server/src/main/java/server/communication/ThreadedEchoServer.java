@@ -55,6 +55,7 @@ public class ThreadedEchoServer  {
         Command localizationForNotificationCommand = new LocalizationForNotificationCommand();
         Command institutionForNotificationCommand = new InstitutionForNotificationCommand();
         Command saveFirstNotificationCommand = new SaveFirstNotificationCommand();
+        Command saveSecondNotificationCommand = new SaveSecondNotificationCommand();
 
         commandRegister = new CommandRegister();
         commandRegister.addCommand(MessageType.AUTHORIZATION,loginCommand);
@@ -74,6 +75,7 @@ public class ThreadedEchoServer  {
         commandRegister.addCommand(MessageType.SEND_FOR_LOCALIZATION_FOR_NOTIFICATION,localizationForNotificationCommand);
         commandRegister.addCommand(MessageType.SEND_FOR_INSTITUTION_FOR_LOCALIZATION,institutionForNotificationCommand);
         commandRegister.addCommand(MessageType.SAVE_NEW_FIRST_NOTIFICATION,saveFirstNotificationCommand);
+        commandRegister.addCommand(MessageType.SAVE_NEW_SECOND_NOTIFICATION,saveSecondNotificationCommand);
     }
 
     public void start() {

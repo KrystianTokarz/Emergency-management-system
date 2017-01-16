@@ -2,6 +2,7 @@ package server.fasade;
 
 import server.model.employee.Employee;
 import server.model.message.MessageWithNotification;
+import server.model.message.SecondMessageWithNotification;
 import server.model.notification.Notification;
 import server.repository.EmployeeRepository;
 import server.repository.NotificationRepository;
@@ -24,5 +25,9 @@ public class NotificationFacade {
 
     public Long saveFirstNotification(MessageWithNotification messageWithNotification) {
         return notificationRepository.saveFirstNotification(messageWithNotification);
+    }
+
+    public Boolean saveSecondNotification(SecondMessageWithNotification secondMessageWithNotification) {
+        return notificationRepository.saveSecondNotification(secondMessageWithNotification);
     }
 }

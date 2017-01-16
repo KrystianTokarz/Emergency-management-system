@@ -14,7 +14,6 @@ public class LocalizationForNotificationCommand implements Command<List<Province
 
     @Override
     public <S> List<Province> execute(S param) {
-        System.out.println("zwrocone");
         return localizationFacade.findAllProvince();
     }
 
