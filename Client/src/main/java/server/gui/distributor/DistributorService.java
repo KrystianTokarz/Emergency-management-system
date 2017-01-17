@@ -2,18 +2,22 @@ package server.gui.distributor;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.web.WebEngine;
 import javafx.util.Duration;
 import server.communication.DataStream;
 import server.communication.EchoThread;
+import server.gui.distributor.factory.NotificationForDistributorTables;
 import server.gui.distributor.observerReceivingPanel.ObservableConcrete;
 import server.gui.distributor.receivingPanel.CallerForTable;
 import server.message.Message;
@@ -27,6 +31,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public class DistributorService {
 
@@ -45,6 +50,7 @@ public class DistributorService {
 
     private DistributorCommandMediator commandMediator;
     private ObservableList<CallerForTable> observableCallerForTableList;
+
 
     public DistributorService(DistributorCommandMediator commandMediator, ObservableConcrete observableConcrete){
         this.commandMediator = commandMediator;
@@ -302,6 +308,69 @@ public class DistributorService {
         else if(b==false){
             setBreakView(b,tableWithAllSystemNotifications, tableWithUserNotifications,googleMapPane);
         }
+    }
+
+
+
+
+
+
+    public void acceptableMessage() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("INFORMATION Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText("Your notification is completed !");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            alert.close();
+        }
+    }
+
+    public void nonAcceptableMessage() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("ERROR Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText("Your notification is not completed !");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK) {
+            alert.close();
+        }
+    }
+
+    public void startThread(){
+        Task task = new Task<Void>() {
+
+            @Override
+            protected Void call() throws Exception {
+                Thread.sleep(17000);
+                boolean result = commandMediator.returnResultOfSaveAllNotificationInDatabase();
+                int size = notificationForDistributorList.size();
+                Notification notification = notificationForDistributorList.get(size - 1);
+                boolean status = false;
+                if(notification.getStatus() ==2)
+                    status = true;
+
+                if( result == true && status == true ){
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            acceptableMessage();
+                        }
+                    });
+                }else if (result == false || status == false){
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            nonAcceptableMessage();
+                        }
+                    });
+                }
+                return null;
+            }
+        };
+        Thread thread = new Thread(task);
+        //thread.setDaemon(true);
+        thread.start();
     }
 }
 

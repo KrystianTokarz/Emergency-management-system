@@ -6,6 +6,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -99,6 +100,7 @@ public class DistributorController implements Initializable {
 
 
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         commandMediator = DistributorCommandMediator.getInstance();
@@ -169,7 +171,6 @@ public class DistributorController implements Initializable {
 
                     tableWithAllSystemNotifications.setItems(notificationForAllApplicationTablesList);
                     tableWithAllSystemNotifications.refresh();
-                    tableWithAllSystemNotifications.getSelectionModel().select(selectedIndexForAllNotifications);
                 }
             }
         }));

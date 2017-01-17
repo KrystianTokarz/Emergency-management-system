@@ -10,6 +10,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.web.WebEngine;
 import server.gui.distributor.DistributorService;
 import server.gui.distributor.employeeData.DistributorEmployeeEditService;
+import server.gui.distributor.factory.NotificationForDistributorTables;
 import server.gui.distributor.notificationPanel.DistributorNotificationService;
 import server.gui.distributor.phone.DistributorPhoneService;
 import server.gui.distributor.receivingPanel.CallerForTable;
@@ -288,5 +289,14 @@ public class DistributorCommandMediator {
 
     public boolean returnResultOfSaveAllNotificationInDatabase(){
         return distributorNotificationService.returnResultOfSaveAllNotificationInDatabase();
+    }
+
+
+    public void startThread() {
+        this.distributorService.startThread();
+    }
+
+    public int getStatusOfController() {
+        return distributorNotificationService.getStatusOfController();
     }
 }

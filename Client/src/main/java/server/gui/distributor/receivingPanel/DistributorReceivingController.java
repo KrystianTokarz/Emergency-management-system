@@ -79,7 +79,7 @@ public class DistributorReceivingController implements Initializable {
     public void acceptNotification() throws IOException {
         try{
             CallerForTable callerForTable = observableCallerForTableList.get(0);
-            distributorCommandMediator.registerDistributorNotificationService(new DistributorNotificationService(distributorCommandMediator,callerForTable));
+            distributorCommandMediator.registerDistributorNotificationService(new DistributorNotificationService(distributorCommandMediator,callerForTable,0));
             distributorCommandMediator.sendMessageForLocalizationForNotification();
             observableCallerForTableList.remove(callerForTable);
             callerTableView.refresh();
@@ -92,5 +92,19 @@ public class DistributorReceivingController implements Initializable {
         }catch (IndexOutOfBoundsException ex){
             callerTableView.refresh();
         }
+    }
+
+    @FXML
+    public void createNotification() throws IOException {
+            CallerForTable callerForTable = null;
+            distributorCommandMediator.registerDistributorNotificationService(new DistributorNotificationService(distributorCommandMediator,callerForTable,1));
+            distributorCommandMediator.sendMessageForLocalizationForNotification();
+            notificationStage = new Stage();
+            AnchorPane notificationView = (AnchorPane) FXMLLoader.load(getClass().getClassLoader().getResource("views/distributor/notification/distributorPanelNotificationsView.fxml"));
+            notificationStage.setScene(new Scene(notificationView));
+            notificationStage.setTitle("NOTIFICATION");
+            notificationStage.show();
+
+
     }
 }

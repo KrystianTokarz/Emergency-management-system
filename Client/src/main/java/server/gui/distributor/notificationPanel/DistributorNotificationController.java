@@ -1,5 +1,6 @@
 package server.gui.distributor.notificationPanel;
 
+import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,10 +29,12 @@ import server.model.localization.Street;
 import server.model.message.MessageWithNotification;
 import server.model.message.SecondMessageWithNotification;
 import server.model.notification.AccidentType;
+import sun.awt.windows.ThemeReader;
 
 
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class DistributorNotificationController implements Initializable {
@@ -73,16 +76,25 @@ public class DistributorNotificationController implements Initializable {
     @FXML
     private TextField numberOfVictimsTextField;
 
+    @FXML
+    private Button  secondNotificationButton;
+
+
 
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        int statusOfController = commandMediator.getStatusOfController();
         commandMediator.sendForInstitutionDataToEdit();
-        CallerForTable callerData = commandMediator.getCallerData();
-        callerNumber.setText(callerData.getCallerPhoneNumber());
-        String localization = callerData.getCallerLocalization();
-
+        String localization;
+        if(statusOfController==0) {
+            CallerForTable callerData = commandMediator.getCallerData();
+            callerNumber.setText(callerData.getCallerPhoneNumber());
+            localization = callerData.getCallerLocalization();
+        }else{
+            localization = null;
+        }
         AccidentType[] enumConstants = AccidentType.INNE.getDeclaringClass().getEnumConstants();
         accidentListView.getItems().setAll(enumConstants);
 
@@ -102,15 +114,20 @@ public class DistributorNotificationController implements Initializable {
 
 
         notificationTask.setOnSucceeded(e-> {
-            provinceChoiceBox.getItems().addAll(notificationTask.getValue());
-            String provinceForLocality = commandMediator.getProvinceForLocality(localization);
-            provinceChoiceBox.getSelectionModel().select(provinceForLocality);
 
-            List<Locality> localityForSelectedProvince = commandMediator.getLocalityForSelectedProvince(provinceChoiceBox.getValue().toString());
+                provinceChoiceBox.getItems().addAll(notificationTask.getValue());
+            if(statusOfController==0) {
+                String provinceForLocality = commandMediator.getProvinceForLocality(localization);
+                provinceChoiceBox.getSelectionModel().select(provinceForLocality);
+
+                List<Locality> localityForSelectedProvince = commandMediator.getLocalityForSelectedProvince(provinceChoiceBox.getValue().toString());
 
 
-            localityChoiceBox.getSelectionModel().select(localization);
-
+                localityChoiceBox.getSelectionModel().select(localization);
+            }else{
+                provinceChoiceBox.getSelectionModel().select(0);
+                //localityChoiceBox.getSelectionModel().select(0);
+            }
 
 
 
@@ -150,6 +167,7 @@ public class DistributorNotificationController implements Initializable {
                 emergencyChoiceBox.setDisable(false);
                 policeChoiceBox.setDisable(false);
 
+                System.out.println("== " + newValue);
                 List<Institution> rightInstitutionLForFireBrigade = commandMediator.getRightInstitutionListForProvinceAndLocality(InstitutionType.FIRE_BRIGADE,(String) newValue);
                 List<Institution> rightInstitutionListForPolice = commandMediator.getRightInstitutionListForProvinceAndLocality(InstitutionType.POLICE,(String) newValue);
                 List<Institution> rightInstitutionListForEmergency = commandMediator.getRightInstitutionListForProvinceAndLocality(InstitutionType.EMERGENCY,(String) newValue);
@@ -211,12 +229,8 @@ public class DistributorNotificationController implements Initializable {
                 secondMessageWithNotification.setAccidentType((AccidentType) accidentListView.getSelectionModel().getSelectedItem());
                 secondMessageWithNotification.setNotations(notationTextArea.getText());
                 commandMediator.saveSecondNotification(secondMessageWithNotification);
-                boolean resultFromServer = false;
-                while(resultFromServer == false){
-                        resultFromServer = commandMediator.returnResultOfSaveAllNotificationInDatabase();
-
-                }
-                Stage stage = (Stage) firstNotificationButton.getScene().getWindow();
+                commandMediator.startThread();
+                Stage stage = (Stage) secondNotificationButton.getScene().getWindow();
                 stage.close();
 
             }

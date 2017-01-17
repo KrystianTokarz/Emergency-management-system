@@ -30,13 +30,19 @@ public class DistributorNotificationService {
     private String emergencyNameInstitution;
     private String fireBrigadeNameInstitution;
     private Long notificationId;
-    private Boolean resultNotificationInServer = false;
+    private Boolean resultNotificationInServer;
+    private int statusOfController;
 
-    public DistributorNotificationService(DistributorCommandMediator distributorCommandMediator, CallerForTable callerForTable){
+    public DistributorNotificationService(DistributorCommandMediator distributorCommandMediator, CallerForTable callerForTable,int status){
         this.commandMediator = distributorCommandMediator;
         this.callerForTable = callerForTable;
+        this.resultNotificationInServer = false;
+        this.statusOfController = status;
     }
 
+    public int getStatusOfController(){
+        return statusOfController;
+    }
     public CallerForTable giveDataCaller(){
         return this.callerForTable;
     }
@@ -178,6 +184,7 @@ public class DistributorNotificationService {
     }
 
     public void setNotificationId(Long notificationId) {
+        System.out.println("+EL:ELSD");
         this.notificationId = notificationId;
     }
 
@@ -193,11 +200,14 @@ public class DistributorNotificationService {
     }
 
     public boolean returnResultOfSaveAllNotificationInDatabase(){
-        return this.resultNotificationInServer;
+        if(this.resultNotificationInServer == false || resultNotificationInServer == null)
+            return false;
+        else
+            return true;
+       // return this.resultNotificationInServer;
     }
 
     public void setResultNotificationInServer(Boolean resultNotificationInServer) {
-        System.out.println("utytane");
         this.resultNotificationInServer = resultNotificationInServer;
     }
 }
