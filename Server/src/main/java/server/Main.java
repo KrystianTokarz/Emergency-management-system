@@ -123,7 +123,7 @@ public class Main {
         notification.setNumberOfVictims(0);
         notification.setAccidentType(AccidentType.POŻAR);
         notification.setEmployee(employee);
-        notification.setStatus(1);
+        notification.setStatus(2);
 
         Notification notification2 = new Notification();
         notification2.setCallerLastName("Oalek");
@@ -138,7 +138,7 @@ public class Main {
         notification2.setNumberOfVictims(3);
         notification2.setAccidentType(AccidentType.WYBUCH);
         notification2.setEmployee(employee);
-        notification2.setStatus(3);
+        notification2.setStatus(2);
 
             entityManager.getTransaction().begin();
             entityManager.persist(institution);

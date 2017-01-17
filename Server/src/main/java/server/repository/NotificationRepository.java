@@ -8,6 +8,7 @@ import server.model.localization.Street;
 import server.model.message.MessageWithNotification;
 import server.model.message.SecondMessageWithNotification;
 import server.model.notification.Notification;
+import server.repository.confirmation.ThreadConfirmationFromAnotherSystem;
 
 import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -119,12 +120,13 @@ public class NotificationRepository extends Repository {
 
 
         entityManager.getTransaction().begin();
-        entityManager.merge(notification);
+        Notification notificationInBase = entityManager.merge(notification);
         entityManager.getTransaction().commit();
         entityManager.clear();
 
+        System.out.println("zapisalismy 1 notyfikacje");
 
-        return 1L;
+        return notificationInBase.getId();
     }
 
     public Boolean saveSecondNotification(SecondMessageWithNotification secondMessageWithNotification) {
@@ -142,8 +144,27 @@ public class NotificationRepository extends Repository {
         entityManager.createQuery(criteriaNotificationUpdate).executeUpdate();
         entityManager.getTransaction().commit();
         entityManager.clear();
-        System.out.println("poszedl zapis");
+
+        Thread confirmationThread = new ThreadConfirmationFromAnotherSystem(secondMessageWithNotification);
+        confirmationThread.start();
         return true;
 
+    }
+
+    public void changeNotificationStatus(SecondMessageWithNotification secondMessageWithNotification){
+
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaUpdate<Notification> criteriaNotificationUpdate = criteriaBuilder.createCriteriaUpdate(Notification.class);
+        Root<Notification> notificationRoot = criteriaNotificationUpdate.from(Notification.class);
+        if(secondMessageWithNotification.getIdFirstMessage() == 5)
+            criteriaNotificationUpdate.set("status",3L);
+        else
+            criteriaNotificationUpdate.set("status",2L);
+        criteriaNotificationUpdate.where(notificationRoot.get("id").in(secondMessageWithNotification.getIdFirstMessage()));
+
+        entityManager.getTransaction().begin();
+        entityManager.createQuery(criteriaNotificationUpdate).executeUpdate();
+        entityManager.getTransaction().commit();
+        entityManager.clear();
     }
 }
