@@ -18,7 +18,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1284.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server.gui.distributor.DistributorController">
    <children>
-      <Label blendMode="DARKEN" layoutX="125.0" layoutY="19.0" prefHeight="30.0" prefWidth="205.0" text="Distributor Panel">
+      <Label fx:id="distributorPanelLabel" blendMode="DARKEN" layoutX="125.0" layoutY="19.0" prefHeight="30.0" prefWidth="205.0">
          <font>
             <Font name="System Bold" size="20.0" />
          </font></Label>
@@ -101,17 +101,17 @@
         </columns>
       </TableView>
       <Separator layoutX="732.0" layoutY="69.0" orientation="VERTICAL" prefHeight="682.0" prefWidth="6.0" />
-      <Label layoutX="304.0" layoutY="84.0" text="Your Notification:">
+      <Label fx:id="yourNotificationLabel" layoutX="304.0" layoutY="84.0">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="344.0" layoutY="410.0" text="Notification In System:">
+      <Label fx:id="notificationInSystemLabel" layoutX="344.0" layoutY="410.0">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button layoutX="495.0" layoutY="22.0" mnemonicParsing="false" onAction="#showEmployeeEditView" text="Edit employee data">
+      <Button fx:id="editButton" layoutX="495.0" layoutY="22.0" mnemonicParsing="false" onAction="#showEmployeeEditView">
          <effect>
             <DropShadow blurType="TWO_PASS_BOX" color="#221717" />
          </effect>
@@ -125,8 +125,8 @@
                <effect>
                   <Shadow color="#d7142b" height="1.0" radius="0.0" width="0.0" />
                </effect></Label>
-            <ToggleButton fx:id="breakOnButton" mnemonicParsing="false" onAction="#manageDistributorBreak" text="Break ON" />
-            <ToggleButton fx:id="breakOffButton" mnemonicParsing="false" onAction="#manageDistributorBreak" text="Break OFF" />
+            <ToggleButton fx:id="breakOnButton" mnemonicParsing="false" onAction="#manageDistributorBreak" />
+            <ToggleButton fx:id="breakOffButton" mnemonicParsing="false" onAction="#manageDistributorBreak" />
             <Button mnemonicParsing="false" text="Work inf." />
          </children>
          <cursor>

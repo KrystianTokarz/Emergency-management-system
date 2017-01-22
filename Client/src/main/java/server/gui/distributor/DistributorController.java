@@ -6,7 +6,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.concurrent.Task;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -25,8 +24,8 @@ import javafx.stage.*;
 import javafx.util.Duration;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import server.gui.distributor.factory.NotificationForDistributorTables;
-import server.gui.distributor.factory.NotificationForTable;
+import server.gui.distributor.builder.NotificationForDistributorTables;
+import server.gui.distributor.builder.NotificationForTable;
 import server.gui.distributor.employeeData.DistributorEmployeeEditService;
 import server.gui.distributor.phone.DistributorPhoneService;
 import server.message.mediator.DistributorCommandMediator;
@@ -37,13 +36,12 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
+import java.net.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.net.URL;
 import java.util.*;
 import java.util.List;
 
@@ -52,6 +50,15 @@ public class DistributorController implements Initializable {
 
     @FXML
     private Label userDataLabel = new Label();
+
+    @FXML
+    private Label distributorPanelLabel;
+    @FXML
+    private Label yourNotificationLabel;
+    @FXML
+    private Label notificationInSystemLabel;
+    @FXML
+    private Button editButton;
 
     @FXML
     private ImageView userImageView;
@@ -97,6 +104,8 @@ public class DistributorController implements Initializable {
 
     private Parent employeeEditViews = null;
 
+    private ResourceBundle resourceBundle;
+
 
 
 
@@ -124,7 +133,11 @@ public class DistributorController implements Initializable {
             }
 
 
-        //tableWithUserNotifications.set
+
+
+        resourceBundle = resources;
+        loadInternationalizationNames();
+
 
         Timeline timelineForNotificationInApplication=commandMediator.give4SecondTimelineForNotificationInApplication();
 
@@ -242,6 +255,16 @@ public class DistributorController implements Initializable {
     }
 
 
+    public void loadInternationalizationNames(){
+        distributorPanelLabel.setText(resourceBundle.getString("panel_name"));
+        yourNotificationLabel.setText(resourceBundle.getString("first_notification"));
+        notificationInSystemLabel.setText(resourceBundle.getString("second_notification"));
+        breakOnButton.setText(resourceBundle.getString("break_on"));
+        breakOffButton.setText(resourceBundle.getString("break_off"));
+        editButton.setText(resourceBundle.getString("employee_edit_button"));
+    }
+
+
     public void showGoogleBrowser() {
         try {
             Desktop.getDesktop().browse(new URI("http://www.google.com"));
@@ -299,7 +322,7 @@ public class DistributorController implements Initializable {
         Employee employee = commandMediator.getEmployeeToEdit();
         commandMediator.registerDistributorEmployeeEditService(new DistributorEmployeeEditService(commandMediator));
         commandMediator.sendForEmployeeDataToEdit(employee);
-        employeeEditViews = FXMLLoader.load(getClass().getClassLoader().getResource("views/distributor/employeeData/distributorPanelEditingEmployeeView.fxml"));
+        employeeEditViews = FXMLLoader.load(getClass().getClassLoader().getResource("views/distributor/employeeData/distributorPanelEditingEmployeeView.fxml"),resourceBundle);
         Stage employeeEditStage = new Stage();
         employeeEditStage.setTitle("Edit data");
         employeeEditStage.setScene(new Scene(employeeEditViews));

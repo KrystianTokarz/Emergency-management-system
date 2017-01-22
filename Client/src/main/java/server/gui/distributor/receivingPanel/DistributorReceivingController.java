@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -35,6 +36,12 @@ public class DistributorReceivingController implements Initializable {
     @FXML
     private TableView callerTableView;
 
+    @FXML
+    private Label distributorLabel;
+
+    @FXML
+    private Button repeatButton;
+
 
     private  ObservableList<CallerForTable> observableCallerForTableList;
 
@@ -46,10 +53,13 @@ public class DistributorReceivingController implements Initializable {
 
     private Stage notificationStage = null;
 
+    private ResourceBundle resourceBundle;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        resourceBundle = resources;
+        loadInternationalizationNames();
 
         Image acceptImage = new Image("images/visibility.png",50,50,false,false);
         acceptButton.setGraphic(new ImageView(acceptImage));
@@ -74,6 +84,12 @@ public class DistributorReceivingController implements Initializable {
         timelineCallForDistributor.setCycleCount(Animation.INDEFINITE);
         timelineCallForDistributor.play();
     }
+    public void loadInternationalizationNames(){
+        distributorLabel.setText(resourceBundle.getString("addition_panel_name"));
+        repeatButton.setText(resourceBundle.getString("repeat_button"));
+
+    }
+
 
     @FXML
     public void acceptNotification() throws IOException {
@@ -84,7 +100,7 @@ public class DistributorReceivingController implements Initializable {
             observableCallerForTableList.remove(callerForTable);
             callerTableView.refresh();
             notificationStage = new Stage();
-            AnchorPane notificationView = (AnchorPane) FXMLLoader.load(getClass().getClassLoader().getResource("views/distributor/notification/distributorPanelNotificationsView.fxml"));
+            AnchorPane notificationView = (AnchorPane) FXMLLoader.load(getClass().getClassLoader().getResource("views/distributor/notification/distributorPanelNotificationsView.fxml"),resourceBundle);
             notificationStage.setScene(new Scene(notificationView));
             notificationStage.setTitle("NOTIFICATION");
             notificationStage.show();
@@ -100,8 +116,9 @@ public class DistributorReceivingController implements Initializable {
             distributorCommandMediator.registerDistributorNotificationService(new DistributorNotificationService(distributorCommandMediator,callerForTable,1));
             distributorCommandMediator.sendMessageForLocalizationForNotification();
             notificationStage = new Stage();
-            AnchorPane notificationView = (AnchorPane) FXMLLoader.load(getClass().getClassLoader().getResource("views/distributor/notification/distributorPanelNotificationsView.fxml"));
+            AnchorPane notificationView = (AnchorPane) FXMLLoader.load(getClass().getClassLoader().getResource("views/distributor/notification/distributorPanelNotificationsView.fxml"),resourceBundle);
             notificationStage.setScene(new Scene(notificationView));
+
             notificationStage.setTitle("NOTIFICATION");
             notificationStage.show();
 

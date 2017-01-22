@@ -61,6 +61,10 @@ public class Notification implements Serializable {
 
     private String notation;
 
+    private Boolean reportBoat;
+
+    private Boolean reportHelicopter;
+
     @NotNull
     @Temporal(TemporalType.TIMESTAMP)
     private Date timeCreated;

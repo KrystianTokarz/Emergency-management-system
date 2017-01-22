@@ -21,6 +21,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.util.logging.Logger;
 
 public class ThreadedEchoClient extends Thread {
 
@@ -34,6 +35,7 @@ public class ThreadedEchoClient extends Thread {
     private DataStream dataSocket;
     private CommandMediator commandMediator;
     private DistributorCommandMediator distributorCommandMediator;
+    Logger logger = Logger.getLogger(this.getClass().getName());
 
 
     public Socket getSocket() {
@@ -60,19 +62,19 @@ public class ThreadedEchoClient extends Thread {
     private void createCommandRegister(){
         commandMediator = CommandMediator.getInstance();
         distributorCommandMediator = DistributorCommandMediator.getInstance();
-        Command authorizationCommand = new AuthorizationCommand(commandMediator);
-        Command employeeListCommand = new EmployeeListCommand(commandMediator);
-        Command oneEmployeeCommand = new OneEmployeeCommand(commandMediator);
+        Command authorizationCommand = new AuthorizationCommand();
+        Command employeeListCommand = new EmployeeListCommand();
+        Command oneEmployeeCommand = new OneEmployeeCommand();
 
-        Command allInstitutionListCommand = new AllInstitutionListCommand(commandMediator);
-        Command oneInstitutionCommand = new OneInstitutionCommand(commandMediator);
-        Command oneEmployeeForDistributor = new OneEmployeeForDistributorCommand(distributorCommandMediator);
-        Command editOneEmployeeData = new EditEmployeeDataCommand(distributorCommandMediator);
-        Command localizationForNotificationCommand = new LocalizationForNotificationCommand(distributorCommandMediator);
-        Command notificationListForAllApplicationCommand = new NotificationForAllApplicationListCommand(distributorCommandMediator);
-        Command institutionForNotificationCommand = new InstitutionsForNotificationCommand(distributorCommandMediator);
-        Command saveFirstNotificationCommand = new SaveFirstNotificationCommand(distributorCommandMediator);
-        Command saveSecondNotificationCommand = new SaveSecondNotificationCommand(distributorCommandMediator);
+        Command allInstitutionListCommand = new AllInstitutionListCommand();
+        Command oneInstitutionCommand = new OneInstitutionCommand();
+        Command oneEmployeeForDistributor = new OneEmployeeForDistributorCommand();
+        Command editOneEmployeeData = new EditEmployeeDataCommand();
+        Command localizationForNotificationCommand = new LocalizationForNotificationCommand();
+        Command notificationListForAllApplicationCommand = new NotificationForAllApplicationListCommand();
+        Command institutionForNotificationCommand = new InstitutionsForNotificationCommand();
+        Command saveFirstNotificationCommand = new SaveFirstNotificationCommand();
+        Command saveSecondNotificationCommand = new SaveSecondNotificationCommand();
 
 
         commandRegister = new CommandRegister();
@@ -92,8 +94,11 @@ public class ThreadedEchoClient extends Thread {
 
     @Override
         public void run()  {
+        commandInvoker = new CommandInvoker(commandRegister);
         try {
             while ((messageFromServer = (Message) streamInput.readObject()) != null) {
+
+                //wrzucenie messaga na liste oczekujaca na wykonanie
                 processMessage(messageFromServer);
             }
         } catch (ClassNotFoundException e ) {
@@ -114,7 +119,6 @@ public class ThreadedEchoClient extends Thread {
 
 
     private void processMessage(Message messageFromServer) {
-        commandInvoker = new CommandInvoker(commandRegister,messageFromServer);
-        commandInvoker.execute(messageFromServer.getType());
+        commandInvoker.takeCommand(messageFromServer);
     }
 }

@@ -11,7 +11,7 @@ import server.model.localization.Locality;
 import server.model.localization.Province;
 import server.model.localization.Street;
 import server.model.message.MessageType;
-import server.model.message.MessageWithNotification;
+import server.model.message.FirstMessageWithNotification;
 import server.model.message.SecondMessageWithNotification;
 
 import java.util.ArrayList;
@@ -174,7 +174,7 @@ public class DistributorNotificationService {
     }
 
 
-    public void saveFirstNotification(MessageWithNotification messageWithNotification) {
+    public void saveFirstNotification(FirstMessageWithNotification messageWithNotification) {
         Message message = new Message.MessageBuilder(MessageType.SAVE_NEW_FIRST_NOTIFICATION)
                 .object(messageWithNotification)
                 .build();
@@ -184,7 +184,6 @@ public class DistributorNotificationService {
     }
 
     public void setNotificationId(Long notificationId) {
-        System.out.println("+EL:ELSD");
         this.notificationId = notificationId;
     }
 

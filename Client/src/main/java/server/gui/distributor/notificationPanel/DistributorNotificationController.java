@@ -1,23 +1,17 @@
 package server.gui.distributor.notificationPanel;
 
-import javafx.application.Platform;
+import com.sun.deploy.xml.XMLable;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import server.gui.administrator.institutionManagement.InstitutionForTable;
 import server.gui.distributor.notificationPanel.decorator.*;
 import server.gui.distributor.receivingPanel.CallerForTable;
 import server.message.mediator.DistributorCommandMediator;
@@ -26,16 +20,13 @@ import server.model.institution.Institution;
 import server.model.institution.InstitutionType;
 import server.model.localization.Locality;
 import server.model.localization.Street;
-import server.model.message.MessageWithNotification;
+import server.model.message.FirstMessageWithNotification;
 import server.model.message.SecondMessageWithNotification;
 import server.model.notification.AccidentType;
-import sun.awt.windows.ThemeReader;
 
 
 import java.net.URL;
-import java.util.List;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class DistributorNotificationController implements Initializable {
 
@@ -79,12 +70,31 @@ public class DistributorNotificationController implements Initializable {
     @FXML
     private Button  secondNotificationButton;
 
+    @FXML
+    private CheckBox helicopterBox;
+
+    @FXML
+    private CheckBox boatBox;
+
+    @FXML
+    private Label notificationLabel;
+    @FXML
+    private Label fireBrigadeLabel;
+    @FXML
+    private Label policeLabel;
+    @FXML
+    private Label emergencyLabel;
+
+    private ResourceBundle resourceBundle;
+
 
 
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        resourceBundle = resources;
+        loadInternationalizationNames();
         int statusOfController = commandMediator.getStatusOfController();
         commandMediator.sendForInstitutionDataToEdit();
         String localization;
@@ -194,7 +204,15 @@ public class DistributorNotificationController implements Initializable {
 
             }
         });
+    }
 
+    public void loadInternationalizationNames(){
+        notificationLabel.setText(resourceBundle.getString("notification"));
+        fireBrigadeLabel.setText(resourceBundle.getString("fire_brigade"));
+        policeLabel.setText(resourceBundle.getString("police"));
+        emergencyLabel.setText(resourceBundle.getString("emergency"));
+        firstNotificationButton.setText(resourceBundle.getString("send_first_notification"));
+        secondNotificationButton.setText(resourceBundle.getString("send_second_notification"));
 
     }
 
@@ -214,6 +232,14 @@ public class DistributorNotificationController implements Initializable {
         alert.showAndWait();
     }
 
+    public void showAdditionInformation(String value){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("INFORMATION");
+        alert.setContentText(value);
+        alert.setHeaderText(null);
+        alert.showAndWait();
+    }
+
 
 
     @FXML
@@ -224,10 +250,40 @@ public class DistributorNotificationController implements Initializable {
             if(!numberOfVictimsTextField.getText().matches(pattern))
                 showErrorInput();
             else {
+                boolean selectedHelicopterBox = helicopterBox.isSelected();
+                boolean selectedBoatBox = boatBox.isSelected();
+                boolean reportBoat = false;
+                boolean reportHelicopter = false;
+                String street = null;
+                if (streetChoiceBox.getSelectionModel().getSelectedItem() != null)
+                    street = (String) streetChoiceBox.getSelectionModel().getSelectedItem();
+                String province = (String) provinceChoiceBox.getSelectionModel().getSelectedItem();
+                String locality = (String) localityChoiceBox.getSelectionModel().getSelectedItem();
+                AccidentType accidentType = (AccidentType) accidentListView.getSelectionModel().getSelectedItem();
+                AdditionAction addictionReport = null;
+                if(selectedHelicopterBox == true && selectedBoatBox == false) {
+                    addictionReport = new HelicopterDecorator(new AddictionReport(province, locality, street, accidentType));
+                    reportHelicopter = true;
+                }
+                else if(selectedHelicopterBox == false && selectedBoatBox == true) {
+                    addictionReport = new BoatDecorator(new AddictionReport(province, locality, street, accidentType));
+                    reportBoat = true;
+                }else if(selectedHelicopterBox == true && selectedBoatBox == true) {
+                    addictionReport = new BoatDecorator(new HelicopterDecorator(new AddictionReport(province, locality, street, accidentType)));
+                    reportHelicopter = true;
+                    reportBoat = true;
+                }
+                if(addictionReport  != null) {
+                    String valueToInformDistributor = addictionReport.report();
+                    showAdditionInformation(valueToInformDistributor);
+                }
+
                 SecondMessageWithNotification secondMessageWithNotification = new SecondMessageWithNotification();
                 secondMessageWithNotification.setNumberOfVictims(Integer.parseInt(numberOfVictimsTextField.getText()));
                 secondMessageWithNotification.setAccidentType((AccidentType) accidentListView.getSelectionModel().getSelectedItem());
                 secondMessageWithNotification.setNotations(notationTextArea.getText());
+                secondMessageWithNotification.setReportBoat(reportBoat);
+                secondMessageWithNotification.setReportHelicopter(reportHelicopter);
                 commandMediator.saveSecondNotification(secondMessageWithNotification);
                 commandMediator.startThread();
                 Stage stage = (Stage) secondNotificationButton.getScene().getWindow();
@@ -244,8 +300,22 @@ public class DistributorNotificationController implements Initializable {
                 &&(fireBrigadeChoiceBox.getSelectionModel().getSelectedIndex()!=0
                     || policeChoiceBox.getSelectionModel().getSelectedIndex()!=0 || emergencyChoiceBox.getSelectionModel().getSelectedIndex()!=0 )) {
             commandMediator.setInstitutionChoiceBoxForService(policeChoiceBox, emergencyChoiceBox, fireBrigadeChoiceBox);
-            InstitutionNotification messageWithInstitution = messageWithInstitution = new PoliceInstitutionDecorator(new FireBrigadeInstitutionDecorator(new EmergencyInstitutionDecorator(new InstitutionNotificationImpl())));
-            MessageWithNotification messageWithNotification = new MessageWithNotification();
+
+            FirstMessageWithNotification messageWithNotification = new FirstMessageWithNotification();
+
+            List<String> institutionList = new ArrayList<>();
+
+
+            String selectedEmergency =  (String) emergencyChoiceBox.getSelectionModel().getSelectedItem();
+            if(!selectedEmergency.equals("No selected"))
+                institutionList.add(selectedEmergency);
+            String selectedFireBrigade =  (String) fireBrigadeChoiceBox.getSelectionModel().getSelectedItem();
+            if(!selectedFireBrigade.equals("No selected"))
+                institutionList.add(selectedFireBrigade);
+            String selectedPolice =  (String) policeChoiceBox.getSelectionModel().getSelectedItem();
+            if(!selectedPolice.equals("No selected"))
+                institutionList.add(selectedPolice);
+
 
             String firstName = callerFirstNameTextField.getText();
             String lastName = callerLastNameTextField.getText();
@@ -276,7 +346,7 @@ public class DistributorNotificationController implements Initializable {
             messageWithNotification.setLocality(locality);
             messageWithNotification.setStreetName(streetName);
             messageWithNotification.setStreetNumber(streetNumber);
-            messageWithNotification.setInstitutionNotification(messageWithInstitution.getInstitution());
+            messageWithNotification.setInstitutionNotification(institutionList);
 
             commandMediator.saveFirstNotification(messageWithNotification);
             provinceChoiceBox.setDisable(true);
@@ -289,6 +359,11 @@ public class DistributorNotificationController implements Initializable {
             policeChoiceBox.setDisable(true);
             fireBrigadeChoiceBox.setDisable(true);
             firstNotificationButton.setDisable(true);
+            Stage stage = (Stage) firstNotificationButton.getScene().getWindow();
+            stage.setOnCloseRequest(event -> {
+                event.consume();
+            });
+
         }else{
             showEmptyFieldPopup();
         }

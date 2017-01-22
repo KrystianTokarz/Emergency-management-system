@@ -1,6 +1,5 @@
-package server.gui.distributor.factory;
+package server.gui.distributor.builder;
 
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

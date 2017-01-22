@@ -11,13 +11,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.web.WebEngine;
 import javafx.util.Duration;
 import server.communication.DataStream;
 import server.communication.EchoThread;
-import server.gui.distributor.factory.NotificationForDistributorTables;
 import server.gui.distributor.observerReceivingPanel.ObservableConcrete;
 import server.gui.distributor.receivingPanel.CallerForTable;
 import server.message.Message;
@@ -27,11 +25,12 @@ import server.model.message.MessageType;
 import server.model.notification.Notification;
 
 import javax.sound.sampled.*;
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.net.URLClassLoader;
+import java.util.*;
 
 public class DistributorService {
 
@@ -50,6 +49,12 @@ public class DistributorService {
 
     private DistributorCommandMediator commandMediator;
     private ObservableList<CallerForTable> observableCallerForTableList;
+
+
+
+    private String language;
+    private String country;
+    private Locale currentLocale;
 
 
     public DistributorService(DistributorCommandMediator commandMediator, ObservableConcrete observableConcrete){
@@ -274,7 +279,14 @@ public class DistributorService {
 //    }
 //
     public List<Notification> getNotificationListForDistributor() {
-        return this.notificationForDistributorList;
+//        List<Notification> tmpNotificationList = new ArrayList<>();
+//        if()
+//        for (Notification notiifcation: notificationListForApplication) {
+//            if(notiifcation.getEmployee().getFirstName().equals(firstName) && notiifcation.getEmployee().getLastName().equals(lastName)
+//                    && notiifcation.getEmployee().getEmail().equals(email))
+//                tmpNotificationList.add(notiifcation);
+//        }
+        return notificationForDistributorList;
     }
 
     public void setNotificationListForApplication(Object notificationListForApplication) {
@@ -372,6 +384,8 @@ public class DistributorService {
         //thread.setDaemon(true);
         thread.start();
     }
+
+
 }
 
 class StringUtilities {

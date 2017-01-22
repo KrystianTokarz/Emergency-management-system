@@ -20,7 +20,13 @@ import server.model.employee.EmployeeAccount;
 import server.model.employee.EmployeeProfileType;
 import server.model.message.MessageType;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class LoginService {
     private Message message;
@@ -29,11 +35,35 @@ public class LoginService {
     private DistributorCommandMediator distributorCommandMediator;
     private Stage additionalStage = null;
     private  ObservableConcrete observableConcrete;
+    private String language;
+    private String country = new String("EN");
+    private ResourceBundle resourceBundle;
 
     public LoginService(CommandMediator commandMediator,DistributorCommandMediator distributorCommandMediator){
         this.commandMediator = commandMediator;
         this.distributorCommandMediator = distributorCommandMediator;
-        //commandMediator.registerLoginService(this);
+        resourceBundle = loadResourceBundle();
+    }
+
+    private ResourceBundle loadResourceBundle() {
+        if(country.equals("EN"))
+            language = new String("en");
+        else if(country.equals("PL"))
+            language = new String("pl");
+        Locale currentLocale = new Locale(language, country);
+        File file = new File("src\\main\\resources\\internationalization");
+        ClassLoader loader = null;
+
+
+        try {
+            URL[] urls =  new URL[]{ file.toURI().toURL()};
+            loader = new URLClassLoader(urls);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        resourceBundle = ResourceBundle.getBundle("MessageBundle",currentLocale,loader);
+        return resourceBundle;
     }
 
 
@@ -100,12 +130,21 @@ public class LoginService {
         }
     }
 
+    public void setResourceBundle(String resourceBundle) {
+        this.country = resourceBundle;
+    }
+
+    public ResourceBundle getResourceBundle() {
+        return loadResourceBundle();
+    }
+
     /**
      * Embedded class for getting correct view for Employee (distributor or administrator view)
      */
     class ProgramViewFactory{
         public Parent getCorrectView(EmployeeProfileType type, Employee employee){
             Parent view;
+
 
             try {
                 if(type == EmployeeProfileType.ADMINISTRATOR){
@@ -120,11 +159,11 @@ public class LoginService {
                     observableConcrete= new ObservableConcrete();
                     additionalStage = new Stage();
                     distributorCommandMediator.registerDistributorReceivingService(new DistributorReceivingService(distributorCommandMediator,observableConcrete,additionalStage));
-                    AnchorPane additionalView = (AnchorPane) FXMLLoader.load(getClass().getClassLoader().getResource("views/distributor/receivingPanel/distributorReceivingPanelView.fxml"));
+                    AnchorPane additionalView = (AnchorPane) FXMLLoader.load(getClass().getClassLoader().getResource("views/distributor/receivingPanel/distributorReceivingPanelView.fxml"),resourceBundle);
                     additionalStage.setScene(new Scene(additionalView));
                     distributorCommandMediator.registerDistributorService(new DistributorService(distributorCommandMediator,observableConcrete));
                     distributorCommandMediator.setProgramPanelInformation(employee);
-                    view = (Parent) FXMLLoader.load(getClass().getClassLoader().getResource("views/distributor/distributorPanelView.fxml"));
+                    view = (Parent) FXMLLoader.load(getClass().getClassLoader().getResource("views/distributor/distributorPanelView.fxml"),resourceBundle);
 
                     return  view;
                 }

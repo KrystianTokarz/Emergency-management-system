@@ -5,10 +5,7 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
@@ -61,6 +58,11 @@ public class DistributorEmployeeEditController implements Initializable{
     @FXML
     private Button editButton;
 
+    @FXML
+    private Label nameLabel;
+
+    private ResourceBundle resourceBundle;
+
     private Employee originalEmployee;
 
     private DistributorCommandMediator commandMediator;
@@ -84,6 +86,8 @@ public class DistributorEmployeeEditController implements Initializable{
 
         commandMediator = DistributorCommandMediator.getInstance();
 
+        resourceBundle = resources;
+        loadInternationalizationNames();
 
         loadImageButton.setOnAction(e -> {
             FileChooser fileChooser = new FileChooser();
@@ -153,12 +157,20 @@ public class DistributorEmployeeEditController implements Initializable{
         new Thread(employeeEditTask).start();
     }
 
+    public void loadInternationalizationNames(){
+        nameLabel.setText(resourceBundle.getString("employee_edit_text"));
+
+
+    }
+
     @FXML
     public void closeEditEmployeeWindow(ActionEvent e){
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
 
     }
+
+
 
 
     public void showDifferentPasswordPopup(){

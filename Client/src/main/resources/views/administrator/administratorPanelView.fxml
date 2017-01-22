@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="708.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server.gui.administrator.AdministratorController">
    <children>
-      <Button layoutX="737.0" layoutY="104.0" mnemonicParsing="false" onAction="#showEmployeeView" prefHeight="47.0" prefWidth="190.0" text="Manage Employees">
+      <Button fx:id="employeeButton" disable="true" layoutX="737.0" layoutY="104.0" mnemonicParsing="false" onAction="#showEmployeeView" prefHeight="47.0" prefWidth="190.0" text="Manage Employees">
          <font>
             <Font size="14.0" />
          </font>
@@ -19,7 +19,7 @@
             <DropShadow color="#1b5fd3" />
          </effect>
       </Button>
-      <Button layoutX="737.0" layoutY="193.0" mnemonicParsing="false" onAction="#showInstitutionView" prefHeight="47.0" prefWidth="190.0" text="Manage Institution">
+      <Button fx:id="institutionButton" disable="true" layoutX="737.0" layoutY="193.0" mnemonicParsing="false" onAction="#showInstitutionView" prefHeight="47.0" prefWidth="190.0" text="Manage Institution">
          <font>
             <Font size="14.0" />
          </font>

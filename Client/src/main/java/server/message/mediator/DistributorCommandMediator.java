@@ -10,7 +10,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.web.WebEngine;
 import server.gui.distributor.DistributorService;
 import server.gui.distributor.employeeData.DistributorEmployeeEditService;
-import server.gui.distributor.factory.NotificationForDistributorTables;
 import server.gui.distributor.notificationPanel.DistributorNotificationService;
 import server.gui.distributor.phone.DistributorPhoneService;
 import server.gui.distributor.receivingPanel.CallerForTable;
@@ -26,11 +25,12 @@ import server.model.institution.InstitutionType;
 import server.model.localization.Locality;
 import server.model.localization.Province;
 import server.model.localization.Street;
-import server.model.message.MessageWithNotification;
+import server.model.message.FirstMessageWithNotification;
 import server.model.message.SecondMessageWithNotification;
 import server.model.notification.Notification;
 
 import java.util.List;
+import java.util.ResourceBundle;
 
 public class DistributorCommandMediator {
 
@@ -67,6 +67,7 @@ public class DistributorCommandMediator {
     public void registerDistributorPhoneService(DistributorPhoneService distributorPhoneService) {
         this.distributorPhoneService=distributorPhoneService;
     }
+
 
     public void setProgramPanelInformation(Employee employee){
         distributorService.setFirstName(employee.getFirstName());
@@ -271,7 +272,7 @@ public class DistributorCommandMediator {
 
 
 
-    public void saveFirstNotification(MessageWithNotification messageWithNotification) {
+    public void saveFirstNotification(FirstMessageWithNotification messageWithNotification) {
         this.distributorNotificationService.saveFirstNotification(messageWithNotification);
     }
 

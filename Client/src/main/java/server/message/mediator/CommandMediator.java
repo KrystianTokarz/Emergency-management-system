@@ -25,6 +25,7 @@ import server.model.localization.Locality;
 import server.model.localization.ProvinceType;
 
 import java.util.List;
+import java.util.ResourceBundle;
 
 public class CommandMediator implements  Mediator {
     private LoginService loginService;
@@ -173,6 +174,8 @@ public class CommandMediator implements  Mediator {
     }
 
     public void giveEmployeeData(Employee param){
+        System.out.println( " param = " + param);
+        System.out.println( " administratorEmployeeEditService = " + administratorEmployeeEditService);
         administratorEmployeeEditService.setEmployeeFromServer(param);
     }
 
@@ -265,6 +268,14 @@ public class CommandMediator implements  Mediator {
 
     public void sendForInstitutionDataToEdit(Institution institution) {
         administratorInstitutionManagementService.sendForInstitutionDataToEdit(institution);
+    }
+
+    public void setResourceBundle(String resourceBundle) {
+        loginService.setResourceBundle(resourceBundle);
+    }
+
+    public ResourceBundle getResourceBundle() {
+        return loginService.getResourceBundle();
     }
 
 //    public TableView<InstitutionForTable> getTableWithInstitution(){

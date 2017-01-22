@@ -115,12 +115,12 @@ public class AdministratorEmployeeManagementController implements Initializable{
 
     public void editEmployee(ActionEvent event)throws IOException {
         if(table.getSelectionModel().getSelectedItem()!= null) {
+            commandMediator.registerAdministratorEmployeeEditService(new AdministratorEmployeeEditService(commandMediator, employeeForTables, table.getSelectionModel().getSelectedIndex()));
             Employee employee = new Employee();
             employee.setFirstName(table.getSelectionModel().getSelectedItem().getFirstName());
             employee.setLastName(table.getSelectionModel().getSelectedItem().getLastName());
             employee.setEmail(table.getSelectionModel().getSelectedItem().getEmail());
             commandMediator.sendForEmployeeDataToEdit(employee);
-            commandMediator.registerAdministratorEmployeeEditService(new AdministratorEmployeeEditService(commandMediator, employeeForTables, table.getSelectionModel().getSelectedIndex()));
             AnchorPane employeeViews = FXMLLoader.load(getClass().getClassLoader().getResource("views/administrator/employeesPanel/administratorPanelEditingEmployeeView.fxml"));
             addNewEmployeeStage = new Stage();
             addNewEmployeeStage.setScene(new Scene(employeeViews));

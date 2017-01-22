@@ -1,13 +1,7 @@
-package server.gui.distributor.factory;
+package server.gui.distributor.builder;
 
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.image.ImageView;
-import server.model.institution.Institution;
-import server.model.institution.InstitutionType;
-import server.model.notification.AccidentType;
-import java.util.Date;
-import java.util.List;
 
 public class NotificationForDistributorTables {
 

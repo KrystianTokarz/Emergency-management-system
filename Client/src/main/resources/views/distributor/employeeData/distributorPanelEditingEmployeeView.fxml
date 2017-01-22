@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="326.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server.gui.distributor.employeeData.DistributorEmployeeEditController">
    <children>
-      <Label layoutX="335.0" layoutY="24.0" prefHeight="33.0" prefWidth="237.0" text="Edit information about your data">
+      <Label fx:id="nameLabel" layoutX="335.0" layoutY="24.0" prefHeight="33.0" prefWidth="237.0">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -32,11 +32,11 @@
       <PasswordField fx:id="firstPasswordField" layoutX="423.0" layoutY="196.0" />
       <PasswordField fx:id="secondPasswordField" layoutX="423.0" layoutY="233.0" />
       <Button fx:id="loadImageButton" layoutX="196.0" layoutY="86.0" mnemonicParsing="false" text="Load image" />
-      <Button fx:id="editButton" layoutX="194.0" layoutY="283.0" onAction="#editYourEmployeeData" mnemonicParsing="false" prefHeight="33.0" prefWidth="82.0" text="Edit">
+      <Button fx:id="editButton" layoutX="194.0" layoutY="283.0" mnemonicParsing="false" onAction="#editYourEmployeeData" prefHeight="33.0" prefWidth="82.0" text="Edit">
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Button>
-      <Button fx:id="cancelButton" layoutX="329.0" layoutY="283.0"  onAction="#closeEditEmployeeWindow" mnemonicParsing="false" prefHeight="33.0" prefWidth="82.0" text="Cancel">
+      <Button fx:id="cancelButton" layoutX="329.0" layoutY="283.0" mnemonicParsing="false" onAction="#closeEditEmployeeWindow" prefHeight="33.0" prefWidth="82.0" text="Cancel">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

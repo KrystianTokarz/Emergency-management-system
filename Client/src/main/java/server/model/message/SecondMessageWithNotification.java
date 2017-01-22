@@ -17,4 +17,8 @@ public class SecondMessageWithNotification implements Serializable{
     private AccidentType accidentType;
 
     private int numberOfVictims;
+
+    private Boolean reportBoat;
+
+    private Boolean reportHelicopter;
 }

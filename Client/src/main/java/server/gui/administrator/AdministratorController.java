@@ -49,6 +49,12 @@ public class AdministratorController implements Initializable {
     @FXML
     private ImageView userImageView;
 
+    @FXML
+    private Button institutionButton;
+
+    @FXML
+    private Button employeeButton;
+
 
     private PieChart pieChart;
 
@@ -90,6 +96,8 @@ public class AdministratorController implements Initializable {
         pieChart.setLegendSide(Side.BOTTOM);
         borderPane.setTop(pieChart);
 
+        institutionButton.setDisable(false);
+        employeeButton.setDisable(false);
     }
 
     @FXML
