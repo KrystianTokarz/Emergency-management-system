@@ -7,7 +7,7 @@ import server.repository.InstitutionRepository;
 
 public class OneInstitutionCommand implements Command<Institution>{
 
-    InstitutionFacade facade = new InstitutionFacade();
+    InstitutionFacade facade = InstitutionFacade.getInstance();
     @Override
     public <S> Institution execute(S param) {
         return facade.findInstitutionByName((Institution) param);

@@ -5,7 +5,7 @@ import server.model.institution.Institution;
 import server.model.localization.Locality;
 import server.model.localization.Province;
 import server.model.localization.Street;
-import server.model.message.MessageWithNotification;
+import server.model.message.FirstMessageWithNotification;
 import server.model.message.SecondMessageWithNotification;
 import server.model.notification.Notification;
 import server.repository.confirmation.ThreadConfirmationFromAnotherSystem;
@@ -84,7 +84,7 @@ public class NotificationRepository extends Repository {
 
     }
 
-    public Long saveFirstNotification(MessageWithNotification messageWithNotification) {
+    public Long saveFirstNotification(FirstMessageWithNotification messageWithNotification) {
         EmployeeRepository employeeRepository = EmployeeRepository.getInstance();
         Employee employeeInDatabase = employeeRepository.findEmployeeByFirstAndLastNameAndMail(messageWithNotification.getEmployee());
         LocalizationRepository localizationRepository = LocalizationRepository.getInstance();
@@ -124,8 +124,6 @@ public class NotificationRepository extends Repository {
         entityManager.getTransaction().commit();
         entityManager.clear();
 
-        System.out.println("zapisalismy 1 notyfikacje");
-
         return notificationInBase.getId();
     }
 
@@ -138,6 +136,8 @@ public class NotificationRepository extends Repository {
              criteriaNotificationUpdate.set("notation",secondMessageWithNotification.getNotations());
         criteriaNotificationUpdate.set("numberOfVictims",secondMessageWithNotification.getNumberOfVictims());
         criteriaNotificationUpdate.set("accidentType",secondMessageWithNotification.getAccidentType());
+        criteriaNotificationUpdate.set("reportBoat",secondMessageWithNotification.getReportBoat());
+        criteriaNotificationUpdate.set("reportHelicopter",secondMessageWithNotification.getReportHelicopter());
         criteriaNotificationUpdate.where(notificationRoot.get("id").in(secondMessageWithNotification.getIdFirstMessage()));
 
         entityManager.getTransaction().begin();

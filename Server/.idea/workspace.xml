@@ -1,56 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/AbstractChainElement.java" line="23" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a17b6a45-a2b9-4b77-9adb-beaf6fb4632e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/SecondCommand.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/AbstractChainElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/EndElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/employees/DeleteEmployeeElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/employees/EditEmployeeElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/employees/EmployeeListElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/employees/LoginElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/employees/OneEmployeeElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/employees/SaveEmployeeElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/exception/EndElementOfChainResponsibilityException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/AllInstitutionElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/DeleteInstitutionElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/EditInstitutionElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/OneInstitutionElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/SaveInstitutionElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/DistributorDataElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/EditEmployeeForDistrbutorElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/InstitutionForNotificationElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/LocalizationForNotificationElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/NotificationForDistributorListElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/SaveFirstNotificationElement.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/SaveSecondNotificationElement.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/notificationPanel/decorator/EmergencyInstitutionDecorator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/notificationPanel/decorator/FireBrigadeInstitutionDecorator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/notificationPanel/decorator/InstitutionNotifciationDecorator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/notificationPanel/decorator/InstitutionNotification.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/notificationPanel/decorator/InstitutionNotificationImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/notificationPanel/decorator/PoliceInstitutionDecorator.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/factory/NotificationForDistributorTables.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/builder/NotificationForDistributorTables.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/factory/NotificationForTable.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/builder/NotificationForTable.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/model/message/MessageWithNotification.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/model/message/FirstMessageWithNotification.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/server/model/message/MessageWithNotification.java" afterPath="$PROJECT_DIR$/src/main/java/server/model/message/FirstMessageWithNotification.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/Main.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/build/resources/main/views/administrator/administratorPanelView.fxml" afterPath="$PROJECT_DIR$/../Client/build/resources/main/views/administrator/administratorPanelView.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/build/resources/main/views/distributor/distributorPanelView.fxml" afterPath="$PROJECT_DIR$/../Client/build/resources/main/views/distributor/distributorPanelView.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/build/resources/main/views/distributor/employeeData/distributorPanelEditingEmployeeView.fxml" afterPath="$PROJECT_DIR$/../Client/build/resources/main/views/distributor/employeeData/distributorPanelEditingEmployeeView.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/build/resources/main/views/distributor/notification/distributorPanelNotificationsView.fxml" afterPath="$PROJECT_DIR$/../Client/build/resources/main/views/distributor/notification/distributorPanelNotificationsView.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/build/resources/main/views/distributor/receivingPanel/distributorReceivingPanelView.fxml" afterPath="$PROJECT_DIR$/../Client/build/resources/main/views/distributor/receivingPanel/distributorReceivingPanelView.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/build/resources/main/views/loginPanelView.fxml" afterPath="$PROJECT_DIR$/../Client/build/resources/main/views/loginPanelView.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/communication/ThreadedEchoClient.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/communication/ThreadedEchoClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/administrator/employeeManagement/flyweight/factory/ImageFlyweightFactory.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/administrator/employeeManagement/flyweight/factory/ImageFlyweightFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/administrator/institutionManagement/flyweight/ImageFlyweight.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/administrator/institutionManagement/flyweight/ImageFlyweight.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/administrator/institutionManagement/flyweight/SharedImageFlyweight.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/administrator/institutionManagement/flyweight/SharedImageFlyweight.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/administrator/institutionManagement/flyweight/UnsharedImageFlyweight.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/administrator/institutionManagement/flyweight/UnsharedImageFlyweight.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/administrator/institutionManagement/flyweight/factory/ImageFlyweightFactory.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/administrator/institutionManagement/flyweight/factory/ImageFlyweightFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/Message.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/Message.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/administrator/AdministratorController.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/administrator/AdministratorController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/administrator/employeeManagement/AdministratorEmployeeManagementController.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/administrator/employeeManagement/AdministratorEmployeeManagementController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/DistributorController.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/DistributorController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/DistributorService.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/DistributorService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/employeeData/DistributorEmployeeEditController.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/employeeData/DistributorEmployeeEditController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/notificationPanel/DistributorNotificationController.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/notificationPanel/DistributorNotificationController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/notificationPanel/DistributorNotificationService.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/notificationPanel/DistributorNotificationService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/receivingPanel/DistributorReceivingController.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/distributor/receivingPanel/DistributorReceivingController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/login/LoginController.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/login/LoginController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/gui/login/LoginService.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/gui/login/LoginService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/Command.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/Command.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/CommandInvoker.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/CommandInvoker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/CommandRegister.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/CommandRegister.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/model/employee/Employee.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/model/employee/Employee.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/model/employee/EmployeeAccount.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/model/employee/EmployeeAccount.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/model/employee/EmployeeImage.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/model/employee/EmployeeImage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/model/institution/Institution.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/model/institution/Institution.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/model/institution/InstitutionType.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/model/institution/InstitutionType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/model/localization/Province.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/model/localization/Province.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/distributor/EditEmployeeDataCommand.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/distributor/EditEmployeeDataCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/distributor/NotificationForAllApplicationListCommand.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/distributor/NotificationForAllApplicationListCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/distributor/OneEmployeeForDistributorCommand.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/distributor/OneEmployeeForDistributorCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/distributor/SaveFirstNotificationCommand.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/distributor/SaveFirstNotificationCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/distributor/SaveSecondNotificationCommand.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/distributor/SaveSecondNotificationCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/employees/AuthorizationCommand.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/employees/AuthorizationCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/employees/EmployeeListCommand.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/employees/EmployeeListCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/employees/OneEmployeeCommand.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/employees/OneEmployeeCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/institutions/AllInstitutionListCommand.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/institutions/AllInstitutionListCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/institutions/InstitutionsForNotificationCommand.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/institutions/InstitutionsForNotificationCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/institutions/LocalizationForNotificationCommand.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/institutions/LocalizationForNotificationCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/institutions/OneInstitutionCommand.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/command/institutions/OneInstitutionCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/mediator/CommandMediator.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/mediator/CommandMediator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/message/mediator/DistributorCommandMediator.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/message/mediator/DistributorCommandMediator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/model/message/SecondMessageWithNotification.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/model/message/SecondMessageWithNotification.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/model/notification/Notification.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/model/notification/Notification.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/java/server/model/prototype/EmployeePrototype.java" afterPath="$PROJECT_DIR$/../Client/src/main/java/server/model/prototype/EmployeePrototype.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/resources/views/administrator/administratorPanelView.fxml" afterPath="$PROJECT_DIR$/../Client/src/main/resources/views/administrator/administratorPanelView.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/24da8aff-68d5-4681-b81d-7a7e9d0d3832.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/24da8aff-68d5-4681-b81d-7a7e9d0d3832.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/resources/views/distributor/distributorPanelView.fxml" afterPath="$PROJECT_DIR$/../Client/src/main/resources/views/distributor/distributorPanelView.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/resources/views/distributor/employeeData/distributorPanelEditingEmployeeView.fxml" afterPath="$PROJECT_DIR$/../Client/src/main/resources/views/distributor/employeeData/distributorPanelEditingEmployeeView.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/resources/views/distributor/notification/distributorPanelNotificationsView.fxml" afterPath="$PROJECT_DIR$/../Client/src/main/resources/views/distributor/notification/distributorPanelNotificationsView.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/resources/views/distributor/receivingPanel/distributorReceivingPanelView.fxml" afterPath="$PROJECT_DIR$/../Client/src/main/resources/views/distributor/receivingPanel/distributorReceivingPanelView.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Client/src/main/resources/views/loginPanelView.fxml" afterPath="$PROJECT_DIR$/../Client/src/main/resources/views/loginPanelView.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/build/resources/main/META-INF/persistence.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/Main.java" afterPath="$PROJECT_DIR$/src/main/java/server/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/communication/EchoThread.java" afterPath="$PROJECT_DIR$/src/main/java/server/communication/EchoThread.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/communication/ThreadedEchoServer.java" afterPath="$PROJECT_DIR$/src/main/java/server/communication/ThreadedEchoServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/dao/HibernateSession.java" afterPath="$PROJECT_DIR$/src/main/java/server/dao/HibernateSession.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/fasade/EmployeesFacade.java" afterPath="$PROJECT_DIR$/src/main/java/server/fasade/EmployeesFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/Message.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/Message.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/Command.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/Command.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/CommandInvoker.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/CommandInvoker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/CommandRegister.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/CommandRegister.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/model/employee/Employee.java" afterPath="$PROJECT_DIR$/src/main/java/server/model/employee/Employee.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/model/employee/EmployeeImage.java" afterPath="$PROJECT_DIR$/src/main/java/server/model/employee/EmployeeImage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/model/institution/Institution.java" afterPath="$PROJECT_DIR$/src/main/java/server/model/institution/Institution.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/model/institution/InstitutionType.java" afterPath="$PROJECT_DIR$/src/main/java/server/model/institution/InstitutionType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/model/localization/Locality.java" afterPath="$PROJECT_DIR$/src/main/java/server/model/localization/Locality.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/model/localization/Province.java" afterPath="$PROJECT_DIR$/src/main/java/server/model/localization/Province.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/model/localization/Street.java" afterPath="$PROJECT_DIR$/src/main/java/server/model/localization/Street.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/fasade/InstitutionFacade.java" afterPath="$PROJECT_DIR$/src/main/java/server/fasade/InstitutionFacade.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/fasade/LocalizationFacade.java" afterPath="$PROJECT_DIR$/src/main/java/server/fasade/LocalizationFacade.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/fasade/NotificationFacade.java" afterPath="$PROJECT_DIR$/src/main/java/server/fasade/NotificationFacade.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/employees/DeleteEmployeeCommand.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/employees/DeleteEmployeeCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/employees/EditEmployeeCommand.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/employees/EditEmployeeCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/employees/EmployeeListCommand.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/employees/EmployeeListCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/employees/LoginCommand.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/employees/LoginCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/employees/OneEmployeeCommand.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/employees/OneEmployeeCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/employees/SaveEmployeeCommand.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/employees/SaveEmployeeCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/institution/AllInstitutionListCommand.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/institution/AllInstitutionListCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/institution/DeleteInstitutionCommand.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/institution/DeleteInstitutionCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/institution/EditInstitutionCommand.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/institution/EditInstitutionCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/institution/OneInstitutionCommand.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/institution/OneInstitutionCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/institution/SaveInstitutionCommand.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/institution/SaveInstitutionCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/notification/EditEmployeeFromDistributor.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/notification/EditEmployeeFromDistributor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/notification/InstitutionForNotificationCommand.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/notification/InstitutionForNotificationCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/notification/LocalizationForNotificationCommand.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/notification/LocalizationForNotificationCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/notification/NotificationForDistributorListCommand.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/notification/NotificationForDistributorListCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/notification/SaveFirstNotificationCommand.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/notification/SaveFirstNotificationCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/message/command/notification/SaveSecondNotificationCommand.java" afterPath="$PROJECT_DIR$/src/main/java/server/message/command/notification/SaveSecondNotificationCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/model/message/SecondMessageWithNotification.java" afterPath="$PROJECT_DIR$/src/main/java/server/model/message/SecondMessageWithNotification.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/model/notification/Notification.java" afterPath="$PROJECT_DIR$/src/main/java/server/model/notification/Notification.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/repository/EmployeeRepository.java" afterPath="$PROJECT_DIR$/src/main/java/server/repository/EmployeeRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/repository/InstitutionRepository.java" afterPath="$PROJECT_DIR$/src/main/java/server/repository/InstitutionRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/repository/LocalizationRepository.java" afterPath="$PROJECT_DIR$/src/main/java/server/repository/LocalizationRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/repository/NotificationRepository.java" afterPath="$PROJECT_DIR$/src/main/java/server/repository/NotificationRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/server/repository/Repository.java" afterPath="$PROJECT_DIR$/src/main/java/server/repository/Repository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
     </list>
     <ignored path="server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,24 +141,6 @@
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Oracle - @localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Oracle - @localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
-      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -114,7 +152,12 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state />
+        </projects_view>
       </state>
     </system>
   </component>
@@ -123,36 +166,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EchoThread.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/server/communication/EchoThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="NotificationRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/server/repository/NotificationRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1734">
-              <caret line="117" column="8" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="8" />
+            <state relative-caret-position="2040">
+              <caret line="138" column="95" selection-start-line="138" selection-start-column="82" selection-end-line="138" selection-end-column="95" />
               <folding>
                 <element signature="imports" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="persistence.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="87" selection-start-line="24" selection-start-column="87" selection-end-line="24" selection-end-column="87" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -167,21 +188,88 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InstitutionRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/server/repository/InstitutionRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2346">
+              <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/24da8aff-68d5-4681-b81d-7a7e9d0d3832/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+            <state relative-caret-position="153">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Institution.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/server/model/institution/Institution.java">
+      <file leaf-file-name="persistence.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+            <state relative-caret-position="340">
+              <caret line="20" column="79" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="79" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmployeesFacade.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/server/fasade/EmployeesFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="10" column="21" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="11" />
+              <folding>
+                <element signature="e#958#959#0" expanded="true" />
+                <element signature="e#1009#1010#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InstitutionFacade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/server/fasade/InstitutionFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocalizationFacade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/server/fasade/LocalizationFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NotificationFacade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/server/fasade/NotificationFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="519">
+              <caret line="40" column="77" selection-start-line="40" selection-start-column="77" selection-end-line="40" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecondMessageWithNotification.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/server/model/message/SecondMessageWithNotification.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="false" />
               </folding>
@@ -196,11 +284,17 @@
       <list>
         <option value="Enum" />
         <option value="JavaFXApplication" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Krystian &lt;krystiantokarz@wp.pl&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GradleLocalSettings">
@@ -475,57 +569,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/server/message/command/employees/SaveEmployeeCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/dao/HibernateSession.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/message/command/employees/OneEmployeeCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/message/command/employees/EmployeeListCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/employee/Employee.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/prototype/EmployeePrototype.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/prototype/EmployeeImagePrototype.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/employee/EmployeeImage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/prototype/EmployeeAccountPrototype.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/employee/EmployeeAccount.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/institution/InstitutionType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/message/command/institution/AllInstitutionListCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/institution/InstitutionImage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/localization/Localization.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/localization/ProvinceType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/localization/Province.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/message/command/institution/DeleteInstitutionCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/localization/Street.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/message/command/institution/SaveInstitutionCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/message/command/institution/OneInstitutionCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/message/command/institution/EditInstitutionCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/localization/Locality.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/repository/EmployeeRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/fasade/EmployeesFacade.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/message/command/notification/EditEmployeeFromDistributor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/message/Message.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/message/command/notification/NotificationListForDistributorCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/message/command/notification/NotificationForAllApplicationListCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/message/command/notification/NotificationForDistributorListCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/exception/EndElementOfChainResponsibilityException.java" />
         <option value="$PROJECT_DIR$/src/main/java/server/fasade/LocalizationFacade.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/message/command/notification/LocalizationForNotificationCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/messageType/MessageType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/fasade/InstitutionFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/command/employees/LoginCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/command/employees/EmployeeListCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/command/employees/EditEmployeeCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/command/employees/DeleteEmployeeCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/command/employees/OneEmployeeCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/command/employees/SaveEmployeeCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/command/institution/AllInstitutionListCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/command/institution/DeleteInstitutionCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/command/institution/EditInstitutionCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/command/institution/OneInstitutionCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/command/institution/SaveInstitutionCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/command/notification/EditEmployeeFromDistributor.java" />
         <option value="$PROJECT_DIR$/src/main/java/server/message/command/notification/InstitutionForNotificationCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/message/MessageType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/fasade/NotificationFacade.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/repository/Repository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/repository/InstitutionRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/repository/LocalizationRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/communication/ThreadedEchoServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/message/InstitutionNotificationImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/message/messageDecorator/InstitutionNotifciationDecorator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/communication/EchoThread.java" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/message/MessageWithNotification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/command/notification/LocalizationForNotificationCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/command/notification/NotificationForDistributorListCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/server/message/command/notification/SaveFirstNotificationCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/repository/EmployeeRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/employees/SaveEmployeeElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/employees/OneEmployeeElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/employees/LoginElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/employees/EmployeeListElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/employees/EditEmployeeElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/employees/DeleteEmployeeElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/EndElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/AbstractChainElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/DeleteInstitutionCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/AllInstitutionElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/DeleteInstitutionElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/EditInstitutionElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/OneInstitutionElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/SaveInstitutionElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/EditEmployeeForDistrbutorElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/InstitutionForNotificationElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/LocalizationForNotificationElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/SaveFirstNotificationElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/SaveSecondNotificationElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/DistributorDataElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/communication/ThreadedEchoServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/NotificationForDistributorListElement.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/communication/EchoThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/message/command/notification/SaveSecondNotificationCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/server/model/notification/Notification.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/24da8aff-68d5-4681-b81d-7a7e9d0d3832/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/server/model/institution/Institution.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/server/model/message/SecondMessageWithNotification.java" />
         <option value="$PROJECT_DIR$/src/main/java/server/repository/NotificationRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/server/fasade/EmployeesFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/fasade/InstitutionFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/server/fasade/NotificationFacade.java" />
       </list>
     </option>
   </component>
@@ -576,7 +670,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -837,371 +933,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="localization" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="institution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="employee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="message" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="message" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="command" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="message" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="command" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="notification" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="message" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="command" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="institution" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="message" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="command" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="employees" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="fasade" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="communication" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Projektos/Client" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="server.message.command.notification" />
       <recent name="server.model.message" />
       <recent name="server.message.command.institution" />
       <recent name="server.model.localization" />
       <recent name="server.model.prototype" />
-      <recent name="server.message.command" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kryst\Desktop\PPPROJEKTOS\Server\src\main\java\server\message\chaingOfResposibility\institution" />
       <recent name="C:\Users\kryst\Desktop\Projekt\Server\src\main\java\server\model\message" />
       <recent name="C:\Users\kryst\Desktop\Projekt\Server\src\main\java\server\model\localization" />
       <recent name="C:\Users\kryst\Desktop\Projekt\Server\src\main\java\server\message" />
@@ -1724,11 +1479,35 @@
       <workItem from="1484417760094" duration="1109000" />
       <workItem from="1484477590644" duration="15670000" />
       <workItem from="1484512294189" duration="1217000" />
+      <workItem from="1484513816848" duration="725000" />
+      <workItem from="1484555887577" duration="7558000" />
+      <workItem from="1484593063948" duration="5196000" />
+      <workItem from="1484676700238" duration="9796000" />
+      <workItem from="1484737789681" duration="2734000" />
+      <workItem from="1484769613035" duration="2446000" />
+      <workItem from="1484835970219" duration="903000" />
+      <workItem from="1484995541056" duration="21488000" />
+      <workItem from="1485083132577" duration="4480000" />
     </task>
+    <task id="LOCAL-00001" summary="commit from server">
+      <created>1484600297164</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1484600297164</updated>
+    </task>
+    <task id="LOCAL-00002" summary="commit for server">
+      <created>1484687552040</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1484687552040</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251164000" />
+    <option name="totallyTimeSpent" value="306490000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1740,36 +1519,54 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="28" width="1696" height="1026" extended-state="1" />
+    <frame x="1912" y="28" width="1696" height="1026" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281075" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10190369" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31354985" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42105263" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3975364" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28178483" sideWeight="0.86133766" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1393643" sideWeight="0.48803827" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23533008" sideWeight="0.8529981" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15953545" sideWeight="0.48803827" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17420538" sideWeight="0.2967525" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28178483" sideWeight="0.13866232" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30011198" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23533008" sideWeight="0.14700194" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16870415" sideWeight="0.5119617" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32586786" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21164614" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3393057" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1782,9 +1579,14 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit from server" />
+    <MESSAGE value="commit for server" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit for server" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1793,286 +1595,296 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/employees/EmployeeListCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/AllInstitutionListCommand.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/SaveInstitutionCommand.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/OneInstitutionCommand.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/EditInstitutionCommand.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/DeleteInstitutionCommand.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/EmployeeListElement.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/employees/DeleteEmployeeElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="54" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="54" />
+        <state relative-caret-position="170">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="24" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/employees/LoginCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/dao/HibernateSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/employees/EditEmployeeCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/institution/OneInstitutionCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/CommandRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="49" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/notification/NotificationListForDistributorCommand.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/institution/InstitutionType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/notification/AccidentType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/notification/EditEmployeeFromDistributor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="59" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/fasade/LocalizationFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/fasade/EmployeesFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="24" column="60" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="68" column="16" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/institution/AllInstitutionListCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="76" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/fasade/InstitutionFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/message/MessageType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="151" selection-start-line="6" selection-start-column="151" selection-end-line="6" selection-end-column="151" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/notification/NotificationForDistributorListCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="77" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/repository/Repository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/localization/ProvinceType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/message/messageDecorator/EmergencyInstitutionDecorator.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/message/messageDecorator/PoliceInstitutionDecorator.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/message/messageDecorator/InstitutionNotifciationDecorator.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/message/messageDecorator/FireBrigadeInstitutionDecorator.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/communication/ThreadedEchoServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="75" column="74" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/message/InstitutionNotification.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/message/InstitutionNotificationImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/repository/EmployeeRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/repository/InstitutionRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="173" column="31" selection-start-line="173" selection-start-column="20" selection-end-line="173" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/repository/LocalizationRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="94" column="30" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/message/MessageWithNotification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/employee/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-104">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/localization/Locality.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="30" column="23" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/localization/LocalizationComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/notification/LocalizationForNotificationCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/notification/InstitutionForNotificationCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/institution/DeleteInstitutionCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/DeleteInstitutionElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/EditInstitutionElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/institution/SaveInstitutionCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        <state relative-caret-position="136">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/fasade/NotificationFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="24" column="68" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/localization/Street.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/localization/Province.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="37" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/notification/SaveFirstNotificationCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/OneInstitutionElement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/notification/Notification.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/SaveInstitutionElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/notification/EditEmployeeFromDistributor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="29" column="66" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="66" />
+          <caret line="15" column="51" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/notification/InstitutionForNotificationCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/institution/AllInstitutionElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="25" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/institution/AllInstitutionListCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/InstitutionForNotificationElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="24" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/LocalizationForNotificationElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/institution/OneInstitutionCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="43" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/institution/EditInstitutionCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/message/MessageType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/employees/OneEmployeeCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="289">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/CommandInvoker.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/employees/EditEmployeeElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="51">
+          <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/employees/OneEmployeeElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/notification/NotificationForDistributorListCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="53" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/DistributorDataElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/EditEmployeeForDistrbutorElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="50" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/AbstractChainElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="26" column="50" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/communication/ThreadedEchoServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="89" column="62" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/SaveFirstNotificationElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="63" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/SaveSecondNotificationElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/chaingOfResposibility/notification/NotificationForDistributorListElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/server/communication/EchoThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        <state relative-caret-position="431">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/repository/Repository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="157" column="48" selection-start-line="157" selection-start-column="48" selection-end-line="157" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/repository/EmployeeRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/notification/SaveFirstNotificationCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="55" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/message/command/notification/SaveSecondNotificationCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/notification/Notification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="65" column="19" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
+          <folding>
+            <element signature="e#1981#1982#0" expanded="false" />
+            <element signature="e#2048#2049#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/message/SecondMessageWithNotification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/repository/NotificationRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="138" column="95" selection-start-line="138" selection-start-column="82" selection-end-line="138" selection-end-column="95" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/24da8aff-68d5-4681-b81d-7a7e9d0d3832/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2084,20 +1896,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/model/institution/Institution.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/repository/InstitutionRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/repository/NotificationRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
-          <caret line="117" column="8" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="8" />
+        <state relative-caret-position="2346">
+          <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
@@ -2106,17 +1908,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="87" selection-start-line="24" selection-start-column="87" selection-end-line="24" selection-end-column="87" />
+        <state relative-caret-position="340">
+          <caret line="20" column="79" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="79" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/24da8aff-68d5-4681-b81d-7a7e9d0d3832/console.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/fasade/NotificationFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        <state relative-caret-position="519">
+          <caret line="40" column="77" selection-start-line="40" selection-start-column="77" selection-end-line="40" selection-end-column="77" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/fasade/LocalizationFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/fasade/InstitutionFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/server/fasade/EmployeesFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="10" column="21" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="11" />
+          <folding>
+            <element signature="e#958#959#0" expanded="true" />
+            <element signature="e#1009#1010#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

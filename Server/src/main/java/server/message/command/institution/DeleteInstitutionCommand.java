@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class DeleteInstitutionCommand implements Command<List<Institution>> {
 
-    private InstitutionFacade facade = new InstitutionFacade();
+    private InstitutionFacade facade = InstitutionFacade.getInstance();
 
     @Override
     public <S> List<Institution> execute(S param) {

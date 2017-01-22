@@ -9,7 +9,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class MessageWithNotification implements Serializable {
+public class FirstMessageWithNotification implements Serializable {
 
     private List<String> institutionNotification;
 

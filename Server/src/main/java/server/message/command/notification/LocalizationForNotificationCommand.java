@@ -10,7 +10,7 @@ import java.util.List;
 public class LocalizationForNotificationCommand implements Command<List<Province>> {
 
 
-    private LocalizationFacade localizationFacade = new LocalizationFacade();
+    private LocalizationFacade localizationFacade = LocalizationFacade.getInstance();
 
     @Override
     public <S> List<Province> execute(S param) {

@@ -8,7 +8,7 @@ import java.util.List;
 
 public class AllInstitutionListCommand implements Command<List<Institution>> {
 
-    private InstitutionFacade facade = new InstitutionFacade();
+    private InstitutionFacade facade = InstitutionFacade.getInstance();
 
     @Override
     public <S> List<Institution> execute(S param) {

@@ -9,7 +9,7 @@ import server.model.employee.Employee;
  */
 public class OneEmployeeCommand implements Command<Employee> {
 
-    private EmployeesFacade fasade = new EmployeesFacade();
+    private EmployeesFacade fasade =EmployeesFacade.getInstance();
 
     @Override
     public <S> Employee execute(S param) {

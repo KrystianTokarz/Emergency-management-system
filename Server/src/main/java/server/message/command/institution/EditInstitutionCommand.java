@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class EditInstitutionCommand implements Command<List<Institution>> {
 
-    private  InstitutionFacade facade = new InstitutionFacade();
+    private  InstitutionFacade facade =InstitutionFacade.getInstance();
     @Override
     public <S> List<Institution> execute(S param) {
         return facade.updateInstitution((Map<String , Institution>) param);

@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class NotificationForDistributorListCommand implements Command<Map<String,List<Notification>>>  {
 
-    private NotificationFacade notificationFacade = new NotificationFacade();
+    private NotificationFacade notificationFacade = NotificationFacade.getInstance();
 
 
     @Override

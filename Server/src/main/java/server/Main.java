@@ -59,6 +59,18 @@ public class Main {
         institution.setStreet(street);
 
 
+        Institution institution5 = new Institution();
+        institution5.setName("Policja nr.5");
+        institution5.setAvailability(true);
+        institution5.setInstitutionImage(null);
+        institution5.setInstitutionType(InstitutionType.POLICE);
+        institution5.setProvince(province);
+        institution5.setLocality(locality);
+        Street tmpStreet = new Street();
+        tmpStreet.setStreet("Solidarnosci");
+        tmpStreet.setSpecialNumber("22");
+        institution5.setStreet(tmpStreet);
+
 
         Locality locality3= new Locality();
         locality3.setLocality("Sandomierz");
@@ -144,6 +156,7 @@ public class Main {
             entityManager.persist(institution);
             entityManager.persist(institution2);
             entityManager.persist(institution3);
+            entityManager.persist(institution5);
             entityManager.persist(employee);
             entityManager.persist(employee2);
         entityManager.persist(notification);

@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public class EditEmployeeCommand implements Command<List<Employee>> {
 
-    private EmployeesFacade fasade = new EmployeesFacade();
+    private EmployeesFacade fasade = EmployeesFacade.getInstance();
 
     @Override
     public <S> List<Employee> execute(S param) {

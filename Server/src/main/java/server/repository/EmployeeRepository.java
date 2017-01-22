@@ -141,6 +141,7 @@ public class EmployeeRepository extends Repository {
         criteriaEmployeeUpdate.set("firstName",newEmployee.getFirstName());
         criteriaEmployeeUpdate.set("lastName",newEmployee.getLastName());
         criteriaEmployeeUpdate.set("email",newEmployee.getEmail());
+        criteriaEmployeeUpdate.set("type",newEmployee.getType());
         if(isNewImage == true)
             criteriaEmployeeUpdate.set("employeeImage",newEmployee.getEmployeeImage());
         criteriaEmployeeUpdate.where(employeeInDatabase.get("firstName").in(oldEmployee.getFirstName())

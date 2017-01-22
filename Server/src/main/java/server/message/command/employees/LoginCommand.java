@@ -11,7 +11,7 @@ import server.model.employee.EmployeeAccount;
  */
 public class LoginCommand implements Command<Employee> {
 
-    private EmployeesFacade fasade = new EmployeesFacade();
+    private EmployeesFacade fasade = EmployeesFacade.getInstance();
 
     @Override
     public <S> Employee execute(S param) {

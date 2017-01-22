@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class EmployeeListCommand implements Command<List<Employee>> {
 
-    private EmployeesFacade fasade = new EmployeesFacade();
+    private EmployeesFacade fasade = EmployeesFacade.getInstance();
 
     @Override
         public <S> List<Employee> execute(S param) {

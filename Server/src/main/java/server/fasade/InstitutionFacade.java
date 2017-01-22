@@ -12,28 +12,45 @@ import java.util.Map;
  */
 public class InstitutionFacade {
 
-    InstitutionRepository institutionRepository = InstitutionRepository.getInstance();
+    private InstitutionFacade() {
+    }
+
+    private static InstitutionFacade instance = null;
+
+    public static InstitutionFacade getInstance() {
+        if (instance == null) {
+            instance = new InstitutionFacade();
+        }
+        return instance;
+    }
+
+
+    private InstitutionRepository institutionRepository = InstitutionRepository.getInstance();
 
     public List<Institution> findAllInstitutions() {
         return institutionRepository.findAll();
     }
 
-    public List<Institution> deleteInstitution(List<Institution> institutions) {
+    public List<Institution> deleteInstitution(Object institutionsObject) {
+        List<Institution> institutions = (List<Institution>) institutionsObject;
         institutionRepository.deleteEmployee(institutions);
         return institutionRepository.findAll();
 
     }
 
-    public List<Institution> saveNewInstitution(Institution institution) {
+    public List<Institution> saveNewInstitution(Object institutionObject) {
+        Institution institution = (Institution) institutionObject;
         institutionRepository.saveNewInstitution(institution);
         return institutionRepository.findAll();
     }
 
-    public Institution findInstitutionByName(Institution institution) {
+    public Institution findInstitutionByName(Object institutionObject) {
+        Institution institution = (Institution) institutionObject;
         return institutionRepository.findInstitutionByName(institution);
     }
 
-    public List<Institution> updateInstitution(Map<String, Institution> institutionMap) {
+    public List<Institution> updateInstitution(Object institutionMapObject) {
+        Map<String, Institution> institutionMap = (Map<String, Institution>) institutionMapObject;
         institutionRepository.updateInstitution(institutionMap);
         return institutionRepository.findAll();
 

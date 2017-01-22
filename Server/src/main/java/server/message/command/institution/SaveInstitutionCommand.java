@@ -9,7 +9,7 @@ import java.util.List;
 
 public class SaveInstitutionCommand implements Command<List<Institution>> {
 
-    private InstitutionFacade facade = new InstitutionFacade();
+    private InstitutionFacade facade = InstitutionFacade.getInstance();
     @Override
     public <S> List<Institution> execute(S param) {
         return facade.saveNewInstitution((Institution) param);
