@@ -5,9 +5,10 @@ import server.message.facade.ClientFacadeProxy;
 import server.message.mediator.CommandMediator;
 import server.message.mediator.Mediator;
 
+/**
+ * Command pattern element
+ */
 public class AllInstitutionListCommand implements Command {
-
-
 
     @Override
     public void execute() {

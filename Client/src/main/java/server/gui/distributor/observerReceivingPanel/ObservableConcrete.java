@@ -3,6 +3,9 @@ package server.gui.distributor.observerReceivingPanel;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Observable class which implements Observable interface for all operations on observable
+ */
 public class ObservableConcrete implements Observable {
 
     private List<Observer> observers = new ArrayList<>();

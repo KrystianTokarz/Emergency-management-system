@@ -4,6 +4,9 @@ import server.model.message.MessageType;
 
 import java.io.Serializable;
 
+/**
+ * Class which allow to send and receive different Object from/to server (Proxy pattern)
+ */
 public class Message implements Serializable {
 
     static final long serialVersionUID = 1L;
@@ -17,7 +20,6 @@ public class Message implements Serializable {
         this.messageType = builder.messageType;
     }
 
-
     public MessageType getType() {
         return messageType;
     }
@@ -25,7 +27,6 @@ public class Message implements Serializable {
     public Object getObject() {
         return object;
     }
-
 
     public static class MessageBuilder{
         private MessageType messageType;

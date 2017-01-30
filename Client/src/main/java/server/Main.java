@@ -14,6 +14,9 @@ import server.communication.ThreadedEchoClient;
 import java.io.IOException;
 import java.util.Optional;
 
+/**
+ * Main class which create JavaFX login stage
+ */
 public class Main  extends Application{
 
     public static void main(String[] args) {
@@ -49,9 +52,7 @@ public class Main  extends Application{
                 primaryStage.close();
             }
         });
-
     }
-
 }
 
 

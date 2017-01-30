@@ -116,7 +116,7 @@
             <DropShadow blurType="TWO_PASS_BOX" color="#221717" />
          </effect>
       </Button>
-      <VBox alignment="BASELINE_CENTER" layoutX="14.0" layoutY="434.0" prefHeight="183.0" prefWidth="118.0" spacing="15">
+      <VBox alignment="BASELINE_CENTER" layoutX="15.0" layoutY="450.0" prefHeight="183.0" prefWidth="118.0" spacing="15">
          <children>
             <Label prefHeight="15.0" prefWidth="57.0" text="PANEL" textAlignment="CENTER">
                <font>
@@ -127,7 +127,6 @@
                </effect></Label>
             <ToggleButton fx:id="breakOnButton" mnemonicParsing="false" onAction="#manageDistributorBreak" />
             <ToggleButton fx:id="breakOffButton" mnemonicParsing="false" onAction="#manageDistributorBreak" />
-            <Button mnemonicParsing="false" text="Work inf." />
          </children>
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />

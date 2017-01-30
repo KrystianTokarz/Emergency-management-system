@@ -49,7 +49,7 @@ import java.util.List;
 public class DistributorController implements Initializable {
 
     @FXML
-    private Label userDataLabel = new Label();
+    private Label userDataLabel;
 
     @FXML
     private Label distributorPanelLabel;
@@ -107,9 +107,6 @@ public class DistributorController implements Initializable {
     private ResourceBundle resourceBundle;
 
 
-
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         commandMediator = DistributorCommandMediator.getInstance();
@@ -132,20 +129,13 @@ public class DistributorController implements Initializable {
                 e.printStackTrace();
             }
 
-
-
-
         resourceBundle = resources;
         loadInternationalizationNames();
-
-
         Timeline timelineForNotificationInApplication=commandMediator.give4SecondTimelineForNotificationInApplication();
-
         timelineForNotificationInApplication.getKeyFrames().add(new KeyFrame(Duration.seconds(4), new EventHandler<ActionEvent>() {
 
             @Override
             public void handle(ActionEvent event) {
-
                 int selectedIndexForAllNotifications = tableWithAllSystemNotifications.getSelectionModel().getSelectedIndex();
                 int selectedIndexForUserNotifications = tableWithAllSystemNotifications.getSelectionModel().getSelectedIndex();
                 commandMediator.sendMessageForAllNotification();
@@ -153,8 +143,10 @@ public class DistributorController implements Initializable {
                 List<Notification> notificationForAllApplicationTable = commandMediator.getNotificationForAllApplicationTable();
                 notificationForUserTablesList = FXCollections.observableArrayList();
                 List<Notification> notificationForUserTable = commandMediator.getNotificationForUserTable();
+
                 if(notificationForAllApplicationTable!=null && notificationForUserTable!=null) {
                     for (Notification notification : notificationForAllApplicationTable) {
+                        System.out.println(notification.getInstitutions());
                         NotificationForDistributorTables forUser = new NotificationForTable.NotificationBuilder(notification.getAccidentType(),
                                 notification.getTimeCreated())
                                 .institutionType(notification.getInstitutions())
@@ -176,12 +168,9 @@ public class DistributorController implements Initializable {
 
                         notificationForUserTablesList.add(forUser);
                     }
-
-
                     tableWithUserNotifications.setItems(notificationForUserTablesList);
                     tableWithUserNotifications.refresh();
                     tableWithUserNotifications.getSelectionModel().select(selectedIndexForUserNotifications);
-
                     tableWithAllSystemNotifications.setItems(notificationForAllApplicationTablesList);
                     tableWithAllSystemNotifications.refresh();
                 }
@@ -189,8 +178,6 @@ public class DistributorController implements Initializable {
         }));
         timelineForNotificationInApplication.setCycleCount(Timeline.INDEFINITE);
         timelineForNotificationInApplication.play();
-
-
 
         Image googleImage = new Image("images/world-web.png",20,20,false,false);
         Image antiStormImage = new Image("images/weather.png",20,20,false,false);
@@ -228,16 +215,12 @@ public class DistributorController implements Initializable {
         breakOnButton.setToggleGroup(toggleGroup);
         breakOffButton.setToggleGroup(toggleGroup);
 
-
-
         final WebView webView = new WebView();
         final WebEngine webEngine = webView.getEngine();
         webEngine.load(getClass().getClassLoader().getResource("googleMap/googlemap.html").toString());
-
         BorderPane root = commandMediator.createGoogleMap(webEngine);
         root.setCenter(webView);
         googleMapPane.getChildren().setAll(root);
-
     }
 
     public void activeEmergencyAlarm(){
@@ -250,10 +233,7 @@ public class DistributorController implements Initializable {
         if (result.get() == ButtonType.OK){
             commandMediator.activeEmergencyAlarm();
         }
-
-
     }
-
 
     public void loadInternationalizationNames(){
         distributorPanelLabel.setText(resourceBundle.getString("panel_name"));
@@ -314,13 +294,10 @@ public class DistributorController implements Initializable {
     }
 
 
-
-
     @FXML
     public void showEmployeeEditView(ActionEvent event) throws IOException, InterruptedException {
-
-        Employee employee = commandMediator.getEmployeeToEdit();
         commandMediator.registerDistributorEmployeeEditService(new DistributorEmployeeEditService(commandMediator));
+        Employee employee = commandMediator.getEmployeeToEdit();
         commandMediator.sendForEmployeeDataToEdit(employee);
         employeeEditViews = FXMLLoader.load(getClass().getClassLoader().getResource("views/distributor/employeeData/distributorPanelEditingEmployeeView.fxml"),resourceBundle);
         Stage employeeEditStage = new Stage();
@@ -330,7 +307,6 @@ public class DistributorController implements Initializable {
             e.consume();
         });
         employeeEditStage.show();
-
     }
 
     @FXML
@@ -342,25 +318,8 @@ public class DistributorController implements Initializable {
         }
         else if (id.equals("breakOffButton")) {
             commandMediator.breakForUser(false,tableWithAllSystemNotifications,tableWithUserNotifications,googleMapPane);
-
         }
     }
-//
-//    public void showInstitutionView(ActionEvent actionEvent) throws IOException, InterruptedException {
-//        if(employeeViews != null ) {
-//            Timeline timeline = commandMediator.give5SecondTimelineForEmployee();
-//            timeline.stop();
-//        }
-//        commandMediator.sendMessageForInstitutionList();
-//        commandMediator.registerAdministratorInstitutionManagementService(new AdministratorInstitutionManagementService(commandMediator));
-//        institutionViews = FXMLLoader.load(getClass().getClassLoader().getResource("views/administrator/institutionsPanel/administratorPanelInstitutionView.fxml"));
-//        borderPane.setTop(institutionViews);
-//
-//
-//    }
-
-
-
 }
 
 

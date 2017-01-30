@@ -16,13 +16,15 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
+/**
+ * Institution builder implementation
+ */
 public class InstitutionBuilderImpl implements  InstitutionBuilder {
     private Institution institution;
 
     public InstitutionBuilderImpl(){
         this.institution = new Institution();
     }
-
 
     @Override
     public void setInstitutionName(String institutionName) {

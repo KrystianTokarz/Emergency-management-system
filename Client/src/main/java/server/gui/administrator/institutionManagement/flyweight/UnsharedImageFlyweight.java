@@ -5,34 +5,24 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-
+/**
+ * Class for unshared image (Flyweight pattern)
+ */
 public class UnsharedImageFlyweight implements ImageFlyweight {
 
-    private byte[] employeeImage;
+    private byte[] institutionImage;
 
     public UnsharedImageFlyweight(){
-//        try {
-//            BufferedImage image =
-//                    ImageIO.read(new File("c:\\image\\mypic.jpg"));
-//            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//            ImageIO.write( image, "jpg", baos );
-//            baos.flush();
-//            employeeImage = baos.toByteArray();
-//            baos.close();
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
 
         Path path = Paths.get("src\\main\\resources\\images\\institution-image.png");
         try {
-            employeeImage = Files.readAllBytes(path);
+            institutionImage = Files.readAllBytes(path);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
     @Override
-    public byte[] getCorrectEmployeeImage() {
-        return this.employeeImage;
+    public byte[] getCorrectInstitutionImage() {
+        return this.institutionImage;
     }
 }

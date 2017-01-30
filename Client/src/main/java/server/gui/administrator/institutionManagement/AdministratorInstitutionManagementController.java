@@ -69,29 +69,12 @@ public class AdministratorInstitutionManagementController implements Initializab
         alert.show();
     }
 
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         commandMediator = CommandMediator.getInstance();
 
-
-
-
         localityComboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
             if(newValue!= null) {
-
-//                if(moreConvertedInstitutionForTables== null) {
-//                    moreConvertedInstitutionForTables = commandMediator.convertInstitutionListIntoIntitutionForTableList(
-//                            commandMediator.getRightInstitutionListForLocality(
-//                                    convertedInstitutionForTables, (String) newValue
-//                            ));
-//                }else{
-//                    moreConvertedInstitutionForTables = commandMediator.convertInstitutionListIntoIntitutionForTableList(
-//                            commandMediator.getRightInstitutionListForLocality(
-//                                    moreConvertedInstitutionForTables, (String) newValue
-//                            ));
-//                }
                 String provinceComboBoxValue = (String) provinceComboBox.getValue();
                 String typeComboBoxValue = (String) institutionTypeComboBox.getValue();
 
@@ -105,9 +88,7 @@ public class AdministratorInstitutionManagementController implements Initializab
                 table.setItems(moreConvertedInstitutionForTables);
                 table.refresh();
             }
-
         });
-
 
         institutionTypeComboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
             if((oldValue != null) && (oldValue.equals(newValue)))
@@ -121,17 +102,12 @@ public class AdministratorInstitutionManagementController implements Initializab
                 if(localityComboBoxValue == null)
                     provinceComboBoxValue = "All";
 
-
-
                 moreConvertedInstitutionForTables = commandMediator.convertInstitutionListIntoIntitutionForTableList(
                         commandMediator.getRightInstitutionListForType((String) newValue,provinceComboBoxValue,localityComboBoxValue));
                 table.setItems(moreConvertedInstitutionForTables);
                 table.refresh();
-
             }
         });
-
-
 
         provinceComboBox.valueProperty().addListener((observable, oldValue, newValue) -> {
 
@@ -155,7 +131,6 @@ public class AdministratorInstitutionManagementController implements Initializab
                             for (Locality locality : localityList) {
                                 nameOfLocality.add(locality.getLocality());
                             }
-
                             localityComboBox.setItems(nameOfLocality);
                         }
                     } else if (newValue.equals("Lodzkie")) {
@@ -166,7 +141,6 @@ public class AdministratorInstitutionManagementController implements Initializab
                             for (Locality locality : localityList) {
                                 nameOfLocality.add(locality.getLocality());
                             }
-
                             localityComboBox.setItems(nameOfLocality);
                         }
                     } else if (newValue.equals("Maslovia")) {
@@ -185,8 +159,6 @@ public class AdministratorInstitutionManagementController implements Initializab
                     else
                         localityComboBox.setDisable(true);
                 }
-
-
                 convertedInstitutionForTables = commandMediator.convertInstitutionListIntoIntitutionForTableList(rightInstitutionList);
                 String valueInstitutionType = (String) institutionTypeComboBox.getValue();
                 if(valueInstitutionType!=null && !valueInstitutionType.equals("All"))
@@ -209,7 +181,6 @@ public class AdministratorInstitutionManagementController implements Initializab
             }
         };
 
-
         institutionListTask.setOnSucceeded(e-> {
             institutionForTables.addAll(institutionListTask.getValue());
             sizeOfElement = institutionForTables.size();
@@ -219,10 +190,6 @@ public class AdministratorInstitutionManagementController implements Initializab
         });
 
         new Thread(institutionListTask).start();
-
-
-
-
 
         Timeline timeline=commandMediator.give10SecondTimelineForInstitution();
 
@@ -246,7 +213,6 @@ public class AdministratorInstitutionManagementController implements Initializab
                 table.getSelectionModel().select(selectedIndex);
             }
         }));
-
 
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();

@@ -2,6 +2,10 @@ package server.gui.distributor.receivingPanel;
 
 import javafx.beans.property.SimpleStringProperty;
 
+
+/**
+ * Class which is uses into javaFX (in java table) in view for caller which make call for help
+ */
 public class CallerForTable {
 
     private SimpleStringProperty callerPhoneNumber = new SimpleStringProperty("");
@@ -36,10 +40,4 @@ public class CallerForTable {
     public void setCallerLocalization(String callerLocalization) {
         this.callerLocalization.set(callerLocalization);
     }
-
-    //public static class CallerFactory{
-
-//        public CallerForTable;
-//    }
-
 }

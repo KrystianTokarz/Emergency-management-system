@@ -11,6 +11,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Class which is uses into javaFX (in java table) in view for institution
+ */
 public class NotificationForTable {
 
 

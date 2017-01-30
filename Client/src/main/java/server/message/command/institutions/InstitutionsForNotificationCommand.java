@@ -8,8 +8,10 @@ import server.model.localization.Province;
 
 import java.util.List;
 
+/**
+ * Command pattern element
+ */
 public class InstitutionsForNotificationCommand implements Command {
-
 
     @Override
     public void execute() {

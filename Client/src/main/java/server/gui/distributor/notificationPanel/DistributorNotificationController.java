@@ -177,7 +177,6 @@ public class DistributorNotificationController implements Initializable {
                 emergencyChoiceBox.setDisable(false);
                 policeChoiceBox.setDisable(false);
 
-                System.out.println("== " + newValue);
                 List<Institution> rightInstitutionLForFireBrigade = commandMediator.getRightInstitutionListForProvinceAndLocality(InstitutionType.FIRE_BRIGADE,(String) newValue);
                 List<Institution> rightInstitutionListForPolice = commandMediator.getRightInstitutionListForProvinceAndLocality(InstitutionType.POLICE,(String) newValue);
                 List<Institution> rightInstitutionListForEmergency = commandMediator.getRightInstitutionListForProvinceAndLocality(InstitutionType.EMERGENCY,(String) newValue);
@@ -245,7 +244,6 @@ public class DistributorNotificationController implements Initializable {
     @FXML
     public void sendSecondNotification(){
         String pattern = "\\d+";
-        //System.out.println(myString.matches(pattern));
         if(numberOfVictimsTextField.getText()!="" && accidentListView.getSelectionModel().getSelectedIndex()!=-1) {
             if(!numberOfVictimsTextField.getText().matches(pattern))
                 showErrorInput();
@@ -288,7 +286,6 @@ public class DistributorNotificationController implements Initializable {
                 commandMediator.startThread();
                 Stage stage = (Stage) secondNotificationButton.getScene().getWindow();
                 stage.close();
-
             }
         }
     }
@@ -305,7 +302,6 @@ public class DistributorNotificationController implements Initializable {
 
             List<String> institutionList = new ArrayList<>();
 
-
             String selectedEmergency =  (String) emergencyChoiceBox.getSelectionModel().getSelectedItem();
             if(!selectedEmergency.equals("No selected"))
                 institutionList.add(selectedEmergency);
@@ -316,14 +312,10 @@ public class DistributorNotificationController implements Initializable {
             if(!selectedPolice.equals("No selected"))
                 institutionList.add(selectedPolice);
 
-
             String firstName = callerFirstNameTextField.getText();
             String lastName = callerLastNameTextField.getText();
             String number = callerNumber.getText();
-
-
             String province = (String) provinceChoiceBox.getSelectionModel().getSelectedItem();
-
             String locality = (String) localityChoiceBox.getSelectionModel().getSelectedItem();
             String street = null;
             if (streetChoiceBox.getSelectionModel().getSelectedItem() != null)
@@ -363,7 +355,6 @@ public class DistributorNotificationController implements Initializable {
             stage.setOnCloseRequest(event -> {
                 event.consume();
             });
-
         }else{
             showEmptyFieldPopup();
         }

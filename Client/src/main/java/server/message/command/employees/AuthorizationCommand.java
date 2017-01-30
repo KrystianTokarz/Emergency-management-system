@@ -14,10 +14,10 @@ import server.model.employee.EmployeeProfileType;
 
 import java.io.IOException;
 
+/**
+ * Command pattern element
+ */
 public class AuthorizationCommand implements Command {
-
-
-
 
     @Override
     public void execute() {

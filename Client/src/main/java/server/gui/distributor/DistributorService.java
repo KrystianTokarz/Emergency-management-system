@@ -44,18 +44,9 @@ public class DistributorService {
     private Timeline timelineForUserNotification = new Timeline();
     private List<Notification> notificationForDistributorList = null;
     private List<Notification> notificationListForApplication = null;
-
     private ObservableConcrete additionalPanelObserver;
-
     private DistributorCommandMediator commandMediator;
     private ObservableList<CallerForTable> observableCallerForTableList;
-
-
-
-    private String language;
-    private String country;
-    private Locale currentLocale;
-
 
     public DistributorService(DistributorCommandMediator commandMediator, ObservableConcrete observableConcrete){
         this.commandMediator = commandMediator;
@@ -214,9 +205,7 @@ public class DistributorService {
 
     public void activeEmergencyAlarm() {
         Mixer.Info[] mixerInfo = AudioSystem.getMixerInfo();
-
         Mixer mixer = AudioSystem.getMixer(mixerInfo[0]);
-
         DataLine.Info dataInfo = new DataLine.Info(Clip.class, null);
         Clip clip = null;
         try {
@@ -239,7 +228,6 @@ public class DistributorService {
         clip.start();
     }
 
-
     public Timeline give4SecondTimelineForNotificationInApplication() {
         return timelineForAllNotification;
     }
@@ -247,19 +235,6 @@ public class DistributorService {
     public Timeline give4SecondTimelineForNotificationForUser() {
         return timelineForUserNotification;
     }
-
-//    public void sendMessageFromUserNotification() {
-//        Employee employee = new Employee();
-//        employee.setFirstName(firstName);
-//        employee.setLastName(lastName);
-//        employee.setEmail(email);
-//        Message message = new Message.MessageBuilder(MessageType.SEND_NOTIFICATION_FOR_DISTRIBUTOR)
-//                .object(employee)
-//                .build();
-//        Thread thread = new EchoThread(message);
-//        thread.start();
-//
-//    }
 
     public void sendMessageForAllNotification(){
         Employee employee = new Employee();
@@ -274,18 +249,7 @@ public class DistributorService {
 
     }
 
-//    public void setNotificationListForDistributor(Object notificationListForDistributor) {
-//        this.notificationForDistributorList = (List<Notification>) notificationListForDistributor;
-//    }
-//
     public List<Notification> getNotificationListForDistributor() {
-//        List<Notification> tmpNotificationList = new ArrayList<>();
-//        if()
-//        for (Notification notiifcation: notificationListForApplication) {
-//            if(notiifcation.getEmployee().getFirstName().equals(firstName) && notiifcation.getEmployee().getLastName().equals(lastName)
-//                    && notiifcation.getEmployee().getEmail().equals(email))
-//                tmpNotificationList.add(notiifcation);
-//        }
         return notificationForDistributorList;
     }
 
@@ -321,11 +285,6 @@ public class DistributorService {
             setBreakView(b,tableWithAllSystemNotifications, tableWithUserNotifications,googleMapPane);
         }
     }
-
-
-
-
-
 
     public void acceptableMessage() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -381,10 +340,8 @@ public class DistributorService {
             }
         };
         Thread thread = new Thread(task);
-        //thread.setDaemon(true);
         thread.start();
     }
-
 
 }
 

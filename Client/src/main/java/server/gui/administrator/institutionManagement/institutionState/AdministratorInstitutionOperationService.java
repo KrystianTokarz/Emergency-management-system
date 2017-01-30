@@ -34,10 +34,6 @@ public class AdministratorInstitutionOperationService {
 
     }
 
-//    public TableView<InstitutionForTable> getTableWithInstitution(){
-//        return this.table;
-//    }
-
     public int getValueSelectedView(){
         return this.valueSelectedView;
     }

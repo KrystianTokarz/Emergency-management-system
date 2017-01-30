@@ -111,13 +111,8 @@ public class AdministratorInstitutionOperationController implements Initializabl
             }
         });
 
-
         ObservableList<String> nameOfLocality = FXCollections.observableArrayList();
         localityTypeChoiceBox.setDisable(true);
-
-
-
-
 
         provinceTypeChoiceBox.valueProperty().addListener((observable, oldValue, newValue) -> {
 
@@ -129,7 +124,6 @@ public class AdministratorInstitutionOperationController implements Initializabl
                 localityTypeChoiceBox.getItems().clear();
                     if (newValue.equals("Swietokrzyskie")) {
                         rightInstitutionList = commandMediator.getRightInstitutionList(ProvinceType.SWIETOKRZYSKIE);
-                        System.out.println(rightInstitutionList.size() + " ZISE");
                         if(rightInstitutionList.size()!=0) {
                             List<Locality> localityList = rightInstitutionList.get(0).getProvince().getLocalityList();
                             for (Locality locality : localityList) {
@@ -175,7 +169,6 @@ public class AdministratorInstitutionOperationController implements Initializabl
 
 
             institutionEditTask.setOnSucceeded(e -> {
-                System.out.println("[yyyyy");
                 Institution institution = institutionEditTask.getValue();
                 institutionNameTextField.setText(institution.getName());
                 if (institution.getProvince().getProvinceType() == ProvinceType.SWIETOKRZYSKIE) {
@@ -185,10 +178,6 @@ public class AdministratorInstitutionOperationController implements Initializabl
                 } else if (institution.getProvince().getProvinceType() == ProvinceType.MASLOVIA) {
                     provinceTypeChoiceBox.getSelectionModel().select(2);
                 }
-
-//                System.out.println(nameOfLocality.size());
-//                nameOfLocality.add(institution.getLocality().getLocality());
-//                System.out.println(nameOfLocality.size());
 
                 String realLocality = institution.getLocality().getLocality();
                 localityTypeChoiceBox.getSelectionModel().select(realLocality);
@@ -226,11 +215,6 @@ public class AdministratorInstitutionOperationController implements Initializabl
         }
     }
 
-
-
-
-
-
     @FXML
     public void closeEditInstitutionWindow(ActionEvent actionEvent) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
@@ -265,8 +249,4 @@ public class AdministratorInstitutionOperationController implements Initializabl
             showEmptyFieldPopup();
         }
     }
-
-
-
-
 }

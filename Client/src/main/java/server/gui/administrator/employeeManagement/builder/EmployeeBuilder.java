@@ -6,6 +6,10 @@ import server.model.employee.EmployeeProfileType;
 
 import java.time.LocalDate;
 
+
+/**
+ * Builder pattern interface for build employee
+ */
 public interface EmployeeBuilder {
 
     Employee getResult();

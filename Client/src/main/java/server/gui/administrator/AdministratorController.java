@@ -55,7 +55,6 @@ public class AdministratorController implements Initializable {
     @FXML
     private Button employeeButton;
 
-
     private PieChart pieChart;
 
     private Parent employeeViews = null;
@@ -123,13 +122,10 @@ public class AdministratorController implements Initializable {
             timeline.stop();
         }
 
-
         commandMediator.sendMessageForEmployeeList();
         commandMediator.registerAdministratorEmployeeManagementService(new AdministratorEmployeeManagementService(commandMediator));
         employeeViews = FXMLLoader.load(getClass().getClassLoader().getResource("views/administrator/employeesPanel/administratorPanelEmployeeView.fxml"));
         borderPane.setTop(employeeViews);
-
-
     }
 
     public void showInstitutionView(ActionEvent actionEvent) throws IOException, InterruptedException {
@@ -145,12 +141,10 @@ public class AdministratorController implements Initializable {
         commandMediator.registerAdministratorInstitutionManagementService(new AdministratorInstitutionManagementService(commandMediator));
         institutionViews = FXMLLoader.load(getClass().getClassLoader().getResource("views/administrator/institutionsPanel/administratorPanelInstitutionView.fxml"));
         borderPane.setTop(institutionViews);
-
-
     }
 
-    public void showSystemStatistic(ActionEvent actionEvent)
-    {
+    public void showSystemStatistic(ActionEvent actionEvent) {
+
         if(employeeViews != null ) {
             Timeline timeline = commandMediator.give5SecondTimelineForEmployee();
             timeline.stop();

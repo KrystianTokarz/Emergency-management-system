@@ -15,6 +15,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
 
+/**
+ * Employee builder implementation
+ */
 public class EmployeeBuilderImpl implements  EmployeeBuilder {
 
     private Employee employee;

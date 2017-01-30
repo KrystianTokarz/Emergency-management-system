@@ -73,7 +73,6 @@ public class AdministratorInstitutionManagementService {
                     }
                 }
             }
-
         }
         return rightInstitution;
     }
@@ -95,9 +94,6 @@ public class AdministratorInstitutionManagementService {
         else  if(provinceComboBoxValue.equals("Maslovia"))
             provinceType = ProvinceType.MASLOVIA;
 
-
-
-
         if(type.equals("All"))
             institutionType = null;
         else if(type.equals("Fire Brigade"))
@@ -107,16 +103,11 @@ public class AdministratorInstitutionManagementService {
         else if(type.equals("Emergency"))
             institutionType = InstitutionType.EMERGENCY;
 
-
-//        List<Institution> tmpInstitutionList = new ArrayList<>();
-
         for (Institution institution: allInstitutionList) {
             if(( institutionType == null || institution.getInstitutionType() == institutionType) && (provinceType == null || institution.getProvince().getProvinceType() == provinceType)) {
                 if(localityComboBoxValue!= null ) {
-                   // for (Locality locality : institution.getProvince().getLocalityList()) {
                         if (institution.getLocality().getLocality().equals(localityComboBoxValue))
                             rightInstitution.add(institution);
-                   // }
                 }else{
                             rightInstitution.add(institution);
                 }
@@ -156,7 +147,7 @@ public class AdministratorInstitutionManagementService {
             else {
                 correctImageFlyweight = imageFlyweightFactory.createCorrectImageFlyweight(institution.getInstitutionImage().getImage());
             }
-            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(correctImageFlyweight.getCorrectEmployeeImage());
+            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(correctImageFlyweight.getCorrectInstitutionImage());
             try {
                 BufferedImage bufferedImage = ImageIO.read(byteArrayInputStream);
                 Image image = SwingFXUtils.toFXImage(bufferedImage, null);
@@ -199,7 +190,7 @@ public class AdministratorInstitutionManagementService {
             else {
                 correctImageFlyweight = imageFlyweightFactory.createCorrectImageFlyweight(institution.getInstitutionImage().getImage());
             }
-            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(correctImageFlyweight.getCorrectEmployeeImage());
+            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(correctImageFlyweight.getCorrectInstitutionImage());
             try {
                 BufferedImage bufferedImage = ImageIO.read(byteArrayInputStream);
                 Image image = SwingFXUtils.toFXImage(bufferedImage, null);
@@ -209,7 +200,6 @@ public class AdministratorInstitutionManagementService {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
 
             institutionForTable.setName(institution.getName());
             institutionForTable.setAvailability(institution.getAvailability());

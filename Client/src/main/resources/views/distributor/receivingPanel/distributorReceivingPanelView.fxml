@@ -26,7 +26,7 @@
           </TableColumn>
         </columns>
       </TableView>
-      <Label fx:id="distributorLabel" alignment="CENTER" layoutX="47.0" layoutY="27.0" prefHeight="37.0" prefWidth="203.0" textAlignment="CENTER">
+      <Label fx:id="distributorLabel" alignment="CENTER" layoutX="14.0" layoutY="27.0" prefHeight="37.0" prefWidth="273.0" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>

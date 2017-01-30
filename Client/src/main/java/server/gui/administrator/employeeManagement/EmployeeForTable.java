@@ -7,6 +7,9 @@ import javafx.scene.image.ImageView;
 
 import java.awt.image.BufferedImage;
 
+/**
+ * Class which is uses into javaFX (in java table) in view for employee
+ */
 public class EmployeeForTable {
 
     private ImageView image = null;

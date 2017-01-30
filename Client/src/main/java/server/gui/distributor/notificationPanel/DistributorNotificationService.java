@@ -52,7 +52,6 @@ public class DistributorNotificationService {
     }
 
     public List<String> returnAllProvince(){
-        System.out.println("..." + localizationForServer);
         List<String> provinceNameList = new ArrayList<>();
         for (Province province: localizationForServer) {
             provinceNameList.add(province.getProvinceType().toString());
@@ -84,10 +83,6 @@ public class DistributorNotificationService {
             }
         }
         List<Locality> localityList = tmpProvince.getLocalityList();
-        //List<String> localityNameList = new ArrayList<>();
-//        for (Locality locality: localityList) {
-//            localityNameList.add(locality.getLocality());
-//        }
         return localityList;
     }
 
@@ -99,10 +94,7 @@ public class DistributorNotificationService {
                 selectedLocality = locality;
             }
         }
-
         return selectedLocality.getStreetList();
-
-
     }
 
 
@@ -142,7 +134,6 @@ public class DistributorNotificationService {
                         rightInstitution.add(institution);
                     }
                 }
-
         }
         return rightInstitution;
     }
@@ -180,7 +171,6 @@ public class DistributorNotificationService {
                 .build();
         Thread thread = new EchoThread(message);
         thread.start();
-
     }
 
     public void setNotificationId(Long notificationId) {
@@ -195,7 +185,6 @@ public class DistributorNotificationService {
                 .build();
         Thread thread = new EchoThread(message);
         thread.start();
-
     }
 
     public boolean returnResultOfSaveAllNotificationInDatabase(){
@@ -203,7 +192,6 @@ public class DistributorNotificationService {
             return false;
         else
             return true;
-       // return this.resultNotificationInServer;
     }
 
     public void setResultNotificationInServer(Boolean resultNotificationInServer) {

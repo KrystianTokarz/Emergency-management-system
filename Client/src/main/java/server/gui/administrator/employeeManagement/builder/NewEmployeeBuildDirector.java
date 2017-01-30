@@ -6,6 +6,9 @@ import server.model.employee.EmployeeProfileType;
 
 import java.time.LocalDate;
 
+/**
+ * Employee builder director
+ */
 public class NewEmployeeBuildDirector {
 
     private EmployeeBuilder employeeBuilder;
@@ -23,7 +26,6 @@ public class NewEmployeeBuildDirector {
         employeeBuilder.setImage(image);
         return employeeBuilder.getResult();
     }
-
 }
 
 

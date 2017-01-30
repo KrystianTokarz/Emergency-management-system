@@ -5,9 +5,10 @@ import server.message.facade.ClientFacadeProxy;
 import server.message.mediator.DistributorCommandMediator;
 import server.model.employee.Employee;
 
+/**
+ * Command pattern element
+ */
 public class EditEmployeeDataCommand implements Command{
-
-
 
     @Override
     public void execute() {

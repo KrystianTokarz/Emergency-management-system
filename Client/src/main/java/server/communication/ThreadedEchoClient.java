@@ -7,7 +7,7 @@ import server.message.command.distributor.*;
 //import server.message.command.distributor.NotificationForDistributorListCommand;
 import server.message.command.employees.AuthorizationCommand;
 import server.message.command.employees.EmployeeListCommand;
-import server.message.command.employees.OneEmployeeCommand;
+import server.message.command.employees.OneEmployeeForAdministratorCommand;
 import server.message.command.institutions.AllInstitutionListCommand;
 import server.message.command.institutions.InstitutionsForNotificationCommand;
 import server.message.command.institutions.LocalizationForNotificationCommand;
@@ -23,6 +23,9 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.util.logging.Logger;
 
+/**
+ * Main class (thread) for receive data from server and register all of command elements
+ */
 public class ThreadedEchoClient extends Thread {
 
     private Socket socket;
@@ -33,10 +36,7 @@ public class ThreadedEchoClient extends Thread {
     private CommandInvoker commandInvoker;
     private Message messageFromServer;
     private DataStream dataSocket;
-    private CommandMediator commandMediator;
-    private DistributorCommandMediator distributorCommandMediator;
-    Logger logger = Logger.getLogger(this.getClass().getName());
-
+//    Logger logger = Logger.getLogger(this.getClass().getName());
 
     public Socket getSocket() {
         return socket;
@@ -60,11 +60,9 @@ public class ThreadedEchoClient extends Thread {
     }
 
     private void createCommandRegister(){
-        commandMediator = CommandMediator.getInstance();
-        distributorCommandMediator = DistributorCommandMediator.getInstance();
         Command authorizationCommand = new AuthorizationCommand();
         Command employeeListCommand = new EmployeeListCommand();
-        Command oneEmployeeCommand = new OneEmployeeCommand();
+        Command oneEmployeeCommand = new OneEmployeeForAdministratorCommand();
 
         Command allInstitutionListCommand = new AllInstitutionListCommand();
         Command oneInstitutionCommand = new OneInstitutionCommand();
@@ -98,7 +96,6 @@ public class ThreadedEchoClient extends Thread {
         try {
             while ((messageFromServer = (Message) streamInput.readObject()) != null) {
 
-                //wrzucenie messaga na liste oczekujaca na wykonanie
                 processMessage(messageFromServer);
             }
         } catch (ClassNotFoundException e ) {
@@ -116,7 +113,6 @@ public class ThreadedEchoClient extends Thread {
         }
             Platform.exit();
     }
-
 
     private void processMessage(Message messageFromServer) {
         commandInvoker.takeCommand(messageFromServer);

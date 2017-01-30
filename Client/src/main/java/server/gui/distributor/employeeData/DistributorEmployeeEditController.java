@@ -75,17 +75,14 @@ public class DistributorEmployeeEditController implements Initializable{
                     + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
     public boolean validateEmail(final String hex) {
-
         matcher = pattern.matcher(hex);
         return matcher.matches();
-
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         commandMediator = DistributorCommandMediator.getInstance();
-
         resourceBundle = resources;
         loadInternationalizationNames();
 
@@ -117,12 +114,10 @@ public class DistributorEmployeeEditController implements Initializable{
                 do {
                     Thread.sleep(1000);
                     employee = commandMediator.giveEmployeeFromServer();
-
                 }while (employee == null);
                 return  employee;
             }
         };
-
 
         employeeEditTask.setOnSucceeded(e-> {
             Employee employee = employeeEditTask.getValue();
@@ -151,7 +146,6 @@ public class DistributorEmployeeEditController implements Initializable{
             secondLoginTextField.setPromptText("repeat login");
             firstPasswordField.setText(employee.getEmployeeAccount().getPassword());
             secondPasswordField.setPromptText("repeat password");
-
         });
 
         new Thread(employeeEditTask).start();
@@ -159,18 +153,13 @@ public class DistributorEmployeeEditController implements Initializable{
 
     public void loadInternationalizationNames(){
         nameLabel.setText(resourceBundle.getString("employee_edit_text"));
-
-
     }
 
     @FXML
     public void closeEditEmployeeWindow(ActionEvent e){
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
-
     }
-
-
 
 
     public void showDifferentPasswordPopup(){
@@ -221,7 +210,6 @@ public class DistributorEmployeeEditController implements Initializable{
                 emailTextField.setStyle("-fx-text-box-border: red ; -fx-focus-color: red ;");
                 emailTextField.setVisible(true);
             }
-
         } else {
             showEmptyFieldPopup();
         }

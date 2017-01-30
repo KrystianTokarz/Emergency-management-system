@@ -1,5 +1,8 @@
 package server.gui.distributor.receivingPanel;
 
+/**
+ * Mocking class which static methods for adding new caller into system
+ */
 public class CallerDataMock {
 
     public static String getLocation(int index){

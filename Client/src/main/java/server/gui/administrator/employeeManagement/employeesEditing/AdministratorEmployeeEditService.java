@@ -18,8 +18,8 @@ import java.util.Map;
 public class AdministratorEmployeeEditService {
 
     private CommandMediator commandMediator;
-    ObservableList<EmployeeForTable> employeeForTables;
-    EmployeeForTable selectedEmployee;
+    private ObservableList<EmployeeForTable> employeeForTables;
+    private EmployeeForTable selectedEmployee;
     private Employee employeeFromServer = null;
     int index;
 

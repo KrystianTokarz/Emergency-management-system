@@ -8,6 +8,9 @@ import server.model.localization.Province;
 
 import java.util.List;
 
+/**
+ * Facade pattern for support receiving data from server (proxy-end)
+ */
 public class ClientFacadeProxy {
 
     private ClientFacadeProxy() {
@@ -23,21 +26,22 @@ public class ClientFacadeProxy {
     }
 
     private Object objectForMediator;
+    private DistributorCommandMediator distributorCommandMediator = DistributorCommandMediator.getInstance();
+    private CommandMediator commandMediator = CommandMediator.getInstance();
+
 
     public void setObjectForMediator(Object objectForMediator){
         this.objectForMediator = objectForMediator;
     }
 
-    private DistributorCommandMediator distributorCommandMediator = DistributorCommandMediator.getInstance();
-    private CommandMediator commandMediator = CommandMediator.getInstance();
 
-   public void setProgramPanelInformation(){
+    public void setProgramPanelInformation(){
        distributorCommandMediator.setProgramPanelInformation((Employee) objectForMediator);
-   }
+    }
 
    public void setNotificationForDistributor() {
        distributorCommandMediator.setNotificationForDistributor(objectForMediator);
-   }
+    }
 
     public void setNotificationId() {
         distributorCommandMediator.setNotificationId((Long) objectForMediator);
@@ -55,8 +59,11 @@ public class ClientFacadeProxy {
         commandMediator.setEmployeeList(objectForMediator);
     }
 
-    public void giveEmployeeData(){
-        System.out.println("Object = " + objectForMediator);
+    public void giveEmployeeDataForAdministrator(){
+        commandMediator.giveEmployeeData((Employee) objectForMediator);
+    }
+
+    public void giveEmployeeDataForDistributor(){
         distributorCommandMediator.giveEmployeeData((Employee) objectForMediator);
     }
 

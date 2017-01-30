@@ -11,14 +11,15 @@ import server.gui.administrator.employeeManagement.employeesEditing.Administrato
 import server.gui.administrator.institutionManagement.AdministratorInstitutionManagementService;
 import server.gui.login.LoginService;
 import server.message.command.employees.AuthorizationCommand;
-import server.message.command.employees.OneEmployeeCommand;
+import server.message.command.employees.OneEmployeeForAdministratorCommand;
 import server.message.command.institutions.OneInstitutionCommand;
 import server.model.employee.Employee;
 import server.model.institution.Institution;
 
+/**
+ * Mediator pattern interface
+ */
 public interface Mediator {
-     void registerAuthorizationCommand(AuthorizationCommand authorizationCommand);
-     void registerOneEmployeeCommand(OneEmployeeCommand oneEmployeeCommand);
      void registerLoginService(LoginService loginService);
      void registerAdministratorService(AdministratorService administratorService);
      void registerAdministratorEmployeeManagementService(AdministratorEmployeeManagementService employeeManagementService);
@@ -38,10 +39,6 @@ public interface Mediator {
      void giveEmployeeData(Employee param);
      Employee giveEmployeeFromServer();
      void setInstitutionFromServer(Institution institution);
-
-    void sendMessageForInstitutionList();
-
+     void sendMessageForInstitutionList();
      void setAllInstitutionList(Object param);
-
-     void registerOneInstitutionCommand(OneInstitutionCommand oneInstitutionCommand);
 }

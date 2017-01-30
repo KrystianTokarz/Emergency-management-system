@@ -7,14 +7,15 @@ import javafx.scene.image.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class which is uses into javaFX (in java table) in view for institution
+ */
 public class InstitutionForTable {
 
     private ImageView image = null;
     private SimpleStringProperty name = new SimpleStringProperty("");
     private SimpleStringProperty type  = new SimpleStringProperty("");
     private SimpleBooleanProperty availability = new SimpleBooleanProperty();
-
-
 
     public ImageView getImage() {
         return image;

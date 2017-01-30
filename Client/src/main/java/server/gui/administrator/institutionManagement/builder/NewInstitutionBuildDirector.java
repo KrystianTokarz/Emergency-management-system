@@ -3,6 +3,9 @@ package server.gui.administrator.institutionManagement.builder;
 import javafx.scene.image.ImageView;
 import server.model.institution.Institution;
 
+/**
+ * Institution builder director
+ */
 public class NewInstitutionBuildDirector {
 
     private InstitutionBuilder institutionBuilder;

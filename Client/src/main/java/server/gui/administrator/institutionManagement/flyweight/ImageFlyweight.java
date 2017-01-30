@@ -1,6 +1,9 @@
 package server.gui.administrator.institutionManagement.flyweight;
 
+/**
+ * Interface for Flyweight pattern
+ */
 public interface ImageFlyweight {
 
-    byte[] getCorrectEmployeeImage();
+    byte[] getCorrectInstitutionImage();
 }

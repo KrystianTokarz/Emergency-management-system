@@ -7,8 +7,10 @@ import server.model.localization.Province;
 
 import java.util.List;
 
+/**
+ * Command pattern element
+ */
 public class LocalizationForNotificationCommand implements Command{
-
 
     @Override
     public void execute() {

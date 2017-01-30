@@ -62,11 +62,8 @@ public class DistributorPhoneController implements Initializable {
         }
     }
 
-
-
-        @Override
+    @Override
     public void initialize(URL location, ResourceBundle resources) {
-
 
         Image callImage = new Image("images/green-call.png",25,20,false,false);
         cancelCallImage = new Image("images/red-call.png",25,20,false,false);
@@ -74,8 +71,6 @@ public class DistributorPhoneController implements Initializable {
         callButton.setGraphic(new ImageView(callImage));
         cancelCallButton.setGraphic(new ImageView(cancelCallImage));
         backOneStepButton.setGraphic(new ImageView(backArrowImage));
-
-
     }
 
     public void closePhoneView() {
@@ -83,19 +78,17 @@ public class DistributorPhoneController implements Initializable {
         stage.close();
     }
     private static boolean validatePhoneNumber(String phoneNo) {
-        //validate phone numbers of format "1234567890"
-        if (phoneNo.matches("\\d{9}")) return true;
-            //validating phone number with -, . or spaces
-        else if(phoneNo.matches("\\d{3}[-\\.\\s]\\d{3}[-\\.\\s]\\d{3}")) return true;
-        else return false;
-
+        if (phoneNo.matches("\\d{9}"))
+            return true;
+        else if(phoneNo.matches("\\d{3}[-\\.\\s]\\d{3}[-\\.\\s]\\d{3}"))
+            return true;
+        else
+            return false;
     }
-
 
     public void makeCall(){
 
         String phoneNumber = numberPhoneTextField.getText();
-        System.out.println(phoneNumber + "phoneNumber");
         if (phoneNumber!= null && validatePhoneNumber(phoneNumber)) {
             Stage stage = (Stage) callButton.getScene().getWindow();
             VBox root = new VBox();
@@ -105,7 +98,6 @@ public class DistributorPhoneController implements Initializable {
             Label label1 = new Label();
             label1.setFont(Font.font("Verdana",FontWeight.BOLD,16));
             label1.setText("  " + phoneNumber + "  ");
-
 
             Button button = new Button();
             button.setPrefSize(130,70);
@@ -128,8 +120,5 @@ public class DistributorPhoneController implements Initializable {
             alert.setContentText("The number entered is incorrect!");
             alert.showAndWait();
         }
-
-        }
-
-
+    }
 }

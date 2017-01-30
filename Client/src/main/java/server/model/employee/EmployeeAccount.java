@@ -23,5 +23,4 @@ public class EmployeeAccount extends EmployeeAccountPrototype implements Seriali
 
     private String password;
 
-
 }

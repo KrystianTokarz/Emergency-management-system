@@ -38,6 +38,7 @@ public class LoginService {
     private String language;
     private String country = new String("EN");
     private ResourceBundle resourceBundle;
+    private boolean testedValue = false;
 
     public LoginService(CommandMediator commandMediator,DistributorCommandMediator distributorCommandMediator){
         this.commandMediator = commandMediator;
@@ -54,14 +55,12 @@ public class LoginService {
         File file = new File("src\\main\\resources\\internationalization");
         ClassLoader loader = null;
 
-
         try {
             URL[] urls =  new URL[]{ file.toURI().toURL()};
             loader = new URLClassLoader(urls);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-
         resourceBundle = ResourceBundle.getBundle("MessageBundle",currentLocale,loader);
         return resourceBundle;
     }
@@ -111,9 +110,11 @@ public class LoginService {
                         primaryStage.setScene(new Scene(correctView));
                         primaryStage.setX(300);
                         primaryStage.setY(150);
+                    if(testedValue == true)
+                        primaryStage.setX(5);
+                    else
                         primaryStage.show();
                         if(additionalStage!= null) {
-
 
                             additionalStage.setX(primaryStage.getScene().getWindow().getX() + primaryStage.getScene().getWidth());
                             additionalStage.setY(primaryStage.getScene().getWindow().getY());
@@ -123,7 +124,6 @@ public class LoginService {
                             });
                             additionalStage.setTitle("PANEL");
                             additionalStage.show();
-
                         }
                 }
             });
@@ -145,14 +145,12 @@ public class LoginService {
         public Parent getCorrectView(EmployeeProfileType type, Employee employee){
             Parent view;
 
-
             try {
                 if(type == EmployeeProfileType.ADMINISTRATOR){
                     commandMediator.registerAdministratorService(new AdministratorService(commandMediator));
                     commandMediator.setProgramPanelInformation(employee);
                     view = (Parent) FXMLLoader.load(getClass().getClassLoader().getResource("views/administrator/administratorPanelView.fxml"));
-
-
+                    testedValue = false;
                     return  view;
                 }
                 else if(type == EmployeeProfileType.DISTRIBUTOR){
@@ -164,7 +162,7 @@ public class LoginService {
                     distributorCommandMediator.registerDistributorService(new DistributorService(distributorCommandMediator,observableConcrete));
                     distributorCommandMediator.setProgramPanelInformation(employee);
                     view = (Parent) FXMLLoader.load(getClass().getClassLoader().getResource("views/distributor/distributorPanelView.fxml"),resourceBundle);
-
+                    testedValue = true;
                     return  view;
                 }
             } catch (IOException e) {
@@ -173,5 +171,4 @@ public class LoginService {
             return null;
         }
     }
-
 }

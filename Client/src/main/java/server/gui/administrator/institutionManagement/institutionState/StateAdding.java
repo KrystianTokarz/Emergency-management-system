@@ -12,7 +12,9 @@ import server.message.Message;
 import server.model.institution.Institution;
 import server.model.message.MessageType;
 
-
+/**
+ * State which create adding view
+ */
 public class StateAdding implements InstitutionState {
 
     Button buttonToSet = new Button();
@@ -25,7 +27,6 @@ public class StateAdding implements InstitutionState {
         this.labelToSet = labelToSet;
         this.buttonToSet.setText("Add");
         this.labelToSet.setText("Add new Institution");
-
     }
 
     @Override
@@ -41,7 +42,6 @@ public class StateAdding implements InstitutionState {
                 numberName,
                 imageView,
                 selectedValue);
-
 
         Message message = new Message.MessageBuilder(MessageType.SAVE_NEW_INSTITUTION)
                 .object(newInstitution)

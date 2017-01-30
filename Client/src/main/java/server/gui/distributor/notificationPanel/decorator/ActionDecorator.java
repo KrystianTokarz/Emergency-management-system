@@ -1,5 +1,8 @@
 package server.gui.distributor.notificationPanel.decorator;
 
+/**
+ * Class for adding new decorating elements
+ */
 public abstract  class ActionDecorator implements AdditionAction {
 
     protected AdditionAction decoratedAction;

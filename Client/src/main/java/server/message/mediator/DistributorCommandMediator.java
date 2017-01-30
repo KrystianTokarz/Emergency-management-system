@@ -32,15 +32,14 @@ import server.model.notification.Notification;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Mediator pattern for all operation for distributor
+ */
 public class DistributorCommandMediator {
 
     private DistributorService distributorService;
     private DistributorPhoneService distributorPhoneService;
     private DistributorEmployeeEditService distributorEmployeeEditService;
-    private LocalizationForNotificationCommand localizationForNotificationCommand;
-    private NotificationForAllApplicationListCommand notificationForApplicationListCommand;
-    private InstitutionsForNotificationCommand institutionsForNotificationCommand;
-    private OneInstitutionCommand oneInstitutionCommand;
     private DistributorReceivingService distributorReceivingService;
     private DistributorNotificationService distributorNotificationService;
 
@@ -102,7 +101,6 @@ public class DistributorCommandMediator {
         distributorService.logout();
     }
 
-
     public BorderPane createGoogleMap(WebEngine webEngine) {
         return distributorService.createGoogleMap(webEngine);
     }
@@ -114,7 +112,6 @@ public class DistributorCommandMediator {
     public void sendForEmployeeDataToEdit(Employee employee) {
         distributorService.sendForEmployeeDataToEdit(employee);
     }
-
 
     public void giveEmployeeData(Employee employee) {
         distributorEmployeeEditService.setEmployeeFromServer(employee);
@@ -136,7 +133,6 @@ public class DistributorCommandMediator {
         distributorPhoneService.activePhoneRinging();
     }
 
-
     public Timeline give4SecondTimelineForNotificationInApplication() {
         return distributorService.give4SecondTimelineForNotificationInApplication();
     }
@@ -149,24 +145,8 @@ public class DistributorCommandMediator {
         return distributorReceivingService.giveTimelineForNotificationCaller();
     }
 
-//    public void sendMessageFromUserNotification() {
-//        distributorService.sendMessageFromUserNotification();
-//    }
-//
-//    public void registerNotificationForDistributorListCommand(NotificationForDistributorListCommand notificationForDistributorListCommand) {
-//        this.notificationForDistributorListCommand = notificationForDistributorListCommand;
-//    }
-//
-//    public  void setNotificationListForDistributor(Object param) {
-//        distributorService.setNotificationListForDistributor(param);
-//    }
-//
     public List<Notification> getNotificationForUserTable() {
         return distributorService.getNotificationListForDistributor();
-    }
-
-    public void registerNotificationForApplicationListCommand(NotificationForAllApplicationListCommand notificationForApplicationListCommand) {
-        this.notificationForApplicationListCommand = notificationForApplicationListCommand;
     }
 
     public void setNotificationForDistributor(Object param){
@@ -210,10 +190,6 @@ public class DistributorCommandMediator {
         distributorReceivingService.sendMessageForLocalizationForNotification();
     }
 
-    public void registerOneInstitutionCommand(OneInstitutionCommand oneInstitutionCommand) {
-        this.oneInstitutionCommand = oneInstitutionCommand;
-    }
-
     public void setLocalizationForServer(List<Province> localizationForServer) {
         this.distributorNotificationService.setLocalizationForServer(localizationForServer);
     }
@@ -232,14 +208,6 @@ public class DistributorCommandMediator {
 
     public String getProvinceForLocality(String localityString) {
         return this.distributorNotificationService.getProvinceForLocality(localityString);
-    }
-
-    public void registerLocalizationForNotificationCommand(LocalizationForNotificationCommand localizationForNotificationCommand) {
-        this.localizationForNotificationCommand = localizationForNotificationCommand;
-    }
-
-    public void registerInstitutionForNotificationCommand(InstitutionsForNotificationCommand institutionsForNotificationCommand) {
-        this.institutionsForNotificationCommand = institutionsForNotificationCommand;
     }
 
     public void setInstitutionForServer(List<Institution> institutionForServer) {
@@ -270,8 +238,6 @@ public class DistributorCommandMediator {
         this.distributorNotificationService.setInstitutionChoiceBoxForService(policeChoiceBox,emergencyChoiceBox,fireBrigadeChoiceBox);
     }
 
-
-
     public void saveFirstNotification(FirstMessageWithNotification messageWithNotification) {
         this.distributorNotificationService.saveFirstNotification(messageWithNotification);
     }
@@ -291,7 +257,6 @@ public class DistributorCommandMediator {
     public boolean returnResultOfSaveAllNotificationInDatabase(){
         return distributorNotificationService.returnResultOfSaveAllNotificationInDatabase();
     }
-
 
     public void startThread() {
         this.distributorService.startThread();

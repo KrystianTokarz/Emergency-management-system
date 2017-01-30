@@ -7,6 +7,9 @@ import server.message.mediator.Mediator;
 import server.model.employee.Employee;
 import server.model.institution.Institution;
 
+/**
+ * Command pattern element
+ */
 public class OneInstitutionCommand implements Command {
 
     @Override

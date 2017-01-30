@@ -3,6 +3,9 @@ package server.gui.distributor.builder;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.image.ImageView;
 
+/**
+ * Builder pattern which is used to create new notification for JavaFX table
+ */
 public class NotificationForDistributorTables {
 
     private SimpleStringProperty accidentType = new SimpleStringProperty("");

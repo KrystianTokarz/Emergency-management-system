@@ -36,10 +36,6 @@ public class AdministratorEmployeeManagementController implements Initializable{
     private Stage addNewEmployeeStage;
 
 
-
-
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         commandMediator = CommandMediator.getInstance();
@@ -57,7 +53,6 @@ public class AdministratorEmployeeManagementController implements Initializable{
                 return  employeeForTablesThread;
             }
         };
-
 
         employeeListTask.setOnSucceeded(e-> {
             employeeForTables.addAll(employeeListTask.getValue());
@@ -88,7 +83,6 @@ public class AdministratorEmployeeManagementController implements Initializable{
 
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
-
     }
 
 

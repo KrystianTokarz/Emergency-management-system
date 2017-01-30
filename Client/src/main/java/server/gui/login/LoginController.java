@@ -14,14 +14,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+
 public class LoginController implements Initializable{
 
 
     @FXML
-    private TextField loginField = new TextField();
+    private TextField loginField;
 
     @FXML
-    private PasswordField passwordField = new PasswordField();
+    private PasswordField passwordField;
 
     @FXML
     private ComboBox i18lComboBox;
@@ -65,7 +66,6 @@ public class LoginController implements Initializable{
 
     @FXML
     public void handleButtonLogin(ActionEvent event){
-
 
         primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         commandMediator.sendPasswordAndLogin(primaryStage,loginField.getText(), passwordField.getText());

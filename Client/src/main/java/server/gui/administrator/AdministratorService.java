@@ -53,7 +53,6 @@ public class AdministratorService {
 
     public byte[] loadEmployeeImageView(){
         byte[] userImage = commandMediator.getUserImage();
-        System.out.println(userImage);
         return userImage;
     }
 

@@ -87,7 +87,6 @@ public class DistributorReceivingController implements Initializable {
     public void loadInternationalizationNames(){
         distributorLabel.setText(resourceBundle.getString("addition_panel_name"));
         repeatButton.setText(resourceBundle.getString("repeat_button"));
-
     }
 
 
@@ -104,7 +103,6 @@ public class DistributorReceivingController implements Initializable {
             notificationStage.setScene(new Scene(notificationView));
             notificationStage.setTitle("NOTIFICATION");
             notificationStage.show();
-
         }catch (IndexOutOfBoundsException ex){
             callerTableView.refresh();
         }
@@ -121,7 +119,5 @@ public class DistributorReceivingController implements Initializable {
 
             notificationStage.setTitle("NOTIFICATION");
             notificationStage.show();
-
-
     }
 }

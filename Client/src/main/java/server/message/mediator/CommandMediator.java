@@ -16,7 +16,7 @@ import server.gui.administrator.institutionManagement.institutionState.Administr
 import server.gui.login.LoginService;
 import server.message.command.employees.AuthorizationCommand;
 import server.message.command.employees.EmployeeListCommand;
-import server.message.command.employees.OneEmployeeCommand;
+import server.message.command.employees.OneEmployeeForAdministratorCommand;
 import server.message.command.institutions.AllInstitutionListCommand;
 import server.message.command.institutions.OneInstitutionCommand;
 import server.model.employee.Employee;
@@ -27,14 +27,12 @@ import server.model.localization.ProvinceType;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Mediator pattern for all operation for administrator
+ */
 public class CommandMediator implements  Mediator {
     private LoginService loginService;
     private AdministratorService administratorService;
-    private AuthorizationCommand authorizationCommand;
-    private EmployeeListCommand employeeListCommand;
-    private OneEmployeeCommand oneEmployeeCommand;
-    private AllInstitutionListCommand allInstitutionListCommand;
-    private OneInstitutionCommand oneInstitutionCommand;
     private AdministratorEmployeeManagementService administratorEmployeeManagementService;
     private AdministratorEmployeeAddService administratorEmployeeAddService;
     private AdministratorEmployeeEditService administratorEmployeeEditService;
@@ -50,15 +48,6 @@ public class CommandMediator implements  Mediator {
         if (instance == null)
             instance = new CommandMediator();
         return instance;
-    }
-
-
-    public void registerAuthorizationCommand(AuthorizationCommand authorizationCommand){
-        this.authorizationCommand = authorizationCommand;
-    }
-
-    public void registerOneEmployeeCommand(OneEmployeeCommand oneEmployeeCommand){
-        this.oneEmployeeCommand = oneEmployeeCommand;
     }
 
     public void registerLoginService(LoginService loginService){
@@ -80,8 +69,6 @@ public class CommandMediator implements  Mediator {
     public void registerAdministratorInstitutionAddService(AdministratorInstitutionOperationService administratorInstitutionOperationService){
         this.administratorInstitutionOperationService = administratorInstitutionOperationService;
     }
-
-
 
     public void executeLogin(Object param){
         loginService.loginIntoSystem(param);
@@ -127,10 +114,6 @@ public class CommandMediator implements  Mediator {
         return administratorEmployeeManagementService.loadEmployeeTable();
     }
 
-    public void registerEmployeeListCommand(EmployeeListCommand employeeListCommand) {
-        this.employeeListCommand = employeeListCommand;
-    }
-
     public void sendMessageForEmployeeList(){
         administratorService.sendMessageForEmployeeList();
     }
@@ -144,7 +127,6 @@ public class CommandMediator implements  Mediator {
     public void deleteEmployeesFromTable(ObservableList<EmployeeForTable>  employeeForTable) {
         administratorEmployeeManagementService.deleteEmployees(employeeForTable);
     }
-
 
     public void deleteInstitutionFromTable(ObservableList<InstitutionForTable>  institutionForTable) {
         administratorInstitutionManagementService.deleteInstitutions(institutionForTable);
@@ -174,10 +156,10 @@ public class CommandMediator implements  Mediator {
     }
 
     public void giveEmployeeData(Employee param){
-        System.out.println( " param = " + param);
-        System.out.println( " administratorEmployeeEditService = " + administratorEmployeeEditService);
         administratorEmployeeEditService.setEmployeeFromServer(param);
     }
+
+
 
     public Employee giveEmployeeFromServer(){
        return administratorEmployeeEditService.giveEmployeeFromServer();
@@ -204,19 +186,9 @@ public class CommandMediator implements  Mediator {
         administratorInstitutionManagementService.setAllInstitutionList(param);
     }
 
-    @Override
-    public void registerOneInstitutionCommand(OneInstitutionCommand oneInstitutionCommand) {
-        this.oneInstitutionCommand = oneInstitutionCommand;
-    }
-
-    public void registerAllInstitutionListCommand(AllInstitutionListCommand allInstitutionListCommand) {
-        this.allInstitutionListCommand = allInstitutionListCommand;
-    }
-
     public ObservableList<InstitutionForTable> loadInstitutionTable (){
         return administratorInstitutionManagementService.loadInstitutionTable();
     }
-
 
     public List<Institution> getRightInstitutionList(ProvinceType type){
         return administratorInstitutionManagementService.getRightInstitutionListForProvince(type);
@@ -228,7 +200,6 @@ public class CommandMediator implements  Mediator {
     public List<Locality> getLocalityList(Institution institution){
         return administratorInstitutionManagementService.getLocalityList(institution);
     }
-
 
     public ObservableList<InstitutionForTable> sortWithInstitutionType(ObservableList<InstitutionForTable> convertedInstitutionForTables,String type) {
         return administratorInstitutionManagementService.sortWithInstitutionType(convertedInstitutionForTables,type);
@@ -277,14 +248,4 @@ public class CommandMediator implements  Mediator {
     public ResourceBundle getResourceBundle() {
         return loginService.getResourceBundle();
     }
-
-//    public TableView<InstitutionForTable> getTableWithInstitution(){
-//        return administratorInstitutionOperationService.getTableWithInstitution();
-//    }
-
-
-
-//    public void registerAdministratorInstitutionOperationController(AdministratorInstitutionOperationController administratorInstitutionOperationController) {
-//        this.administratorInstitutionOperationM
-//    }
 }

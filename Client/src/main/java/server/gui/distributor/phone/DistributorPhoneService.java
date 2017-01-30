@@ -16,9 +16,7 @@ public class DistributorPhoneService {
 
     public void activePhoneRinging() {
         Mixer.Info[] mixerInfo = AudioSystem.getMixerInfo();
-
         Mixer mixer = AudioSystem.getMixer(mixerInfo[0]);
-
         DataLine.Info dataInfo = new DataLine.Info(Clip.class, null);
         Clip clip = null;
         try {

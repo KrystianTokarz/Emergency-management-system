@@ -1,10 +1,13 @@
 package server.gui.distributor.notificationPanel.decorator;
 
-        import server.model.localization.Locality;
+import server.model.localization.Locality;
         import server.model.localization.Province;
         import server.model.localization.Street;
         import server.model.notification.AccidentType;
 
+/**
+ * Basic class which is decorating
+ */
 public class AddictionReport implements AdditionAction{
 
     private String province;

@@ -1,17 +1,17 @@
-package server.message.command.distributor;
+package server.message.command.employees;
 
 import server.message.command.Command;
 import server.message.facade.ClientFacadeProxy;
-import server.message.mediator.DistributorCommandMediator;
+
 
 /**
  * Command pattern element
  */
-public class SaveSecondNotificationCommand implements Command {
+public class OneEmployeeForDistributorCommand implements Command {
 
     @Override
     public void execute() {
         ClientFacadeProxy clientFacadeProxy = ClientFacadeProxy.getInstance();
-        clientFacadeProxy.setResultNotificationInServer();
+        clientFacadeProxy.giveEmployeeDataForDistributor();
     }
 }

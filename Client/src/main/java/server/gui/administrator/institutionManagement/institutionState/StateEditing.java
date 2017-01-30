@@ -15,6 +15,9 @@ import server.model.message.MessageType;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * State which create editing view
+ */
 public class StateEditing implements InstitutionState {
 
 
@@ -52,6 +55,4 @@ public class StateEditing implements InstitutionState {
         Thread thread = new EchoThread(message);
         thread.start();
     }
-
-
 }

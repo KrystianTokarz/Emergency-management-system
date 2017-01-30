@@ -3,12 +3,14 @@ package server.communication;
 import java.io.*;
 import java.net.Socket;
 
+/**
+ * Singleton class with socket and input/output stream
+ */
 public class DataStream {
     private static DataStream instance = null;
     private Socket socket;
     private ObjectOutputStream outputStream;
     private ObjectInputStream inputStream;
-
 
     public static DataStream getInstance() {
         if (instance == null) {

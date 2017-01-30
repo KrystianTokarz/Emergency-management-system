@@ -4,13 +4,12 @@ import server.gui.administrator.institutionManagement.flyweight.ImageFlyweight;
 import server.gui.administrator.institutionManagement.flyweight.SharedImageFlyweight;
 import server.gui.administrator.institutionManagement.flyweight.UnsharedImageFlyweight;
 
+
+/**
+ * Factory (pattern) for create right image
+ */
 public class ImageFlyweightFactory {
 
-//    private ImageFlyweight imageFlyweight;
-//
-//    public ImageFlyweightFactory(ImageFlyweight imageFlyweight){
-//        this.imageFlyweight = imageFlyweight;
-//    }
 
     public ImageFlyweight createCorrectImageFlyweight(byte[] imageByteArray){
         if (imageByteArray == null)

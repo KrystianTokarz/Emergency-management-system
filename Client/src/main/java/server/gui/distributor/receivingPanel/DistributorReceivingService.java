@@ -10,6 +10,9 @@ import server.message.Message;
 import server.message.mediator.DistributorCommandMediator;
 import server.model.message.MessageType;
 
+/**
+ * Special service for distributor (which is used for receive notification) which is observer (in Observable pattern)
+ */
 public class DistributorReceivingService implements Observer{
 
     private DistributorCommandMediator commandMediator;

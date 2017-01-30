@@ -1,5 +1,8 @@
 package server.gui.distributor.observerReceivingPanel;
 
+/**
+ * Observable (pattern) interface
+ */
 public interface Observable {
 
     boolean getState();

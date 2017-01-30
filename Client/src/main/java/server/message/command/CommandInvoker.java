@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * Command invoker with list of messages from server and thread which support this list
+ */
 public class CommandInvoker {
 
     private CommandRegister commandRegister;
@@ -46,7 +49,6 @@ public class CommandInvoker {
                     }
                     Message removeMessage = commandList.remove(0);
                     ClientFacadeProxy clientFacadeProxy = ClientFacadeProxy.getInstance();
-                    System.out.println("removeMessage.getObject() =  " + removeMessage.getObject());
                     clientFacadeProxy.setObjectForMediator(removeMessage.getObject());
                     Command command = commandRegister.getCommand(removeMessage.getType());
                     command.execute();

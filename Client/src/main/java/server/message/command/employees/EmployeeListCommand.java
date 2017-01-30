@@ -9,10 +9,10 @@ import server.model.employee.Employee;
 
 import java.util.List;
 
+/**
+ * Command pattern element
+ */
 public class EmployeeListCommand implements Command {
-
-
-
 
     @Override
     public void execute() {

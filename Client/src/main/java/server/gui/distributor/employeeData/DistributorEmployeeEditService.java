@@ -18,7 +18,6 @@ public class DistributorEmployeeEditService {
     private DistributorCommandMediator commandMediator;
     private Employee employeeFromServer = null;
 
-
     public DistributorEmployeeEditService(DistributorCommandMediator commandMediator){
         this.commandMediator = commandMediator;
     }
@@ -35,15 +34,13 @@ public class DistributorEmployeeEditService {
         EmployeeBuilder employeeBuilder = new EmployeeBuilderImpl();
         NewEmployeeBuildDirector newEmployeeBuildDirector = new NewEmployeeBuildDirector(employeeBuilder);
         Employee newEmployee = newEmployeeBuildDirector.construct(firstName, lastName, email, "Distributor", password, login, image);
-        Map<String , Employee> map = new HashMap<>();
-        map.put("old",originalEmployee);
-        map.put("new",newEmployee);
+        Map<String, Employee> map = new HashMap<>();
+        map.put("old", originalEmployee);
+        map.put("new", newEmployee);
         Message message = new Message.MessageBuilder(MessageType.EDIT_EMPLOYEE_DISTRIBUTOR)
                 .object(map)
                 .build();
         Thread thread = new EchoThread(message);
         thread.start();
     }
-
-
 }

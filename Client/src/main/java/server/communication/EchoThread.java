@@ -5,6 +5,9 @@ import server.message.Message;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
+/**
+ * Special class (thread) for send data into server
+ */
 public class EchoThread extends Thread{
 
     private ObjectOutputStream streamOutput;
