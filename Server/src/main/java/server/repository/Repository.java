@@ -24,11 +24,4 @@ public abstract class Repository {
         entityManager = session.getEntityManager();
 }
     public abstract  <T> T findById(Long id);
-
-
-
-
-//    public abstract <T> List<T> findAll();
-
-
 }

@@ -41,8 +41,6 @@ public class Employee extends EmployeePrototype implements Serializable{
     @Enumerated(EnumType.STRING)
     private EmployeeProfileType type;
 
-    //    @OneToMany
-    //    private List<Notification> notifications;
 
 
 }

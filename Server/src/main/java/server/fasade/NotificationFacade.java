@@ -15,7 +15,6 @@ import java.util.logging.Logger;
  */
 public class NotificationFacade {
 
-
     private NotificationFacade() {
     }
 
@@ -28,10 +27,7 @@ public class NotificationFacade {
         return instance;
     }
 
-
     private NotificationRepository notificationRepository = NotificationRepository.getInstance();
-
-
 
     public Map<String,List<Notification>> findAllNotification(Object employeeObject) {
         Employee employee = (Employee) employeeObject;

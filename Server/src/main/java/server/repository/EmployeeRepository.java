@@ -5,6 +5,7 @@ import server.model.employee.Employee;
 import server.model.employee.EmployeeAccount;
 import server.model.employee.EmployeeImage;
 import server.model.employee.EmployeeProfileType;
+import server.model.notification.Notification;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -82,7 +83,8 @@ public class EmployeeRepository extends Repository {
     private void deleteEmployeeByFirstAndLastNameAndMail(Employee employee){
 
         Employee employeeByFirstAndLastNameAndMail = findEmployeeByFirstAndLastNameAndMail(employee);
-
+        NotificationRepository notificationRepository = NotificationRepository.getInstance();
+        notificationRepository.updateNotificationForEmployee(employeeByFirstAndLastNameAndMail);
         entityManager.getTransaction().begin();
         entityManager.remove(entityManager.contains(employeeByFirstAndLastNameAndMail) ? employeeByFirstAndLastNameAndMail : entityManager.merge(employeeByFirstAndLastNameAndMail));
         entityManager.getTransaction().commit();
@@ -91,8 +93,6 @@ public class EmployeeRepository extends Repository {
     }
 
     public void deleteEmployee(List<Employee> employees) {
-
-
         for (Employee employee: employees) {
             deleteEmployeeByFirstAndLastNameAndMail(employee);
         }

@@ -2,20 +2,25 @@ package server.repository;
 
 
 
+import server.model.employee.Employee;
 import server.model.institution.Institution;
 import server.model.institution.InstitutionImage;
 import server.model.localization.Locality;
 import server.model.localization.Province;
 import server.model.localization.ProvinceType;
 import server.model.localization.Street;
+import server.model.notification.Notification;
 
 import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.CriteriaUpdate;
 import javax.persistence.criteria.Root;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * Class InstitutionRepository for CRUD operation on Institution Entity (singleton)
@@ -71,7 +76,6 @@ public class InstitutionRepository extends Repository {
                 foundedInstitution = null;
             }
             entityManager.clear();
-        System.out.println(foundedInstitution.getName() );
         return  foundedInstitution;
     }
 
@@ -90,7 +94,6 @@ public class InstitutionRepository extends Repository {
             foundedInstitution = null;
         }
         entityManager.clear();
-        System.out.println(foundedInstitution.getName() );
         return  foundedInstitution;
     }
 
@@ -98,7 +101,6 @@ public class InstitutionRepository extends Repository {
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Locality> criteriaQuery = criteriaBuilder.createQuery(Locality.class);
         Root<Locality> localityInDatabase = criteriaQuery.from(Locality.class);
-
 
         criteriaQuery.select(localityInDatabase)
                 .where(localityInDatabase.get("locality").in(institution.getLocality().getLocality()));
@@ -127,36 +129,12 @@ public class InstitutionRepository extends Repository {
 
     private void deleteInstitutionByName(Institution institution){
         Institution institutionByName = findInstitutionByName(institution);
-        Street street = findStreetInBase(institutionByName);
-        Locality localityInBase = findLocalityInBase(institutionByName);
-        int index =0;
-        int result = -1 ;
-        for (Street streetTmp : localityInBase.getStreetList()) {
-            if(streetTmp.getStreet().equals(street.getStreet())) {
-                result = index;
-                break;
-            }
-            index++;
-        }
-        if(result != -1)
-             localityInBase.getStreetList().remove(result);
-        entityManager.getTransaction().begin();
-        entityManager.merge(localityInBase);
-        entityManager.getTransaction().commit();
-        entityManager.clear();
-
-
+        NotificationRepository notificationRepository = NotificationRepository.getInstance();
 
         entityManager.getTransaction().begin();
         entityManager.remove(entityManager.contains(institutionByName) ? institutionByName : entityManager.merge(institutionByName));
         entityManager.getTransaction().commit();
         entityManager.clear();
-
-        entityManager.getTransaction().begin();
-        entityManager.remove(entityManager.contains(street) ? street : entityManager.merge(street));
-        entityManager.getTransaction().commit();
-        entityManager.clear();
-
     }
     public void deleteEmployee(List<Institution> institutions) {
         for(Institution institution:institutions){
@@ -186,7 +164,7 @@ public class InstitutionRepository extends Repository {
                 .where(streetInDatabase.get("street").in(institution.getStreet().getStreet()),
                         streetInDatabase.get("specialNumber").in(institution.getStreet().getSpecialNumber()));
         Street foundedStreet = entityManager.createQuery(criteriaQuery).getSingleResult();
-        entityManager.clear();;
+        entityManager.clear();
         return foundedStreet;
     }
 
@@ -201,11 +179,22 @@ public class InstitutionRepository extends Repository {
 
         entityManager.getTransaction().begin();
         entityManager.createQuery(criteriaStreetUpdate).executeUpdate();
-
-
         entityManager.getTransaction().commit();
         entityManager.clear();
     }
+
+    public void updateNotificationInstitution(String institutionName, Notification notification){
+
+        Institution institutionByName = findInstitutionByName(institutionName);
+        institutionByName.getNotification().add(notification);
+
+        entityManager.getTransaction().begin();
+        entityManager.merge(institutionByName);
+        entityManager.getTransaction().commit();
+        entityManager.clear();
+    }
+
+
 
     public void updateInstitution(Map<String, Institution> institutionMap) {
         boolean isNewImage = false;
@@ -214,8 +203,6 @@ public class InstitutionRepository extends Repository {
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 
         Institution institutionByName = findInstitutionByName(oldInstitution);
-
-
 
         /*UPDATE EMPLOYEE_IMAGE ENTITY*/
         CriteriaUpdate<InstitutionImage> criteriaImageUpdate = null;
@@ -236,15 +223,11 @@ public class InstitutionRepository extends Repository {
             }
         }
 
-
         Province newProvinceInBase = findProvinceInBase(newInstitution);
         Locality newLocalityInBase = findLocalityInBase(newInstitution);
-//
-//        Street newStreetInBase = findStreetInBase(newInstitution);
         Street oldStreetInBase = findStreetInBase(oldInstitution);
         Street newStreet = newInstitution.getStreet();
         updateStreet(oldStreetInBase,newStreet);
-
 
         CriteriaUpdate<Institution> criteriaInstitutionUpdate = criteriaBuilder.createCriteriaUpdate(Institution.class);
         Root<Institution> institutionInDatabase = criteriaInstitutionUpdate.from(Institution.class);
@@ -255,8 +238,6 @@ public class InstitutionRepository extends Repository {
             criteriaInstitutionUpdate.set("institutionImage",newInstitution.getInstitutionImage());
         criteriaInstitutionUpdate.set("province",newProvinceInBase);
         criteriaInstitutionUpdate.set("locality",newLocalityInBase);
-//        criteriaInstitutionUpdate.set("street",newStreet);
-
         criteriaInstitutionUpdate.where(institutionInDatabase.get("name").in(oldInstitution.getName()));
 
         entityManager.getTransaction().begin();

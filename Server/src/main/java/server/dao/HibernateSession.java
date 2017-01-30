@@ -11,9 +11,9 @@ public class HibernateSession {
 
     private static HibernateSession instance = null;
 
-    private static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("systemDatabase");
+    private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("systemDatabase");
 
-    private static EntityManager entityManager;
+    private EntityManager entityManager;
 
     private HibernateSession() {
     }

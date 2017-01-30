@@ -25,9 +25,7 @@ public class LocalizationFacade {
 
     private LocalizationRepository localizationRepository = LocalizationRepository.getInstance();
 
-
     public List<Province> findAllProvince() {
         return localizationRepository.findAllProvince();
-
     }
 }

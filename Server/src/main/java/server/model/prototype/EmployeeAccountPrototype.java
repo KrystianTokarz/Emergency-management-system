@@ -4,6 +4,9 @@ import server.model.employee.EmployeeAccount;
 
 import java.io.Serializable;
 
+/**
+ * Class (for Prototype Pattern) for clone employee accounts
+ */
 public class EmployeeAccountPrototype implements Serializable{
 
     @Override

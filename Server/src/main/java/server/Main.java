@@ -19,6 +19,9 @@ import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Main class with mock data for database
+ */
 public class Main {
 
     public static void main(String[] args) {
@@ -36,9 +39,6 @@ public class Main {
         employee.setEmail("krycha@wp.pl");
         employee.setType(EmployeeProfileType.DISTRIBUTOR);
         employee.setEmployeeAccount(employeeAccount);
-
-
-
 
         Province province  = new Province();
         province.setProvinceType(ProvinceType.SWIETOKRZYSKIE);
@@ -58,20 +58,6 @@ public class Main {
         institution.setLocality(locality);
         institution.setStreet(street);
 
-
-        Institution institution5 = new Institution();
-        institution5.setName("Policja nr.5");
-        institution5.setAvailability(true);
-        institution5.setInstitutionImage(null);
-        institution5.setInstitutionType(InstitutionType.POLICE);
-        institution5.setProvince(province);
-        institution5.setLocality(locality);
-        Street tmpStreet = new Street();
-        tmpStreet.setStreet("Solidarnosci");
-        tmpStreet.setSpecialNumber("22");
-        institution5.setStreet(tmpStreet);
-
-
         Locality locality3= new Locality();
         locality3.setLocality("Sandomierz");
         Street street3 = new Street();
@@ -87,7 +73,6 @@ public class Main {
         institution3.setProvince(province);
         institution3.setLocality(locality3);
         institution3.setStreet(street3);
-
 
         Province province2  = new Province();
         province2.setProvinceType(ProvinceType.LODZKIE);
@@ -108,12 +93,9 @@ public class Main {
         institution2.setStreet(street2);
 
 
-
-
         EmployeeAccount employeeAccount2 = new EmployeeAccount();
         employeeAccount2.setPassword("1");
         employeeAccount2.setLogin("2");
-
 
         Employee employee2 = new Employee();
         employee2.setFirstName("Jan");
@@ -126,9 +108,8 @@ public class Main {
         notification.setCallerLastName("Basia");
         notification.setCallerFirstName("Asia");
         notification.setCallerPhoneNumber("333111333");
-        List<Institution> tmpList = new ArrayList<>();
-        tmpList.add(institution);
-        notification.setInstitutions(tmpList);
+
+        notification.getInstitutions().add(institution);
         notification.setProvince(province);
         notification.setLocality(locality);
         notification.setStreet(street);
@@ -137,13 +118,13 @@ public class Main {
         notification.setEmployee(employee);
         notification.setStatus(2);
 
+
         Notification notification2 = new Notification();
         notification2.setCallerLastName("Oalek");
         notification2.setCallerFirstName("Barek");
         notification2.setCallerPhoneNumber("222111333");
-        List<Institution> tmpList2 = new ArrayList<>();
-        tmpList2.add(institution2);
-        notification2.setInstitutions(tmpList2);
+
+        notification2.getInstitutions().add(institution2);
         notification2.setProvince(province2);
         notification2.setLocality(locality2);
         notification2.setStreet(street2);
@@ -152,20 +133,21 @@ public class Main {
         notification2.setEmployee(employee);
         notification2.setStatus(2);
 
+        institution2.getNotification().add(notification2);
+        institution.getNotification().add(notification);
+
             entityManager.getTransaction().begin();
             entityManager.persist(institution);
             entityManager.persist(institution2);
             entityManager.persist(institution3);
-            entityManager.persist(institution5);
             entityManager.persist(employee);
             entityManager.persist(employee2);
-        entityManager.persist(notification);
-        entityManager.persist(notification2);
+            entityManager.persist(notification);
+            entityManager.persist(notification2);
             entityManager.getTransaction().commit();
             entityManager.clear();
 
-
-        ThreadedEchoServer threadedEchoServer = ThreadedEchoServer.getInstance();
+        ThreadedEchoServer threadedEchoServer = new ThreadedEchoServer();
         threadedEchoServer.start();
     }
 }

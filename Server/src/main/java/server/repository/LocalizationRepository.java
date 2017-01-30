@@ -68,7 +68,6 @@ public class LocalizationRepository extends Repository {
         CriteriaQuery<Street> criteriaQuery = criteriaBuilder.createQuery(Street.class);
         Root<Street> streetInDatabase = criteriaQuery.from(Street.class);
 
-
         criteriaQuery.select(streetInDatabase)
                 .where(streetInDatabase.get("street").in(streetName)
                         , streetInDatabase.get("specialNumber").in(streetNumber));

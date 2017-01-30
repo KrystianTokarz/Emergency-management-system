@@ -3,6 +3,9 @@ package server.repository.confirmation;
 import server.model.message.SecondMessageWithNotification;
 import server.repository.NotificationRepository;
 
+/**
+ * Additional thread for create confirmation notification from another systems
+ */
 public class ThreadConfirmationFromAnotherSystem extends Thread{
 
     private SecondMessageWithNotification secondMessageWithNotification;

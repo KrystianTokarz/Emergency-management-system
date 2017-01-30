@@ -6,10 +6,9 @@ import java.io.Serializable;
 
 
 /**
- * Class which allow to send and receive different Object from/to client
+ * Class which allow to send and receive different Object from/to client (Proxy pattern)
  */
 public class Message implements Serializable {
-
 
     static final long serialVersionUID = 1L;
 
@@ -24,7 +23,6 @@ public class Message implements Serializable {
     public MessageType getType() {
         return messageType;
     }
-
 
     public Object getObject() {
         return object;
@@ -43,8 +41,6 @@ public class Message implements Serializable {
                 messageType = MessageType.EMPLOYEE_LIST;
             if((messageType == MessageType.SAVE_NEW_INSTITUTION ) || (messageType == MessageType.DELETE_INSTITUTIONS ||  messageType == MessageType.EDIT_INSTITUTION))
                 messageType = MessageType.ALL_INSTITUTION_LIST;
-//
-
 
             this.messageType=messageType;
         }

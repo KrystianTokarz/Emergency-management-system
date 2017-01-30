@@ -24,7 +24,6 @@ public class InstitutionFacade {
         return instance;
     }
 
-
     private InstitutionRepository institutionRepository = InstitutionRepository.getInstance();
 
     public List<Institution> findAllInstitutions() {
@@ -35,7 +34,6 @@ public class InstitutionFacade {
         List<Institution> institutions = (List<Institution>) institutionsObject;
         institutionRepository.deleteEmployee(institutions);
         return institutionRepository.findAll();
-
     }
 
     public List<Institution> saveNewInstitution(Object institutionObject) {
@@ -53,6 +51,5 @@ public class InstitutionFacade {
         Map<String, Institution> institutionMap = (Map<String, Institution>) institutionMapObject;
         institutionRepository.updateInstitution(institutionMap);
         return institutionRepository.findAll();
-
     }
 }

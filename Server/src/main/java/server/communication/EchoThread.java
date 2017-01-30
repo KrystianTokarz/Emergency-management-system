@@ -1,14 +1,9 @@
 package server.communication;
 
 import server.message.*;
-import server.message.chaingOfResposibility.AbstractChainElement;
-import server.message.chaingOfResposibility.EndElement;
-import server.message.chaingOfResposibility.employees.*;
-import server.message.command.CommandInvoker;
-import server.message.command.CommandRegister;
-import server.model.message.MessageType;
+import server.message.chaingOfResponsibility.AbstractChainElement;
 
-import javax.swing.*;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -26,9 +21,9 @@ public class EchoThread extends Thread {
     private Message messageFromClient;
     private Message messageToClient;
     private AbstractChainElement chainOfElements;
-    Logger logger = Logger.getLogger(this.getClass().getName());
+//    Logger logger = Logger.getLogger(this.getClass().getName());
 
-    public EchoThread(Socket clientSocket,AbstractChainElement chainOfElements) {
+    public EchoThread(Socket clientSocket, AbstractChainElement chainOfElements) {
         this.socket = clientSocket;
         this.chainOfElements = chainOfElements;
         try {
@@ -40,117 +35,22 @@ public class EchoThread extends Thread {
     }
 
 
-
     @Override
     public void run() {
-       // logger.info("przyszlo");
         try {
-           while ((messageFromClient = (Message) streamInput.readObject()) != null) {
-               logger.info("cos jest ");
-               messageToClient = chainOfElements.processRequest(messageFromClient);
-
-               streamOutput.writeObject(messageToClient);
-               //messageToClient = null;
-           }
-       } catch (IOException | ClassNotFoundException e) {
-           try {
-               streamInput.close();
-               streamOutput.close();
-               socket.close();
-           } catch (IOException e1) {
-               e1.printStackTrace();
-           }
-       }
+            while ((messageFromClient = (Message) streamInput.readObject()) != null) {
+                messageToClient = chainOfElements.processRequest(messageFromClient);
+                streamOutput.writeObject(messageToClient);
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            try {
+                streamInput.close();
+                streamOutput.close();
+                socket.close();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
     }
-
-//    private Message processMessage(Message messageFromServer) {
-//
-//        commandInvoker = new CommandInvoker(commandRegister,messageFromClient);
-//
-//        Object object = commandInvoker.execute(messageFromClient.getType());
-//        return new Message.MessageBuilder(messageFromServer.getType())
-//                .object(object)
-//                .build();
-//    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-//package server.communication;
-//
-//        import server.message.*;
-//        import server.message.command.CommandInvoker;
-//        import server.message.command.CommandRegister;
-//
-//        import java.io.IOException;
-//        import java.io.ObjectInputStream;
-//        import java.io.ObjectOutputStream;
-//        import java.net.Socket;
-//        import java.util.logging.Logger;
-//
-
-///**
-// *Main class extends Thread which supports each client
-// */
-//public class EchoThread extends Thread {
-//    private Socket socket;
-//    private ObjectInputStream streamInput;
-//    private ObjectOutputStream streamOutput;
-//    private CommandRegister commandRegister;
-//    private Message messageFromClient;
-//    private Message messageToClient;
-//    private CommandInvoker commandInvoker;
-//    Logger logger = Logger.getLogger(this.getClass().getName());
-//
-//    public EchoThread(Socket clientSocket,CommandRegister commandRegister) {
-//        this.commandRegister = commandRegister;
-//        this.socket = clientSocket;
-//        try {
-//            streamInput = new ObjectInputStream(socket.getInputStream());
-//            streamOutput = new ObjectOutputStream(socket.getOutputStream());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//    @Override
-//    public void run() {
-//        logger.info("przyszlo");
-//        try {
-//            while ((messageFromClient = (Message) streamInput.readObject()) != null) {
-//                messageToClient = processMessage(messageFromClient);
-//                streamOutput.writeObject(messageToClient);
-//
-//            }
-//        } catch (IOException | ClassNotFoundException e) {
-//            try {
-//                streamInput.close();
-//                streamOutput.close();
-//                socket.close();
-//            } catch (IOException e1) {
-//                e1.printStackTrace();
-//            }
-//        }
-//    }
-//
-//    private Message processMessage(Message messageFromServer) {
-//
-//        commandInvoker = new CommandInvoker(commandRegister,messageFromClient);
-//
-//        Object object = commandInvoker.execute(messageFromClient.getType());
-//        return new Message.MessageBuilder(messageFromServer.getType())
-//                .object(object)
-//                .build();
-//    }
-//}
-//
 

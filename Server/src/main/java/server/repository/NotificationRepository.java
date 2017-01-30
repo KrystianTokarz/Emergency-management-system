@@ -11,14 +11,13 @@ import server.model.notification.Notification;
 import server.repository.confirmation.ThreadConfirmationFromAnotherSystem;
 
 import javax.persistence.NoResultException;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.CriteriaUpdate;
 import javax.persistence.criteria.Root;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.math.BigDecimal;
+import java.util.*;
 
 /**
  * Class NotificationRepository for CRUD operation on Notification Entity (singleton)
@@ -45,7 +44,6 @@ public class NotificationRepository extends Repository {
         Root<Notification> notification = criteriaQuery.from(Notification.class);
         criteriaQuery.select(notification).where(notification.get("id").in(id));
         Notification singleResult= entityManager.createQuery(criteriaQuery).getSingleResult();
-
         return  singleResult;
     }
 
@@ -92,24 +90,16 @@ public class NotificationRepository extends Repository {
         Street streetInDatabase = localizationRepository.findStreet(messageWithNotification.getStreetName(),messageWithNotification.getStreetNumber());
         Province provinceInDatabase = localizationRepository.findProvince(messageWithNotification.getProvince());
 
-
-
         InstitutionRepository institutionRepository = InstitutionRepository.getInstance();
         List<String> institutions = messageWithNotification.getInstitutionNotification();
 
-        List<Institution> institutionsList = new ArrayList<>();
+        Notification notification = new Notification();
 
         for (String institutionName:institutions) {
             Institution institution = institutionRepository.findInstitutionByName(institutionName);
-            institutionsList.add(institution);
-
+            notification.getInstitutions().add(institution);
         }
-
-
-
-        Notification notification = new Notification();
         notification.setStatus(1);
-        notification.setInstitutions(institutionsList);
         notification.setCallerFirstName(messageWithNotification.getCallerFirstNameTextField());
         notification.setCallerLastName(messageWithNotification.getCallerLastNameTextField());
         notification.setCallerPhoneNumber(messageWithNotification.getCallerNumber());
@@ -118,14 +108,68 @@ public class NotificationRepository extends Repository {
         notification.setLocality(localityInDatabase);
         notification.setProvince(provinceInDatabase);
 
-
         entityManager.getTransaction().begin();
         Notification notificationInBase = entityManager.merge(notification);
         entityManager.getTransaction().commit();
         entityManager.clear();
 
+        for (String institutionName:institutions) {
+            institutionRepository.updateNotificationInstitution(institutionName, notificationInBase);
+        }
         return notificationInBase.getId();
     }
+
+    public void updateNotificationForEmployee(Employee employee) {
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Notification> criteriaQuery = criteriaBuilder.createQuery(Notification.class);
+        Root<Notification> notificationInDatabase = criteriaQuery.from(Notification.class);
+
+        criteriaQuery.select(notificationInDatabase)
+                .where(notificationInDatabase.get("employee").in(employee));
+        List<Notification> resultList;
+        try {
+            entityManager.getTransaction().begin();
+            resultList = entityManager.createQuery(criteriaQuery).getResultList();
+            entityManager.getTransaction().commit();
+            entityManager.clear();
+        } catch (NoResultException e) {
+            resultList = null;
+            entityManager.getTransaction().commit();
+            entityManager.clear();
+        }
+
+        CriteriaUpdate<Notification> criteriaUpdate = null;
+        for (Notification notification : resultList) {
+            criteriaUpdate = criteriaBuilder.createCriteriaUpdate(Notification.class);
+            Root<Notification> notificationInBase = criteriaUpdate.from(Notification.class);
+            criteriaUpdate.set("employee", null);
+            criteriaUpdate.where(notificationInBase.get("id").in(notification.getId()));
+            entityManager.getTransaction().begin();
+            entityManager.createQuery(criteriaUpdate).executeUpdate();
+            entityManager.getTransaction().commit();
+            entityManager.clear();
+        }
+    }
+
+    public void updateNotificationForInstitutions(Institution institution) {
+
+        Query nativeQuery = entityManager.createNativeQuery("SELECT COUNT(*) FROM NOTIFICATION");
+        BigDecimal numberOfNotifications = (BigDecimal) nativeQuery.getSingleResult();
+
+        for(long i=1;i<=numberOfNotifications.intValue();i++){
+            Notification notification = entityManager.find(Notification.class, i);
+            for (Institution institutionToEdit: notification.getInstitutions()) {
+                if(institutionToEdit.getId() == institution.getId()){
+                    institutionToEdit = null;
+                }
+            }
+            entityManager.getTransaction().begin();
+            entityManager.merge(notification);
+            entityManager.getTransaction().commit();
+        }
+    }
+
+
 
     public Boolean saveSecondNotification(SecondMessageWithNotification secondMessageWithNotification) {
 

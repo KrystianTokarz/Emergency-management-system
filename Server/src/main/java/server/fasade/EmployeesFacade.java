@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Facade to support operation on Employees
+ * Facade to support operation on Employees (proxy-end)
  */
 public class EmployeesFacade  {
 
